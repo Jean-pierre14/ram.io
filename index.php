@@ -1,424 +1,424 @@
-<?php include '_header.php'; ?>
-    <?php include '_sidebar.php';?>
-    <div class="app-drawer-wrapper">
-        <div class="drawer-nav-btn">
-            <button type="button" class="hamburger hamburger--elastic is-active">
-                <span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
-        </div>
-        <div class="drawer-content-wrapper">
-            <div class="scrollbar-container">
-                <h3 class="drawer-heading">Servers Status</h3>
-                <div class="drawer-section">
-                    <div class="row">
-                        <div class="col">
-                            <div class="progress-box">
-                                <h4>Server Load 1</h4>
-                                <div class="circle-progress circle-progress-gradient-xl mx-auto">
-                                    <small></small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="progress-box">
-                                <h4>Server Load 2</h4>
-                                <div class="circle-progress circle-progress-success-xl mx-auto">
-                                    <small></small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="progress-box">
-                                <h4>Server Load 3</h4>
-                                <div class="circle-progress circle-progress-danger-xl mx-auto">
-                                    <small></small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="mt-3">
-                        <h5 class="text-center card-title">Live Statistics</h5>
-                        <div id="sparkline-carousel-3"></div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="widget-chart p-0">
-                                    <div class="widget-chart-content">
-                                        <div class="widget-numbers text-warning fsize-3">43</div>
-                                        <div class="widget-subheading pt-1">Packages</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="widget-chart p-0">
-                                    <div class="widget-chart-content">
-                                        <div class="widget-numbers text-danger fsize-3">65</div>
-                                        <div class="widget-subheading pt-1">Dropped</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="widget-chart p-0">
-                                    <div class="widget-chart-content">
-                                        <div class="widget-numbers text-success fsize-3">18</div>
-                                        <div class="widget-subheading pt-1">Invalid</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="text-center mt-2 d-block">
-                            <button class="mr-2 border-0 btn-transition btn btn-outline-danger">Escalate Issue</button>
-                            <button class="border-0 btn-transition btn btn-outline-success">Support Center</button>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="drawer-heading">File Transfers</h3>
-                <div class="drawer-section p-0">
-                    <div class="files-box">
-                        <ul class="list-group list-group-flush">
-                            <li class="pt-2 pb-2 pr-2 list-group-item">
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div
-                                            class="widget-content-left opacity-6 fsize-2 mr-3 text-primary center-elem">
-                                            <i class="fa fa-file-alt"></i>
-                                        </div>
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading font-weight-normal">TPSReport.docx</div>
-                                        </div>
-                                        <div class="widget-content-right widget-content-actions">
-                                            <button class="btn-icon btn-icon-only btn btn-link btn-sm">
-                                                <i class="fa fa-cloud-download-alt"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pt-2 pb-2 pr-2 list-group-item">
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div
-                                            class="widget-content-left opacity-6 fsize-2 mr-3 text-warning center-elem">
-                                            <i class="fa fa-file-archive"></i>
-                                        </div>
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading font-weight-normal">Latest_photos.zip</div>
-                                        </div>
-                                        <div class="widget-content-right widget-content-actions">
-                                            <button class="btn-icon btn-icon-only btn btn-link btn-sm">
-                                                <i class="fa fa-cloud-download-alt"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pt-2 pb-2 pr-2 list-group-item">
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left opacity-6 fsize-2 mr-3 text-danger center-elem">
-                                            <i class="fa fa-file-pdf"></i>
-                                        </div>
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading font-weight-normal">Annual Revenue.pdf</div>
-                                        </div>
-                                        <div class="widget-content-right widget-content-actions">
-                                            <button class="btn-icon btn-icon-only btn btn-link btn-sm">
-                                                <i class="fa fa-cloud-download-alt"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="pt-2 pb-2 pr-2 list-group-item">
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div
-                                            class="widget-content-left opacity-6 fsize-2 mr-3 text-success center-elem">
-                                            <i class="fa fa-file-excel"></i>
-                                        </div>
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading font-weight-normal">Analytics_GrowthReport.xls
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-right widget-content-actions">
-                                            <button class="btn-icon btn-icon-only btn btn-link btn-sm">
-                                                <i class="fa fa-cloud-download-alt"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <h3 class="drawer-heading">Tasks in Progress</h3>
-                <div class="drawer-section p-0">
-                    <div class="todo-box">
-                        <ul class="todo-list-wrapper list-group list-group-flush">
-                            <li class="list-group-item">
-                                <div class="todo-indicator bg-warning"></div>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-2">
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" id="exampleCustomCheckbox1266"
-                                                    class="custom-control-input">
-                                                <label class="custom-control-label"
-                                                    for="exampleCustomCheckbox1266">&nbsp;</label>
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading">Wash the car
-                                                <div class="badge badge-danger ml-2">Rejected</div>
-                                            </div>
-                                            <div class="widget-subheading"><i>Written by Bob</i></div>
-                                        </div>
-                                        <div class="widget-content-right widget-content-actions">
-                                            <button class="border-0 btn-transition btn btn-outline-success">
-                                                <i class="fa fa-check"></i>
-                                            </button>
-                                            <button class="border-0 btn-transition btn btn-outline-danger">
-                                                <i class="fa fa-trash-alt"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="todo-indicator bg-focus"></div>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-2">
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" id="exampleCustomCheckbox1666"
-                                                    class="custom-control-input">
-                                                <label class="custom-control-label"
-                                                    for="exampleCustomCheckbox1666">&nbsp;</label>
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading">Task with hover dropdown menu</div>
-                                            <div class="widget-subheading">
-                                                <div>By Johnny
-                                                    <div class="badge badge-pill badge-info ml-2">NEW</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-right widget-content-actions">
-                                            <div class="d-inline-block dropdown">
-                                                <button type="button" data-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false" class="border-0 btn-transition btn btn-link">
-                                                    <i class="fa fa-ellipsis-h">
-                                                    </i>
-                                                </button>
-                                                <div tabindex="-1" role="menu" aria-hidden="true"
-                                                    class="dropdown-menu dropdown-menu-right">
-                                                    <h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                                    <button type="button" disabled="" tabindex="-1"
-                                                        class="disabled dropdown-item">Action</button>
-                                                    <button type="button" tabindex="0" class="dropdown-item">Another
-                                                        Action</button>
-                                                    <div tabindex="-1" class="dropdown-divider"></div>
-                                                    <button type="button" tabindex="0" class="dropdown-item">Another
-                                                        Action</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="todo-indicator bg-primary"></div>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-2">
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" id="exampleCustomCheckbox4777"
-                                                    class="custom-control-input">
-                                                <label class="custom-control-label"
-                                                    for="exampleCustomCheckbox4777">&nbsp;</label>
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-left flex2">
-                                            <div class="widget-heading">Badge on the right task</div>
-                                            <div class="widget-subheading">This task has show on hover actions!</div>
-                                        </div>
-                                        <div class="widget-content-right widget-content-actions">
-                                            <button class="border-0 btn-transition btn btn-outline-success">
-                                                <i class="fa fa-check">
-                                                </i>
-                                            </button>
-                                        </div>
-                                        <div class="widget-content-right ml-3">
-                                            <div class="badge badge-pill badge-success">Latest Task</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="todo-indicator bg-info"></div>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-2">
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" id="exampleCustomCheckbox2444"
-                                                    class="custom-control-input">
-                                                <label class="custom-control-label"
-                                                    for="exampleCustomCheckbox2444">&nbsp;</label>
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-left mr-3">
-                                            <div class="widget-content-left"><img width="42" class="rounded"
-                                                    src="assets/images/avatars/1.jpg" alt="" /></div>
-                                        </div>
-                                        <div class="widget-content-left">
-                                            <div class="widget-heading">Go grocery shopping</div>
-                                            <div class="widget-subheading">A short description ...</div>
-                                        </div>
-                                        <div class="widget-content-right widget-content-actions">
-                                            <button class="border-0 btn-transition btn btn-sm btn-outline-success">
-                                                <i class="fa fa-check"></i>
-                                            </button>
-                                            <button class="border-0 btn-transition btn btn-sm btn-outline-danger">
-                                                <i class="fa fa-trash-alt"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="todo-indicator bg-success"></div>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-2">
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" id="exampleCustomCheckbox3222"
-                                                    class="custom-control-input">
-                                                <label class="custom-control-label"
-                                                    for="exampleCustomCheckbox3222">&nbsp;</label>
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-left flex2">
-                                            <div class="widget-heading">Development Task</div>
-                                            <div class="widget-subheading">Finish React ToDo List App</div>
-                                        </div>
-                                        <div class="widget-content-right">
-                                            <div class="badge badge-warning mr-2">69</div>
-                                        </div>
-                                        <div class="widget-content-right">
-                                            <button class="border-0 btn-transition btn btn-outline-success">
-                                                <i class="fa fa-check">
-                                                </i>
-                                            </button>
-                                            <button class="border-0 btn-transition btn btn-outline-danger">
-                                                <i class="fa fa-trash-alt">
-                                                </i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <h3 class="drawer-heading">Urgent Notifications</h3>
-                <div class="drawer-section">
-                    <div class="notifications-box">
-                        <div
-                            class="vertical-time-simple vertical-without-time vertical-timeline vertical-timeline--one-column">
-                            <div class="vertical-timeline-item dot-danger vertical-timeline-element">
-                                <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                    <div class="vertical-timeline-element-content bounce-in">
-                                        <h4 class="timeline-title">All Hands Meeting</h4><span
-                                            class="vertical-timeline-element-date"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="vertical-timeline-item dot-warning vertical-timeline-element">
-                                <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                    <div class="vertical-timeline-element-content bounce-in">
-                                        <p>Yet another one, at <span class="text-success">15:00 PM</span></p><span
-                                            class="vertical-timeline-element-date"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="vertical-timeline-item dot-success vertical-timeline-element">
-                                <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                    <div class="vertical-timeline-element-content bounce-in">
-                                        <h4 class="timeline-title">Build the production release
-                                            <div class="badge badge-danger ml-2">NEW</div>
-                                        </h4>
-                                        <span class="vertical-timeline-element-date"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="vertical-timeline-item dot-primary vertical-timeline-element">
-                                <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                    <div class="vertical-timeline-element-content bounce-in">
-                                        <h4 class="timeline-title">Something not important
-                                            <div class="avatar-wrapper mt-2 avatar-wrapper-overlap">
-                                                <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                    <div class="avatar-icon"><img src="assets/images/avatars/1.jpg"
-                                                            alt=""></div>
-                                                </div>
-                                                <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                    <div class="avatar-icon"><img src="assets/images/avatars/2.jpg"
-                                                            alt=""></div>
-                                                </div>
-                                                <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                    <div class="avatar-icon"><img src="assets/images/avatars/3.jpg"
-                                                            alt=""></div>
-                                                </div>
-                                                <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                    <div class="avatar-icon"><img src="assets/images/avatars/4.jpg"
-                                                            alt=""></div>
-                                                </div>
-                                                <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                    <div class="avatar-icon"><img src="assets/images/avatars/5.jpg"
-                                                            alt=""></div>
-                                                </div>
-                                                <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                    <div class="avatar-icon"><img src="assets/images/avatars/6.jpg"
-                                                            alt=""></div>
-                                                </div>
-                                                <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                    <div class="avatar-icon"><img src="assets/images/avatars/7.jpg"
-                                                            alt=""></div>
-                                                </div>
-                                                <div class="avatar-icon-wrapper avatar-icon-sm">
-                                                    <div class="avatar-icon"><img src="assets/images/avatars/8.jpg"
-                                                            alt=""></div>
-                                                </div>
-                                                <div class="avatar-icon-wrapper avatar-icon-sm avatar-icon-add">
-                                                    <div class="avatar-icon"><i>+</i></div>
-                                                </div>
-                                            </div>
-                                        </h4>
-                                        <span class="vertical-timeline-element-date"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="vertical-timeline-item dot-info vertical-timeline-element">
-                                <div><span class="vertical-timeline-element-icon bounce-in"></span>
-                                    <div class="vertical-timeline-element-content bounce-in">
-                                        <h4 class="timeline-title">This dot has an info state</h4><span
-                                            class="vertical-timeline-element-date"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="vertical-timeline-item dot-dark vertical-timeline-element">
-                                <div><span class="vertical-timeline-element-icon is-hidden"></span>
-                                    <div class="vertical-timeline-element-content is-hidden">
-                                        <h4 class="timeline-title">This dot has a dark state</h4><span
-                                            class="vertical-timeline-element-date"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<?php include '_header.php';?>
+
+
+<section class="banner-area" id="home">
+  <div class="container">
+    <div class="row fullscreen d-flex align-items-center justify-content-start">
+      <div class="banner-content col-lg-7">
+        <h6 class="text-white text-uppercase">Now you can feel the Energy</h6>
+        <h1>
+          Start your day with <br>
+          a black Coffee
+        </h1>
+        <a href="#" class="primary-btn text-uppercase">Buy Now</a>
+      </div>
     </div>
-    <div class="app-drawer-overlay d-none animated fadeIn"></div>
-<?php include '_footer.php';?>
+  </div>
+</section>
+
+
+<section class="video-sec-area pb-100 pt-40" id="about">
+  <div class="container">
+    <div class="row justify-content-start align-items-center">
+      <div class="col-lg-6 video-right justify-content-center align-items-center d-flex">
+        <div class="overlay overlay-bg"></div>
+        <a class="play-btn" href="https://www.youtube.com/watch?v=ARA0AxrnHdM"><img class="img-fluid"
+            src="img/play-icon.png" alt=""></a>
+      </div>
+      <div class="col-lg-6 video-left">
+        <h6>Live Coffee making process.</h6>
+        <h1>We Telecast our <br>
+          Coffee Making Live</h1>
+        <p><span>We are here to listen from you deliver exellence</span></p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et
+          dolore magna aliqua. Ut enim ad minim.
+        </p>
+        <img class="img-fluid" src="img/signature.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="menu-area section-gap" id="coffee">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-60 col-lg-10">
+        <div class="title text-center">
+          <h1 class="mb-10">What kind of Coffee we serve for you</h1>
+          <p>Who are in extremely love with eco friendly system.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="single-menu">
+          <div class="title-div justify-content-between d-flex">
+            <h4>Cappuccino</h4>
+            <p class="price float-right">
+              $49
+            </p>
+          </div>
+          <p>
+            Usage of the Internet is becoming more common due to rapid advance.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="single-menu">
+          <div class="title-div justify-content-between d-flex">
+            <h4>Americano</h4>
+            <p class="price float-right">
+              $49
+            </p>
+          </div>
+          <p>
+            Usage of the Internet is becoming more common due to rapid advance.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="single-menu">
+          <div class="title-div justify-content-between d-flex">
+            <h4>Espresso</h4>
+            <p class="price float-right">
+              $49
+            </p>
+          </div>
+          <p>
+            Usage of the Internet is becoming more common due to rapid advance.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="single-menu">
+          <div class="title-div justify-content-between d-flex">
+            <h4>Macchiato</h4>
+            <p class="price float-right">
+              $49
+            </p>
+          </div>
+          <p>
+            Usage of the Internet is becoming more common due to rapid advance.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="single-menu">
+          <div class="title-div justify-content-between d-flex">
+            <h4>Mocha</h4>
+            <p class="price float-right">
+              $49
+            </p>
+          </div>
+          <p>
+            Usage of the Internet is becoming more common due to rapid advance.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="single-menu">
+          <div class="title-div justify-content-between d-flex">
+            <h4>Coffee Latte</h4>
+            <p class="price float-right">
+              $49
+            </p>
+          </div>
+          <p>
+            Usage of the Internet is becoming more common due to rapid advance.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="single-menu">
+          <div class="title-div justify-content-between d-flex">
+            <h4>Piccolo Latte</h4>
+            <p class="price float-right">
+              $49
+            </p>
+          </div>
+          <p>
+            Usage of the Internet is becoming more common due to rapid advance.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="single-menu">
+          <div class="title-div justify-content-between d-flex">
+            <h4>Ristretto</h4>
+            <p class="price float-right">
+              $49
+            </p>
+          </div>
+          <p>
+            Usage of the Internet is becoming more common due to rapid advance.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="single-menu">
+          <div class="title-div justify-content-between d-flex">
+            <h4>Affogato</h4>
+            <p class="price float-right">
+              $49
+            </p>
+          </div>
+          <p>
+            Usage of the Internet is becoming more common due to rapid advance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="gallery-area section-gap" id="gallery">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-60 col-lg-10">
+        <div class="title text-center">
+          <h1 class="mb-10">What kind of Coffee we serve for you</h1>
+          <p>Who are in extremely love with eco friendly system.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <a href="img/g1.jpg" class="img-pop-home">
+          <img class="img-fluid" src="img/g1.jpg" alt="">
+        </a>
+        <a href="img/g2.jpg" class="img-pop-home">
+          <img class="img-fluid" src="img/g2.jpg" alt="">
+        </a>
+      </div>
+      <div class="col-lg-8">
+        <a href="img/g3.jpg" class="img-pop-home">
+          <img class="img-fluid" src="img/g3.jpg" alt="">
+        </a>
+        <div class="row">
+          <div class="col-lg-6">
+            <a href="img/g4.jpg" class="img-pop-home">
+              <img class="img-fluid" src="img/g4.jpg" alt="">
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a href="img/g5.jpg" class="img-pop-home">
+              <img class="img-fluid" src="img/g5.jpg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="review-area section-gap" id="review">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-60 col-lg-10">
+        <div class="title text-center">
+          <h1 class="mb-10">What kind of Coffee we serve for you</h1>
+          <p>Who are in extremely love with eco friendly system.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 single-review">
+        <img src="img/r1.png" alt="">
+        <div class="title d-flex flex-row">
+          <h4>lorem ipusm</h4>
+          <div class="star">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+        <p>
+          Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
+          Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
+        </p>
+      </div>
+      <div class="col-lg-6 col-md-6 single-review">
+        <img src="img/r2.png" alt="">
+        <div class="title d-flex flex-row">
+          <h4>lorem ipusm</h4>
+          <div class="star">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+        <p>
+          Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
+          Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.
+        </p>
+      </div>
+    </div>
+    <div class="row counter-row">
+      <div class="col-lg-3 col-md-6 single-counter">
+        <h1 class="counter">2536</h1>
+        <p>Happy Client</p>
+      </div>
+      <div class="col-lg-3 col-md-6 single-counter">
+        <h1 class="counter">7562</h1>
+        <p>Total Projects</p>
+      </div>
+      <div class="col-lg-3 col-md-6 single-counter">
+        <h1 class="counter">2013</h1>
+        <p>Cups Coffee</p>
+      </div>
+      <div class="col-lg-3 col-md-6 single-counter">
+        <h1 class="counter">10536</h1>
+        <p>Total Submitted</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="blog-area section-gap" id="blog">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-60 col-lg-10">
+        <div class="title text-center">
+          <h1 class="mb-10">What kind of Coffee we serve for you</h1>
+          <p>Who are in extremely love with eco friendly system.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 single-blog">
+        <img class="img-fluid" src="img/b1.jpg" alt="">
+        <ul class="post-tags">
+          <li><a href="#">Travel</a></li>
+          <li><a href="#">Life Style</a></li>
+        </ul>
+        <a href="#">
+          <h4>Portable latest Fashion for young women</h4>
+        </a>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore.
+        </p>
+        <p class="post-date">
+          31st January, 2018
+        </p>
+      </div>
+      <div class="col-lg-6 col-md-6 single-blog">
+        <img class="img-fluid" src="img/b2.jpg" alt="">
+        <ul class="post-tags">
+          <li><a href="#">Travel</a></li>
+          <li><a href="#">Life Style</a></li>
+        </ul>
+        <a href="#">
+          <h4>Portable latest Fashion for young women</h4>
+        </a>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore.
+        </p>
+        <p class="post-date">
+          31st January, 2018
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer-area section-gap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-md-6 col-sm-6">
+        <div class="single-footer-widget">
+          <h6>About Us</h6>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
+            magna aliqua.
+          </p>
+          <p class="footer-text">
+
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
+            <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com/"
+              target="_blank">Colorlib</a>
+
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-5  col-md-6 col-sm-6">
+        <div class="single-footer-widget">
+          <h6>Newsletter</h6>
+          <p>Stay update with our latest</p>
+          <div class="" id="mc_embed_signup">
+            <form target="_blank" novalidate="true"
+              action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+              method="get" class="form-inline">
+              <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter Email '" required="" type="email">
+              <button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right"
+                  aria-hidden="true"></i></button>
+              <div style="position: absolute; left: -5000px;">
+                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+              </div>
+              <div class="info pt-20"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+        <div class="single-footer-widget">
+          <h6>Follow Us</h6>
+          <p>Let us be social</p>
+          <div class="footer-social d-flex align-items-center">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-behance"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/vendor/jquery-2.2.4.min.js"></script>
+<script src="../../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+<script src="js/easing.min.js"></script>
+<script src="js/hoverIntent.js"></script>
+<script src="js/superfish.min.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/parallax.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/mail-script.js"></script>
+<script src="js/main.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+</body>
+
+<!-- Mirrored from preview.colorlib.com/theme/coffee/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 08:37:18 GMT -->
+
+</html>
