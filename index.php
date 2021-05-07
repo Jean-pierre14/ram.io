@@ -6,9 +6,9 @@
     <div class="row fullscreen d-flex align-items-center justify-content-start">
       <div class="banner-content col-lg-7">
         <h6 class="text-white text-uppercase">Now you can feel the Energy</h6>
-        <h1>
-          Start your day with <br>
-          a black Coffee
+        <h1 style ="color:black">
+          Connect the World <br>
+           with RamaLL
         </h1>
         <a href="#" class="primary-btn text-uppercase">Buy Now</a>
       </div>
@@ -179,33 +179,33 @@
     <div class="row d-flex justify-content-center">
       <div class="menu-content pb-60 col-lg-10">
         <div class="title text-center">
-          <h1 class="mb-10">What kind of Coffee we serve for you</h1>
+          <h1 class="mb-10">Internet Equipements and tools</h1>
           <p>Who are in extremely love with eco friendly system.</p>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-4">
-        <a href="img/g1.jpg" class="img-pop-home">
-          <img class="img-fluid" src="img/g1.jpg" alt="">
+        <a href="img/net5.jpg" class="img-pop-home">
+          <img class="img-fluid" src="img/net5.jpg" alt="">
         </a>
-        <a href="img/g2.jpg" class="img-pop-home">
-          <img class="img-fluid" src="img/g2.jpg" alt="">
+        <a href="img/s2.jpg" class="img-pop-home">
+          <img class="img-fluid" src="img/s2.jpg" alt="">
         </a>
       </div>
       <div class="col-lg-8">
-        <a href="img/g3.jpg" class="img-pop-home">
-          <img class="img-fluid" src="img/g3.jpg" alt="">
+        <a href="img/net7.jpg" class="img-pop-home">
+          <img class="img-fluid" src="img/net7.jpg" alt="">
         </a>
         <div class="row">
           <div class="col-lg-6">
-            <a href="img/g4.jpg" class="img-pop-home">
-              <img class="img-fluid" src="img/g4.jpg" alt="">
+            <a href="img/ramall4.jpeg" class="img-pop-home">
+              <img class="img-fluid" src="img/ramall4.jpeg" alt="">
             </a>
           </div>
           <div class="col-lg-6">
-            <a href="img/g5.jpg" class="img-pop-home">
-              <img class="img-fluid" src="img/g5.jpg" alt="">
+            <a href="img/ramall5.jpg" class="img-pop-home">
+              <img class="img-fluid" src="img/ramall5.jpg" alt="">
             </a>
           </div>
         </div>
@@ -220,7 +220,7 @@
     <div class="row d-flex justify-content-center">
       <div class="menu-content pb-60 col-lg-10">
         <div class="title text-center">
-          <h1 class="mb-10">What kind of Coffee we serve for you</h1>
+          <h1 class="mb-10">Enjoy the fullly 4G and soon 5G</h1>
           <p>Who are in extremely love with eco friendly system.</p>
         </div>
       </div>

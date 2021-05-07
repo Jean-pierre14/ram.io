@@ -16,7 +16,7 @@
 
 <meta charset="UTF-8">
 
-<title>Coffee</title>
+<title>RamaLL</title>
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 
 <link rel="stylesheet" href="css/linearicons.css">
@@ -64,8 +64,8 @@
           <li><a href="#blog">Blog</a></li>
           <li class="menu-has-children"><a href="#">Pages</a>
             <ul>
-              <li><a href="generic.html">Generic</a></li>
-              <li><a href="elements.html">Elements</a></li>
+              <li><a href="generic.php">Generic</a></li>
+              <li><a href="elements.php">Elements</a></li>
             </ul>
           </li>
         </ul>
