@@ -222,6 +222,7 @@
         <div class="title text-center">
           <h1 class="mb-10">Enjoy the fullly 4G and soon 5G</h1>
           <p>Who are in extremely love with eco friendly system.</p>
+          
         </div>
       </div>
     </div>
