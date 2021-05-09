@@ -45,7 +45,7 @@
 
                             <div class="divider row"></div>
                             <div>
-                                <form class="">
+                                <form action="" autocomplete="false" method="post">
                                     <div class="form-row">
                                         <div class="col-md-6">
                                             <div class="position-relative form-group"><label for="username" class="">Email</label><input name="username" value="<?= $username; ?>" id="username" placeholder="Username or Email" type="text" class="form-control"></div>
@@ -58,7 +58,7 @@
                                     <div class="divider row"></div>
                                     <div class="d-flex align-items-center">
                                         <div class="ml-auto"><a href="javascript:void(0);" class="btn-lg btn btn-link">Recover Password</a>
-                                            <button class="btn btn-primary btn-lg">Login to Dashboard</button>
+                                            <button type="submit" name="signIn" class="btn btn-primary btn-lg">Login to Dashboard</button>
                                         </div>
                                     </div>
                                 </form>
