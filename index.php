@@ -221,16 +221,17 @@
       <div class="menu-content pb-60 col-lg-10">
         <div class="title text-center">
           <h1 class="mb-10">Enjoy the fullly 4G and soon 5G</h1>
-          <p>Who are in extremely love with eco friendly system.</p>
+          <p> love with eco friendly system.</p>
 
         </div>
       </div>
     </div>
     <div class="row">
+    
       <div class="col-lg-6 col-md-6 single-review">
         <img src="img/r1.png" alt="">
         <div class="title d-flex flex-row">
-        
+
           <h4>lorem ipusm</h4>
           <div class="star">
             <span class="fa fa-star checked"></span>
