@@ -53,9 +53,9 @@
         <h6 class="text-white text-uppercase">Now you can feel the Energy</h6>
         <h1 style ="color:black">
           Connect the World <br>
-           with RamaLL
+          with RamaLL
         </h1>
-        <a href="#" class="primary-btn text-uppercase">Buy Now</a>
+        <a href="login.php" class="primary-btn text-uppercase">Sign In</a>
       </div>
     </div>
   </div>

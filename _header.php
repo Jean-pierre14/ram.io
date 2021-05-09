@@ -33,10 +33,5 @@
     
     <?php
     session_start();
-    if($_SESSION['username']){
-      header('location: ./admin/');
-    }else{
-      header('location: login.php');
-    }
-    ?>
+    
     
