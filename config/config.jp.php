@@ -6,7 +6,15 @@ $con = mysqli_connect("localhost", "root", "", "ramall") or die("Couln't connect
 
 $errors = [];
 $username = '';
+$fullname = '';
+$email = '';
+$gender = '';
+$woman = '';
+$children = '';
+
 $password = '';
+$password1 = '';
+$password2 = '';
 
 if (isset($_POST['signIn'])) {
     $username = mysqli_real_escape_string($con, trim(htmlentities($_POST['username'])));
