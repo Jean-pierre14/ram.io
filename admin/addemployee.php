@@ -52,7 +52,16 @@
                                         </div>
                                         <div class="card-body">
                                             <form action="" method="post">
-                                                <h5>form</h5>
+                                                <div class="form-row">
+                                                    <div class="col-md-4 form-group">
+                                                        <label for="username">Username</label>
+                                                        <input type="text" name="username" id="username" placeholder="Username" value="<?= $username; ?>" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-8 form-group">
+                                                        <label for="fullname">Fullname</label>
+                                                        <input type="text" name="fullname" id="fullname" placeholder="Fullname" spellcheck="false" value="<?= $fullname; ?>" class="form-control">
+                                                    </div>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
