@@ -51,7 +51,7 @@
                                             <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
                                                 <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6">
                                                 </i>Easy
-                                                Dynamic Tables
+                                                Employees
                                             </div>
                                             <div class="btn-actions-pane-right actions-icon-btn">
                                                 <div class="btn-group dropdown">
@@ -82,15 +82,15 @@
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                            <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
+                                            <table style="width: 100%;" id="example" class="table table-sm table-responsive-sm table-hover table-striped table-bordered">
                                                 <thead>
                                                     <tr>
-                                                        <th>Name</th>
-                                                        <th>Position</th>
-                                                        <th>Office</th>
+                                                        <th>Fullname</th>
+                                                        <th>Email</th>
+                                                        <th>Gender</th>
                                                         <th>Age</th>
                                                         <th>Start date</th>
-                                                        <th>Salary</th>
+                                                        <th>Events</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -100,23 +100,12 @@
                                                         <td>Edinburgh</td>
                                                         <td>61</td>
                                                         <td>2011/04/25</td>
-                                                        <td>$320,800</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Tiger Nixon</td>
-                                                        <td>System Architect</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>61</td>
-                                                        <td>2011/04/25</td>
-                                                        <td>$320,800</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Tiger Nixon</td>
-                                                        <td>System Architect</td>
-                                                        <td>Edinburgh</td>
-                                                        <td>61</td>
-                                                        <td>2011/04/25</td>
-                                                        <td>$320,800</td>
+                                                        <td>
+                                                            <div class="btn-group p-0 btn-sm event">
+                                                                <a href="viewemployees.php?actionEdit=<?= $row['id']; ?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                                                                <a href="viewemployees.php?actionDelete=<?= $row['id']; ?>" class="btn btn-danger" title="Delete <?= $row['fullnane'] ?>?"><i class="fa fa-trash"></i></a>
+                                                            </div>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                                 <tfoot>

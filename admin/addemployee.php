@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-header">
-                                            <h3>add</h3>
+                                            <h3>Add Employee</h3>
                                         </div>
                                         <div class="card-body">
                                             <form action="" method="post">

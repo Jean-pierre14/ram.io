@@ -5,6 +5,8 @@ $prooject_name = "RamaLL";
 $con = mysqli_connect("localhost", "root", "", "ramall") or die("Couln't connect to the database");
 
 $errors = [];
+$id = "";
+$row['id'] = "";
 $username = '';
 $fullname = '';
 $email = '';
