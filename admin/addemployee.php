@@ -56,7 +56,7 @@
                                                 <div class="form-row">
                                                     <div class="col-md-4 form-group">
                                                         <label for="username">Username</label>
-                                                        <input type="text" name="username" id="username" placeholder="Username" value="<?= $username; ?>" class="form-control">
+                                                        <input type="text" name="username" id="username" placeholder="Username" value="<?= $user; ?>" class="form-control">
                                                     </div>
                                                     <div class="col-md-8 form-group">
                                                         <label for="fullname">Fullname</label>
@@ -65,7 +65,7 @@
                                                     <div class="form-group col-md-4">
                                                         <label for="sex">Gender</label>
                                                         <select name="gender" id="sex" class="form-control">
-                                                            <option> -- Select -- </option>
+                                                            <option value=""> -- Select -- </option>
                                                             <option value="Male">Male</option>
                                                             <option value="Female">Female</option>
                                                         </select>
@@ -77,7 +77,7 @@
                                                     <div class="form-group col-md-4">
                                                         <label for="status">Status</label>
                                                         <select name="status" id="status" class="form-control">
-                                                            <option> -- select -- </option>
+                                                            <option value="">-- select --</option>
                                                             <option value="Single">Single</option>
                                                             <option value="Fiance">Fiance</option>
                                                             <option value="Married">Married</option>
@@ -111,7 +111,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-md-4 mt-2">
-                                                        <button type="submit" class="btn btn-block btn-success">Register</button>
+                                                        <button type="submit" name="addempl" class="btn btn-block btn-success">Register</button>
                                                     </div>
                                                 </div>
                                             </form>

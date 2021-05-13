@@ -157,43 +157,45 @@
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <table style="width: 100%;" id="example" class="table table-sm table-responsive-sm table-hover table-striped table-bordered">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Fullname</th>
-                                                            <th>Email</th>
-                                                            <th>Gender</th>
-                                                            <th>Age</th>
-                                                            <th>Start date</th>
-                                                            <th>Events</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Tiger Nixon</td>
-                                                            <td>System Architect</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>61</td>
-                                                            <td>2011/04/25</td>
-                                                            <td>
-                                                                <div class="btn-group p-0 btn-sm event">
-                                                                    <a href="viewemployees.php?actionEdit=<?= $row['id']; ?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
-                                                                    <a href="viewemployees.php?actionDelete=<?= $row['id']; ?>" class="btn btn-danger" title="Delete <?= $row['fullnane'] ?>?"><i class="fa fa-trash"></i></a>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                    <tfoot>
-                                                        <tr>
-                                                            <th>Fullame</th>
-                                                            <th>Email</th>
-                                                            <th>Gender</th>
-                                                            <th>Age</th>
-                                                            <th>Start date</th>
-                                                            <th>Events</th>
-                                                        </tr>
-                                                    </tfoot>
-                                                </table>
+                                                <div id="select">
+                                                    <table style="width: 100%;" id="example" class="table table-sm table-responsive-sm table-hover table-striped table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Fullname</th>
+                                                                <th>Email</th>
+                                                                <th>Gender</th>
+                                                                <th>Age</th>
+                                                                <th>Start date</th>
+                                                                <th>Events</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Genuis</td>
+                                                                <td>Genuis Team</td>
+                                                                <td>males</td>
+                                                                <td>4</td>
+                                                                <td>2011/04/25</td>
+                                                                <td>
+                                                                    <div class="btn-group p-0 btn-sm event">
+                                                                        <a href="viewemployees.php?actionEdit=<?= $row['id']; ?>" class="btn btn-success"><i class="fa fa-edit"></i></a>
+                                                                        <a href="viewemployees.php?actionDelete=<?= $row['id']; ?>" class="btn btn-danger" title="Delete <?= $row['fullnane'] ?>?"><i class="fa fa-trash"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                        <tfoot>
+                                                            <tr>
+                                                                <th>Fullame</th>
+                                                                <th>Email</th>
+                                                                <th>Gender</th>
+                                                                <th>Age</th>
+                                                                <th>Start date</th>
+                                                                <th>Events</th>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     <?php endif; ?>
