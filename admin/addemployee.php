@@ -51,6 +51,7 @@
                                             <h3>Add Employee</h3>
                                         </div>
                                         <div class="card-body">
+                                            <?php include './_error.php'; ?>
                                             <form action="" method="post">
                                                 <div class="form-row">
                                                     <div class="col-md-4 form-group">
