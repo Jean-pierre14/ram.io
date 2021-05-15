@@ -323,7 +323,7 @@
                                 <div class="container-fluid">
                                     <div class="card mb-2">
                                         <div class="card-header center">Personal information</div>
-                                            <div class="card-body row">
+                                            <div class="card-body">
                                                     
                                                 <form class="row">
                                                     <div class="input-group mb-3 col-sm-4">
@@ -378,13 +378,11 @@
                                                         <input type="number" name="" min ="18" max ="70" class="form-control" id="">
                                                     </div>
                                                 </form>
-                                                <input type="button" value="Add content"class="btn btn-outline-info btn-md btn-actions-pane-right"/>
-                                                <!-- <button type="button" value="Add" class="btn btn-outline-focus"> -->
                                             </div>
                                     </div>
                                     <div class="card mb-2">
                                         <div class="card-header center">Professional information || Spouse identities</div>
-                                            <div class="card-body row">
+                                            <div class="card-body ">
                                                     
                                                 <form class="row">
                                                     <div class="input-group mb-3 col-sm-4">
@@ -393,7 +391,7 @@
                                                             </div>
                                                             <!-- <input type="dropdow" class="form-control " placeholder="First name.."> -->
                                                            <select name="" id="" class="custom-select my-select text-center">
-                                                                <option value="" class="p-2">--Marital Status--</option>
+                                                                <option value="" class="p-2" selected>--Marital Status--</option>
                                                                 <option value="" class="p-2">Signle</option>
                                                                 <option value="" class="p-2">Maried</option>
                                                                 <option value="" class="p-2">Divorced</option>
@@ -464,14 +462,97 @@
                                                         <input type="number" name="" min ="18" max ="80" class="form-control" id="">
                                                     </div>
                                                 </form>
-                                                <input type="button" value="Add content"class="btn btn-outline-info btn-md btn-actions-pane-right"/>
-                                                <!-- <button type="button" value="Add" class="btn btn-outline-focus"> -->
                                             </div>
                                     </div>
-                                    <h3 class="text-center">Human Ressource report</h3>
+                                    <input type="button" style="font-size:20px" value="Save"class="btn btn-success  btn-actions-pane-right"/>
+                                    <h3 class="text-center ">Human Ressource report</h3>
                                     <hr>
-                                    <div class=""></div>
-                                    <div class=""></div>
+                                    <div class="row mx-1">
+                                        <div class="card mb-2 col-sm-7 ">
+                                            <div class="card-header center">Personal information</div>
+                                                <div class="card-body ">
+                                                        
+                                                    <form class="row">
+                                                    <table class="table table-borderless p-0 m-0">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>First Name:</th>
+                                                            <td>Peter  </td>
+                                                            <th>Last Name :</th>
+                                                            <td>KAHUMUZA</td>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>Sirname:</th>
+                                                                <td>404Error</td>
+                                                                <th>Email:</th>
+                                                                <td>peter@kahumuza.com</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Telephone:</th>
+                                                                <td>(0) 781 987 987</td>
+                                                                <th>DoB:</th>
+                                                                <td>July-12-1960</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>PoB:</th>
+                                                                <td>California</td>
+                                                                <th>Age:</th>
+                                                                <td>59 Years Old</td>
+                                                            </tr>
+                                                            <hr>
+                                                            <tr>
+                                                                <th>Spouse's fname:</th>
+                                                                <td>Samanta</td>
+                                                                <th>Spouse's lname:</th>
+                                                                <td>Deker</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Profession:</th>
+                                                                <td>Interior Designer</td>
+                                                                <th>Kids:</th>
+                                                                <td>4</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>RAMA:</th>
+                                                                <td>$ 150</td>
+                                                                <th>Allocation:</th>
+                                                                <td>$ 200</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Marital Status:</th>
+                                                                <td>Married</td>
+                                                                <th>Spouse's Age:</th>
+                                                                <td>60 Years Old</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th>Net Salary</th>
+                                                                <td>$ 2000</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    </form>
+                                                </div>
+                                        </div>
+                                        <div class="card mb-2 col-sm-5">
+                                            <div class="card-header center">Personal information</div>
+                                                <div class="card-body ">
+                                                        
+                                                    <form class="row">
+                                                        <div class="card" style="width:400px">
+                                                            <img class="card-img-top" src="../assets/images/avatars/img_avatar1.png" alt="profile image" style="width:100%">
+                                                            <div class="card-body">
+                                                                <h4 class="card-title">Peter KAHUMUZA</h4>
+                                                                <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum architecto quod dolorem,<b>Peter KAHUMUZA</b> deleniti vero excepturi animi aliquid magnam tempore dolores atque distinctio labore possimus esse nobis totam nostrum aspernatur suscipit!</p>
+                                                                <a href="#" class="btn btn-warning" style="font-size:15px"><i class="fas fa-print p-1" style="font-size:20px;"></i>Print</a>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                        </div>
+                                    </div>
 
                                     <div class="mb-3 card">
                                      
