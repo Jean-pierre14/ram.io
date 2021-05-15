@@ -1,16 +1,61 @@
 <?php include '_header.php';?>
 
 
+
+<header id="header" id="home">
+      <div class="header-top">
+        <div class="container">
+          <div class="row justify-content-end">
+            <div class="col-lg-8 col-sm-4 col-8 header-top-right no-padding">
+              <ul>
+                <li>
+                  Mon-Fri: 8am to 2pm
+                </li>
+                <li>
+                  Sat-Sun: 11am to 4pm
+                </li>
+                <li>
+                  <a href="<?= $numero;?>"><?= $numero;?></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row align-items-center justify-content-between d-flex">
+          <div id="logo">
+            <a href="index-2.html"><img src="img/logo.png" alt="" title="" /></a>
+          </div>
+          <nav id="nav-menu-container">
+            <ul class="nav-menu">
+              <li class="menu-active"><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#coffee">Coffee</a></li>
+              <li><a href="#review">Review</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li class="menu-has-children"><a href="#">Pages</a>
+                <ul>
+                  <li><a href="generic.php">Generic</a></li>
+                  <li><a href="elements.php">Elements</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
 <section class="banner-area" id="home">
   <div class="container">
     <div class="row fullscreen d-flex align-items-center justify-content-start">
       <div class="banner-content col-lg-7">
         <h6 class="text-white text-uppercase">Now you can feel the Energy</h6>
-        <h1>
-          Start your day with <br>
-          a black Coffee
+        <h1 style ="color:black">
+          Connect the World <br>
+          with RamaLL
         </h1>
-        <a href="#" class="primary-btn text-uppercase">Buy Now</a>
+        <a href="login.php" class="primary-btn text-uppercase">Sign In</a>
       </div>
     </div>
   </div>
@@ -179,33 +224,33 @@
     <div class="row d-flex justify-content-center">
       <div class="menu-content pb-60 col-lg-10">
         <div class="title text-center">
-          <h1 class="mb-10">What kind of Coffee we serve for you</h1>
+          <h1 class="mb-10">Internet Equipements and tools</h1>
           <p>Who are in extremely love with eco friendly system.</p>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-4">
-        <a href="img/g1.jpg" class="img-pop-home">
-          <img class="img-fluid" src="img/g1.jpg" alt="">
+        <a href="img/net5.jpg" class="img-pop-home">
+          <img class="img-fluid" src="img/net5.jpg" alt="">
         </a>
-        <a href="img/g2.jpg" class="img-pop-home">
-          <img class="img-fluid" src="img/g2.jpg" alt="">
+        <a href="img/s2.jpg" class="img-pop-home">
+          <img class="img-fluid" src="img/s2.jpg" alt="">
         </a>
       </div>
       <div class="col-lg-8">
-        <a href="img/g3.jpg" class="img-pop-home">
-          <img class="img-fluid" src="img/g3.jpg" alt="">
+        <a href="img/net7.jpg" class="img-pop-home">
+          <img class="img-fluid" src="img/net7.jpg" alt="">
         </a>
         <div class="row">
           <div class="col-lg-6">
-            <a href="img/g4.jpg" class="img-pop-home">
-              <img class="img-fluid" src="img/g4.jpg" alt="">
+            <a href="img/ramall4.jpeg" class="img-pop-home">
+              <img class="img-fluid" src="img/ramall4.jpeg" alt="">
             </a>
           </div>
           <div class="col-lg-6">
-            <a href="img/g5.jpg" class="img-pop-home">
-              <img class="img-fluid" src="img/g5.jpg" alt="">
+            <a href="img/ramall5.jpg" class="img-pop-home">
+              <img class="img-fluid" src="img/ramall5.jpg" alt="">
             </a>
           </div>
         </div>
@@ -220,7 +265,7 @@
     <div class="row d-flex justify-content-center">
       <div class="menu-content pb-60 col-lg-10">
         <div class="title text-center">
-          <h1 class="mb-10">What kind of Coffee we serve for you</h1>
+          <h1 class="mb-10">Enjoy the fullly 4G and soon 5G</h1>
           <p>Who are in extremely love with eco friendly system.</p>
         </div>
       </div>
