@@ -1,41 +1,102 @@
-<div class="app-container app-theme-gray">
+<?php include '_header.php';?>
+<?php include '_sidebar.php'?>
+
+<div class="app-container">
     <div class="app-main">
-        <div class="app-sidebar-wrapper">
-            <div class="app-sidebar sidebar-shadow">
-                <div class="app-header__logo">
-                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="KeroUI Admin Template" class="logo-src"></a>
-                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
-                    </button>
-                </div>
-                <div class="scrollbar-sidebar scrollbar-container">
-                    <div class="app-sidebar__inner">
-                        <ul class="vertical-nav-menu">
-                            <li class="app-sidebar__heading">Menu</li>
-                            <li class="mm-active">
-                                <a href="#">
-                                    <i class="metismenu-icon pe-7s-rocket"></i>
-                                    Dashboards
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                                <ul class="mm-show">
-                                    <li><a class="mm-active" href="index.php">Dashboard</a></li>
-                                    <li><a href="addemployee.php">Add Employee</a></li>
-                                    <li><a href="retired.php">Retired</a></li>
-                                    <li><a href="viewemployee.php">View employees</a></li>
-                                    <li><a href="payslip.php">Pay Slip</a></li>
-                                    <li><a href="attendance.php">Attendance</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+        <div class="app-inner-layout__content">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div class="tab-content">
+                <div class="container-fluid">
+                    <div class="mb-3 card">
+                        <div class="card-header-tab card-header">
+                            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                                <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
+                                Work Performance
+                            </div>
+                            <div class="btn-actions-pane-right text-capitalize">
+                                <button class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">
+                                    View All
+                                </button>
+                            </div>
+                        </div>
+                        <div class="no-gutters row">
+                            <div class="col-sm-6 col-md-4 col-xl-4">
+                                <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
+                                    <div class="icon-wrapper rounded-circle">
+                                        <div class="icon-wrapper-bg opacity-10 bg-warning"></div>
+                                        <i class="lnr-laptop-phone text-dark opacity-8"></i>
+                                    </div>
+                                    <div class="widget-chart-content">
+                                        <div class="widget-subheading">Cash Deposits</div>
+                                        <div class="widget-numbers">1,7M</div>
+                                        <div class="widget-description opacity-8 text-focus">
+                                            <div class="d-inline text-danger pr-1">
+                                                <i class="fa fa-angle-down"></i>
+                                                <span class="pl-1">54.1%</span>
+                                            </div>
+                                            less earnings
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider m-0 d-md-none d-sm-block"></div>
+                            </div>
+                            <div class="col-sm-6 col-md-4 col-xl-4">
+                                <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
+                                    <div class="icon-wrapper rounded-circle">
+                                        <div class="icon-wrapper-bg opacity-9 bg-danger"></div>
+                                        <i class="lnr-graduation-hat text-white"></i>
+                                    </div>
+                                    <div class="widget-chart-content">
+                                        <div class="widget-subheading">Invested Dividents</div>
+                                        <div class="widget-numbers"><span>9M</span></div>
+                                        <div class="widget-description opacity-8 text-focus">
+                                            Grow Rate:
+                                            <span class="text-info pl-1">
+                                                <i class="fa fa-angle-down"></i>
+                                                <span class="pl-1">14.1%</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="divider m-0 d-md-none d-sm-block"></div>
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-xl-4">
+                                <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
+                                    <div class="icon-wrapper rounded-circle">
+                                        <div class="icon-wrapper-bg opacity-9 bg-success"></div>
+                                        <i class="lnr-apartment text-white"></i>
+                                    </div>
+                                    <div class="widget-chart-content">
+                                        <div class="widget-subheading">Capital Gains</div>
+                                        <div class="widget-numbers text-success"><span>$563</span>
+                                        </div>
+                                        <div class="widget-description text-focus">
+                                            Increased by
+                                            <span class="text-warning pl-1">
+                                                <i class="fa fa-angle-up"></i>
+                                                <span class="pl-1">7.35%</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center d-block p-3 card-footer">
+                            <button class="btn-pill btn-wide fsize-1 btn btn-primary">
+                                <span class="mr-2 opacity-7">
+                                    <i class="icon icon-anim-pulse ion-ios-analytics-outline"></i>
+                                </span>
+                                <span class="mr-1">View Complete Report</span>
+                            </button>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-        <div class="app-sidebar-overlay d-none animated fadeIn"></div>
-        <div class="app-main__outer">
+    </div>
+</div>
+<div class="app-main__outer">
             <div class="app-main__inner">
                 <div class="header-mobile-wrapper">
                     <div class="app-header__logo">
@@ -58,9 +119,9 @@
                 </div>
                 <div class="app-header">
                     <div class="page-title-heading">
-                        Analytics
+                        Ramall's Analytics
                         <div class="page-title-subheading">
-                            This is an example dashboard created using build-in elements and components.
+                            Ramall's analytics is the simplified and summarized data representation
                         </div>
                     </div>
                     <div class="app-header-right">
@@ -651,93 +712,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="app-inner-layout__content">
-                            <div class="tab-content">
-                                <div class="container-fluid">
-                                    <div class="mb-3 card">
-                                        <div class="card-header-tab card-header">
-                                            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                                                <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
-                                                Portfolio Performance
-                                            </div>
-                                            <div class="btn-actions-pane-right text-capitalize">
-                                                <button class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">
-                                                    View All
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="no-gutters row">
-                                            <div class="col-sm-6 col-md-4 col-xl-4">
-                                                <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
-                                                    <div class="icon-wrapper rounded-circle">
-                                                        <div class="icon-wrapper-bg opacity-10 bg-warning"></div>
-                                                        <i class="lnr-laptop-phone text-dark opacity-8"></i>
-                                                    </div>
-                                                    <div class="widget-chart-content">
-                                                        <div class="widget-subheading">Cash Deposits</div>
-                                                        <div class="widget-numbers">1,7M</div>
-                                                        <div class="widget-description opacity-8 text-focus">
-                                                            <div class="d-inline text-danger pr-1">
-                                                                <i class="fa fa-angle-down"></i>
-                                                                <span class="pl-1">54.1%</span>
-                                                            </div>
-                                                            less earnings
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="divider m-0 d-md-none d-sm-block"></div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-xl-4">
-                                                <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
-                                                    <div class="icon-wrapper rounded-circle">
-                                                        <div class="icon-wrapper-bg opacity-9 bg-danger"></div>
-                                                        <i class="lnr-graduation-hat text-white"></i>
-                                                    </div>
-                                                    <div class="widget-chart-content">
-                                                        <div class="widget-subheading">Invested Dividents</div>
-                                                        <div class="widget-numbers"><span>9M</span></div>
-                                                        <div class="widget-description opacity-8 text-focus">
-                                                            Grow Rate:
-                                                            <span class="text-info pl-1">
-                                                                <i class="fa fa-angle-down"></i>
-                                                                <span class="pl-1">14.1%</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="divider m-0 d-md-none d-sm-block"></div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-4 col-xl-4">
-                                                <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
-                                                    <div class="icon-wrapper rounded-circle">
-                                                        <div class="icon-wrapper-bg opacity-9 bg-success"></div>
-                                                        <i class="lnr-apartment text-white"></i>
-                                                    </div>
-                                                    <div class="widget-chart-content">
-                                                        <div class="widget-subheading">Capital Gains</div>
-                                                        <div class="widget-numbers text-success"><span>$563</span>
-                                                        </div>
-                                                        <div class="widget-description text-focus">
-                                                            Increased by
-                                                            <span class="text-warning pl-1">
-                                                                <i class="fa fa-angle-up"></i>
-                                                                <span class="pl-1">7.35%</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center d-block p-3 card-footer">
-                                            <button class="btn-pill btn-wide fsize-1 btn btn-primary">
-                                                <span class="mr-2 opacity-7">
-                                                    <i class="icon icon-anim-pulse ion-ios-analytics-outline"></i>
-                                                </span>
-                                                <span class="mr-1">View Complete Report</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="row">
+           
+                                    <!-- <div class="row">
                                         <div class="col-sm-12 col-lg-6">
                                             <div class="mb-3 card">
                                                 <div class="card-header-tab card-header">
@@ -771,12 +747,12 @@
                                                                     <button class="mr-2 btn-shadow btn-sm btn btn-primary">
                                                                         Action
                                                                     </button>
-                                                                </div>
+                                                                </div> -->
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="p-0 card-body">
+                                                <!-- <div class="p-0 card-body">
                                                     <div class="p-1 slick-slider-sm mx-auto">
                                                         <div class="slick-slider">
                                                             <div>
@@ -810,8 +786,8 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div>
+                                                            </div> -->
+                                                            <!-- <div>
                                                                 <div class="widget-chart widget-chart2 text-left p-0">
                                                                     <div class="widget-chat-wrapper-outer">
                                                                         <div class="widget-chart-content widget-chart-content-lg pb-0">
@@ -906,14 +882,14 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-12 col-lg-6">
+                                        </div> -->
+                                        <!-- <div class="col-sm-12 col-lg-6">
                                             <div class="card-hover-shadow-2x mb-3 card">
                                                 <div class="card-header-tab card-header">
                                                     <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
                                                         <i class="header-icon lnr-lighter icon-gradient bg-amy-crisp">
                                                         </i>
-                                                        Timeline Example
+                                                        Appointment and Meetings
                                                     </div>
                                                     <div class="btn-actions-pane-right text-capitalize actions-icon-btn">
                                                         <div class="btn-group dropdown">
@@ -1394,9 +1370,8 @@
                                     <div class="card mb-3">
                                         <div class="card-header-tab card-header">
                                             <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                                                <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6">
-                                                </i>Easy
-                                                Dynamic Tables
+                                                <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"></i>
+                                                Easy Dynamic Tables
                                             </div>
                                             <div class="btn-actions-pane-right actions-icon-btn">
                                                 <div class="btn-group dropdown">
@@ -1454,8 +1429,8 @@
                                                         <td>63</td>
                                                         <td>2011/07/25</td>
                                                         <td>$170,750</td>
-                                                    </tr>
-                                                    <tr>
+                                                    </tr> -->
+                                                    <!-- <tr>
                                                         <td>Ashton Cox</td>
                                                         <td>Junior Technical Author</td>
                                                         <td>San Francisco</td>
@@ -1894,8 +1869,8 @@
                                                         <td>27</td>
                                                         <td>2011/01/25</td>
                                                         <td>$112,000</td>
-                                                    </tr>
-                                                </tbody>
+                                                    </tr> -->
+                                                <!-- </tbody>
                                                 <tfoot>
                                                     <tr>
                                                         <th>Name</th>
@@ -1914,16 +1889,14 @@
                                             <div class="card-hover-shadow-2x mb-3 card">
                                                 <div class="card-header-tab card-header">
                                                     <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                                                        <i class="header-icon lnr-database icon-gradient bg-malibu-beach">
-                                                        </i>Tasks
-                                                        List
+                                                        <i class="header-icon lnr-database icon-gradient bg-malibu-beach"></i>
+                                                        Tasks List
                                                     </div>
                                                     <div class="btn-actions-pane-right text-capitalize actions-icon-btn">
                                                         <div class="btn-group dropdown">
                                                             <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-icon btn-icon-only btn btn-link"><i class="pe-7s-menu btn-icon-wrapper"></i></button>
                                                             <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link dropdown-menu">
-                                                                <h6 tabindex="-1" class="dropdown-header">
-                                                                    Header</h6>
+                                                                <h6 tabindex="-1" class="dropdown-header">Header</h6>
                                                                 <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-inbox">
                                                                     </i><span>Menus</span>
                                                                 </button>
@@ -2465,9 +2438,8 @@
                                                                 <div class="float-right">
                                                                     <div class="chat-box-wrapper chat-box-wrapper-right">
                                                                         <div>
-                                                                            <div class="chat-box">The master-builder
-                                                                                of
-                                                                                human happiness.
+                                                                            <div class="chat-box">The master-builder of human happiness
+                                                                        
                                                                             </div>
                                                                             <small class="opacity-6">
                                                                                 <i class="fa fa-calendar-alt mr-1"></i>
@@ -2642,8 +2614,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="app-wrapper-footer">
+            </div> -->
+            <!-- <div class="app-wrapper-footer">
                 <div class="app-footer">
                     <div class="">
                         <div class="app-footer__inner">
@@ -3089,8 +3061,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ui-theme-settings">
+    </div> -->
+    <!-- <div class="ui-theme-settings">
         <button type="button" id="TooltipDemo" class="btn-open-options btn btn-outline-2x btn-outline-focus">
             <i class="fa fa-sync-alt icon-anim-pulse fa-2x"></i>
         </button>
@@ -3256,7 +3228,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
-    </div>
-</div>
+   
+<?include '_footer.php';?>
