@@ -1,6 +1,51 @@
 <?php include '_header.php';?>
 
 
+
+<header id="header" id="home">
+      <div class="header-top">
+        <div class="container">
+          <div class="row justify-content-end">
+            <div class="col-lg-8 col-sm-4 col-8 header-top-right no-padding">
+              <ul>
+                <li>
+                  Mon-Fri: 8am to 2pm
+                </li>
+                <li>
+                  Sat-Sun: 11am to 4pm
+                </li>
+                <li>
+                  <a href="<?= $numero;?>"><?= $numero;?></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row align-items-center justify-content-between d-flex">
+          <div id="logo">
+            <a href="index-2.html"><img src="img/logo.png" alt="" title="" /></a>
+          </div>
+          <nav id="nav-menu-container">
+            <ul class="nav-menu">
+              <li class="menu-active"><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#coffee">Coffee</a></li>
+              <li><a href="#review">Review</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li class="menu-has-children"><a href="#">Pages</a>
+                <ul>
+                  <li><a href="generic.php">Generic</a></li>
+                  <li><a href="elements.php">Elements</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
 <section class="banner-area" id="home">
   <div class="container">
     <div class="row fullscreen d-flex align-items-center justify-content-start">
@@ -8,9 +53,9 @@
         <h6 class="text-white text-uppercase">Now you can feel the Energy</h6>
         <h1 style ="color:black">
           Connect the World <br>
-           with RamaLL
+          with RamaLL
         </h1>
-        <a href="#" class="primary-btn text-uppercase">Buy Now</a>
+        <a href="login.php" class="primary-btn text-uppercase">Sign In</a>
       </div>
     </div>
   </div>
@@ -221,14 +266,17 @@
       <div class="menu-content pb-60 col-lg-10">
         <div class="title text-center">
           <h1 class="mb-10">Enjoy the fullly 4G and soon 5G</h1>
-          <p>Who are in extremely love with eco friendly system.</p>
+          <p> love with eco friendly system.</p>
+
         </div>
       </div>
     </div>
     <div class="row">
+    
       <div class="col-lg-6 col-md-6 single-review">
         <img src="img/r1.png" alt="">
         <div class="title d-flex flex-row">
+
           <h4>lorem ipusm</h4>
           <div class="star">
             <span class="fa fa-star checked"></span>
