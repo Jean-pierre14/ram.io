@@ -98,7 +98,7 @@ if (isset($_POST['addempl'])) {
         ";
         if (mysqli_query($con, "DROP PROCEDURE IF EXISTS insertEmpl")) {
             if (mysqli_query($con, $procedure)) {
-                $query = "CALL insertEmpl('$user', '$fullname', '$email', '$gender', '$status', '$woman', '$children', '$passHash')";
+                $query = "CALL insertEmpl('" . $user . "', '" . $fullname . "', '" . $email . "', '" . $gender . "', '" . $status . "', '" . $woman . "', '" . $children . "', '" . $passHash . "')";
                 $response = mysqli_query($con, $query);
                 if ($response) {
                     array_push($success, "Employee Registered ");
