@@ -1,7 +1,7 @@
-<?php include '_header.php';?>
-<?php include '_sidebar.php';?>
+<?php include '_header.php'; ?>
+<?php include '_sidebar.php'; ?>
 <div class="app-container app-theme-gray">
-    <div class="app-main" >
+    <div class="app-main">
         <div class="app-main__outer">
             <div class="app-main__inner">
                 <div class="header-mobile-wrapper">
@@ -27,7 +27,7 @@
                     <div class="page-title-heading">
                         ramall's analytics
                         <div class="page-title-subheading">
-                            Ramall's analytics is the simplified and summarized data representation
+                            <?= $prooject_name; ?>'s analytics is the simplified and summarized data representation
                         </div>
                     </div>
                     <div class="app-header-right">
@@ -318,169 +318,169 @@
                         </div>
                     </div>
                     <div class="app-inner-layout__wrapper">
-                      <div class="app-inner-layout__content">
+                        <div class="app-inner-layout__content">
                             <div class="tab-content">
                                 <div class="container-fluid">
                                     <div class="card mb-2">
                                         <div class="card-header center">Personal information</div>
-                                            <div class="card-body">
-                                                    
-                                                <form class="row">
-                                                    <div class="input-group mb-3 col-sm-4">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Name</span>
-                                                        </div>
-                                                            <input type="text" class="form-control " placeholder="First name..">
+                                        <div class="card-body">
+
+                                            <form class="row">
+                                                <div class="input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Name</span>
                                                     </div>
-                                    
-                                                    <div class=" input-group mb-3 col-sm-4">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Last Name</span>
-                                                        </div>
-                                                            <input type="text" class="form-control " placeholder="Last name..">
-                                                        
+                                                    <input type="text" class="form-control " placeholder="First name..">
+                                                </div>
+
+                                                <div class=" input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Last Name</span>
                                                     </div>
-                                                    <div class="input-group mb-3 col-sm-4">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Sirname</span>
-                                                        </div>
-                                                            <input type="text" class="form-control " placeholder="Sirname..">
+                                                    <input type="text" class="form-control " placeholder="Last name..">
+
+                                                </div>
+                                                <div class="input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Sirname</span>
                                                     </div>
-                                                    <div class="input-group mb-3 col-sm-4">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Email</span>
-                                                        </div>
-                                                            <input type="email" class="form-control " placeholder="me@email.com">
+                                                    <input type="text" class="form-control " placeholder="Sirname..">
+                                                </div>
+                                                <div class="input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Email</span>
                                                     </div>
-                                                    <div class="input-group mb-3 col-sm-4">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Phone</span>
-                                                        </div>
-                                                            <input type="phone" class="form-control " placeholder="telephone">
-                                                        
+                                                    <input type="email" class="form-control " placeholder="me@email.com">
+                                                </div>
+                                                <div class="input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Phone</span>
                                                     </div>
-                                                    <div class="input-group mb-3 col-sm-4">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">DoB</span>
-                                                        </div>
-                                                        <input type="date" class="form-control"name="" id="">
+                                                    <input type="phone" class="form-control " placeholder="telephone">
+
+                                                </div>
+                                                <div class="input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">DoB</span>
                                                     </div>
-                                                    <div class="input-group col-sm-4 mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">PoB</span>
-                                                        </div>
-                                                        <input type="text" class="form-control" placeholder="Place of birth">
+                                                    <input type="date" class="form-control" name="" id="">
+                                                </div>
+                                                <div class="input-group col-sm-4 mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">PoB</span>
                                                     </div>
-                                                    <div class="input-group mb-3 col-sm-2">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Age</span>
-                                                        </div>
-                                                        <input type="number" name="" min ="18" max ="70" class="form-control" id="">
+                                                    <input type="text" class="form-control" placeholder="Place of birth">
+                                                </div>
+                                                <div class="input-group mb-3 col-sm-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Age</span>
                                                     </div>
-                                                </form>
-                                            </div>
+                                                    <input type="number" name="" min="18" max="70" class="form-control" id="">
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
                                     <div class="card mb-2">
                                         <div class="card-header center">Professional information || Spouse identities</div>
-                                            <div class="card-body ">
-                                                    
-                                                <form class="row">
-                                                    <div class="input-group mb-3 col-sm-4">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text">Marital status</span>
-                                                            </div>
-                                                            <!-- <input type="dropdow" class="form-control " placeholder="First name.."> -->
-                                                           <select name="" id="" class="custom-select my-select text-center">
-                                                                <option value="" class="p-2" selected>--Marital Status--</option>
-                                                                <option value="" class="p-2">Signle</option>
-                                                                <option value="" class="p-2">Maried</option>
-                                                                <option value="" class="p-2">Divorced</option>
-                                                                <option value="" class="p-2">Widow</option>
-                                                                <option value="" class="p-2">widower</option>
-                                                           </select>
-                                                        
-                                        
-                                                    </div>
-                                    
-                                                    <div class=" input-group mb-3 col-sm-4">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Firstname</span>
-                                                        </div>
-                                                            <input type="text" class="form-control " placeholder="spouse's name if any...">
-                                                        
-                                                    </div>
-                                                    <div class="input-group mb-3 col-sm-4">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Lastname</span>
-                                                        </div>
-                                                            <input type="text" class="form-control " placeholder="spouse's name if any...">
-                                                    </div>
-                                                    <div class="input-group mb-3 col-sm-4">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Profession</span>
-                                                        </div>
-                                                            <input type="email" class="form-control " placeholder="profession">
-                                                    </div>
-                                                    <div class="input-group mb-3 col-sm-4">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Number of Kids</span>
-                                                        </div>
-                                                        <select name="" id="" class="custom-select my-select text-center">
-                                                                <option value="" class="p-2">--Kids--</option>
-                                                                <option value="" class="p-2">none</option>
-                                                                <option value="" class="p-2">1</option>
-                                                                <option value="" class="p-2">2</option>
-                                                                <option value="" class="p-2">3</option>
-                                                                <option value="" class="p-2">4</option>
-                                                                <option value="" class="p-2">5</option>
-                                                           </select>
-                                                        
-                                                    </div>
-                                                    <div class="input-group mb-3 col-sm-4">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">RAMA</span>
-                                                        </div>
-                                                        <input type="text" class="form-control"name="" id="">
-                                                    </div>
-                                                    <div class="input-group col-sm-4 mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Allocation</span>
-                                                        </div>
-                                                        <input type="text" class="form-control" placeholder="allocations">
-                                                    </div>
-                                                    <div class="input-group col-sm-4 mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">NetSal</span>
-                                                        </div>
-                                                        <input type="text" class="form-control" placeholder="netsalary">
-                                                    </div>
+                                        <div class="card-body ">
 
-                                                    <div class="input-group mb-3 col-sm-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Spouse's age</span>
-                                                        </div>
-                                                        <input type="number" name="" min ="18" max ="80" class="form-control" id="">
+                                            <form class="row">
+                                                <div class="input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Marital status</span>
                                                     </div>
-                                                </form>
-                                            </div>
+                                                    <!-- <input type="dropdow" class="form-control " placeholder="First name.."> -->
+                                                    <select name="" id="" class="custom-select my-select text-center">
+                                                        <option value="" class="p-2" selected>--Marital Status--</option>
+                                                        <option value="" class="p-2">Signle</option>
+                                                        <option value="" class="p-2">Maried</option>
+                                                        <option value="" class="p-2">Divorced</option>
+                                                        <option value="" class="p-2">Widow</option>
+                                                        <option value="" class="p-2">widower</option>
+                                                    </select>
+
+
+                                                </div>
+
+                                                <div class=" input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Firstname</span>
+                                                    </div>
+                                                    <input type="text" class="form-control " placeholder="spouse's name if any...">
+
+                                                </div>
+                                                <div class="input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Lastname</span>
+                                                    </div>
+                                                    <input type="text" class="form-control " placeholder="spouse's name if any...">
+                                                </div>
+                                                <div class="input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Profession</span>
+                                                    </div>
+                                                    <input type="email" class="form-control " placeholder="profession">
+                                                </div>
+                                                <div class="input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Number of Kids</span>
+                                                    </div>
+                                                    <select name="" id="" class="custom-select my-select text-center">
+                                                        <option value="" class="p-2">--Kids--</option>
+                                                        <option value="" class="p-2">none</option>
+                                                        <option value="" class="p-2">1</option>
+                                                        <option value="" class="p-2">2</option>
+                                                        <option value="" class="p-2">3</option>
+                                                        <option value="" class="p-2">4</option>
+                                                        <option value="" class="p-2">5</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="input-group mb-3 col-sm-4">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">RAMA</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" name="" id="">
+                                                </div>
+                                                <div class="input-group col-sm-4 mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Allocation</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="allocations">
+                                                </div>
+                                                <div class="input-group col-sm-4 mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">NetSal</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="netsalary">
+                                                </div>
+
+                                                <div class="input-group mb-3 col-sm-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Spouse's age</span>
+                                                    </div>
+                                                    <input type="number" name="" min="18" max="80" class="form-control" id="">
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <input type="button" style="font-size:20px" value="Save"class="btn btn-success  btn-actions-pane-right"/>
+                                    <input type="button" style="font-size:20px" value="Save" class="btn btn-success  btn-actions-pane-right" />
                                     <h3 class="text-center ">Human Ressource report</h3>
                                     <hr>
                                     <div class="row mx-1">
                                         <div class="card mb-2 col-sm-7 ">
                                             <div class="card-header center">Personal information</div>
-                                                <div class="card-body ">
-                                                        
-                                                    <form class="row">
+                                            <div class="card-body ">
+
+                                                <form class="row">
                                                     <table class="table table-borderless p-0 m-0">
                                                         <thead>
-                                                        <tr>
-                                                            <th>First Name:</th>
-                                                            <td>Peter  </td>
-                                                            <th>Last Name :</th>
-                                                            <td>KAHUMUZA</td>
-                                                        </tr>
+                                                            <tr>
+                                                                <th>First Name:</th>
+                                                                <td>Peter </td>
+                                                                <th>Last Name :</th>
+                                                                <td>KAHUMUZA</td>
+                                                            </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
@@ -532,113 +532,112 @@
                                                             </tr>
                                                         </tbody>
                                                     </table>
-                                                    </form>
-                                                </div>
+                                                </form>
+                                            </div>
                                         </div>
                                         <div class="card mb-2 col-sm-5">
                                             <div class="card-header center">Personal information</div>
-                                                <div class="card-body ">
-                                                        
-                                                    <form class="row">
-                                                        <div class="card" style="width:400px">
-                                                            <img class="card-img-top" src="../assets/images/avatars/img_avatar1.png" alt="profile image" style="width:100%">
-                                                            <div class="card-body">
-                                                                <h4 class="card-title">Peter KAHUMUZA</h4>
-                                                                <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum architecto quod dolorem,<b>Peter KAHUMUZA</b> deleniti vero excepturi animi aliquid magnam tempore dolores atque distinctio labore possimus esse nobis totam nostrum aspernatur suscipit!</p>
-                                                                <a href="#" class="btn btn-warning" style="font-size:15px"><i class="fas fa-print p-1" style="font-size:20px;"></i>Print</a>
-                                                            </div>
-                                                            </div>
+                                            <div class="card-body ">
+
+                                                <form class="row">
+                                                    <div class="card" style="width:400px">
+                                                        <img class="card-img-top" src="../assets/images/avatars/img_avatar1.png" alt="profile image" style="width:100%">
+                                                        <div class="card-body">
+                                                            <h4 class="card-title">Peter KAHUMUZA</h4>
+                                                            <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum architecto quod dolorem,<b>Peter KAHUMUZA</b> deleniti vero excepturi animi aliquid magnam tempore dolores atque distinctio labore possimus esse nobis totam nostrum aspernatur suscipit!</p>
+                                                            <a href="#" class="btn btn-warning" style="font-size:15px"><i class="fas fa-print p-1" style="font-size:20px;"></i>Print</a>
                                                         </div>
-                                                    </form>
-                                                </div>
+                                                    </div>
+                                            </div>
+                                            </form>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="mb-3 card">
-                                     
-                                                 <!-- Professional info -->
-                                        <div class="card-header-tab card-header">
-                                            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                                                <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
-                                                    Professional Reports
-                                            </div>
-                                            <div class="btn-actions-pane-right text-capitalize">
-                                                <button class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">
-                                                    View All
-                                                </button>
-                                            </div>
+                                <div class="mb-3 card">
+
+                                    <!-- Professional info -->
+                                    <div class="card-header-tab card-header">
+                                        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                                            <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
+                                            Professional Reports
                                         </div>
-                                        <div class="no-gutters row">
-                                            <div class="col-sm-6 col-md-4 col-xl-4">
-                                                <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
-                                                    <div class="icon-wrapper rounded-circle">
-                                                        <div class="icon-wrapper-bg opacity-10 bg-warning"></div>
-                                                        <i class="lnr-laptop-phone text-dark opacity-8"></i>
-                                                    </div>
-                                                    <div class="widget-chart-content">
-                                                        <div class="widget-subheading">Cash Deposits</div>
-                                                        <div class="widget-numbers">1,7M</div>
-                                                        <div class="widget-description opacity-8 text-focus">
-                                                            <div class="d-inline text-danger pr-1">
-                                                                <i class="fa fa-angle-down"></i>
-                                                                <span class="pl-1">54.1%</span>
-                                                            </div>
-                                                            less earnings
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="divider m-0 d-md-none d-sm-block"></div>
-                                            </div>
-                                            <div class="col-sm-6 col-md-4 col-xl-4">
-                                                <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
-                                                    <div class="icon-wrapper rounded-circle">
-                                                        <div class="icon-wrapper-bg opacity-9 bg-danger"></div>
-                                                        <i class="lnr-graduation-hat text-white"></i>
-                                                    </div>
-                                                    <div class="widget-chart-content">
-                                                        <div class="widget-subheading">Invested Dividents</div>
-                                                        <div class="widget-numbers"><span>9M</span></div>
-                                                        <div class="widget-description opacity-8 text-focus">
-                                                            Grow Rate:
-                                                            <span class="text-info pl-1">
-                                                                <i class="fa fa-angle-down"></i>
-                                                                <span class="pl-1">14.1%</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="divider m-0 d-md-none d-sm-block"></div>
-                                            </div>
-                                            <div class="col-sm-12 col-md-4 col-xl-4">
-                                                <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
-                                                    <div class="icon-wrapper rounded-circle">
-                                                        <div class="icon-wrapper-bg opacity-9 bg-success"></div>
-                                                        <i class="lnr-apartment text-white"></i>
-                                                    </div>
-                                                    <div class="widget-chart-content">
-                                                        <div class="widget-subheading">Capital Gains</div>
-                                                        <div class="widget-numbers text-success"><span>$563</span>
-                                                        </div>
-                                                        <div class="widget-description text-focus">
-                                                            Increased by
-                                                            <span class="text-warning pl-1">
-                                                                <i class="fa fa-angle-up"></i>
-                                                                <span class="pl-1">7.35%</span>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center d-block p-3 card-footer">
-                                            <button class="btn-pill btn-wide fsize-1 btn btn-primary">
-                                                <span class="mr-2 opacity-7">
-                                                    <i class="icon icon-anim-pulse ion-ios-analytics-outline"></i>
-                                                </span>
-                                                <span class="mr-1">View Complete Report</span>
+                                        <div class="btn-actions-pane-right text-capitalize">
+                                            <button class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">
+                                                View All
                                             </button>
                                         </div>
-                                    </div> 
+                                    </div>
+                                    <div class="no-gutters row">
+                                        <div class="col-sm-6 col-md-4 col-xl-4">
+                                            <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
+                                                <div class="icon-wrapper rounded-circle">
+                                                    <div class="icon-wrapper-bg opacity-10 bg-warning"></div>
+                                                    <i class="lnr-laptop-phone text-dark opacity-8"></i>
+                                                </div>
+                                                <div class="widget-chart-content">
+                                                    <div class="widget-subheading">Cash Deposits</div>
+                                                    <div class="widget-numbers">1,7M</div>
+                                                    <div class="widget-description opacity-8 text-focus">
+                                                        <div class="d-inline text-danger pr-1">
+                                                            <i class="fa fa-angle-down"></i>
+                                                            <span class="pl-1">54.1%</span>
+                                                        </div>
+                                                        less earnings
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="divider m-0 d-md-none d-sm-block"></div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-4 col-xl-4">
+                                            <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
+                                                <div class="icon-wrapper rounded-circle">
+                                                    <div class="icon-wrapper-bg opacity-9 bg-danger"></div>
+                                                    <i class="lnr-graduation-hat text-white"></i>
+                                                </div>
+                                                <div class="widget-chart-content">
+                                                    <div class="widget-subheading">Invested Dividents</div>
+                                                    <div class="widget-numbers"><span>9M</span></div>
+                                                    <div class="widget-description opacity-8 text-focus">
+                                                        Grow Rate:
+                                                        <span class="text-info pl-1">
+                                                            <i class="fa fa-angle-down"></i>
+                                                            <span class="pl-1">14.1%</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="divider m-0 d-md-none d-sm-block"></div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-4 col-xl-4">
+                                            <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
+                                                <div class="icon-wrapper rounded-circle">
+                                                    <div class="icon-wrapper-bg opacity-9 bg-success"></div>
+                                                    <i class="lnr-apartment text-white"></i>
+                                                </div>
+                                                <div class="widget-chart-content">
+                                                    <div class="widget-subheading">Capital Gains</div>
+                                                    <div class="widget-numbers text-success"><span>$563</span>
+                                                    </div>
+                                                    <div class="widget-description text-focus">
+                                                        Increased by
+                                                        <span class="text-warning pl-1">
+                                                            <i class="fa fa-angle-up"></i>
+                                                            <span class="pl-1">7.35%</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center d-block p-3 card-footer">
+                                        <button class="btn-pill btn-wide fsize-1 btn btn-primary">
+                                            <span class="mr-2 opacity-7">
+                                                <i class="icon icon-anim-pulse ion-ios-analytics-outline"></i>
+                                            </span>
+                                            <span class="mr-1">View Complete Report</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -648,4 +647,5 @@
         </div>
     </div>
 </div>
-<?php include '_footer';?>
+</div>
+<?php include '_footer'; ?>
