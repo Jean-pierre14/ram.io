@@ -113,7 +113,7 @@ if (isset($_POST['action'])) {
                         <th>Fullname</th>
                         <th>Email</th>
                         <th>Gender</th>
-                        <th>Event</th>
+                        <th>Marital Status</th>
                         <th>Start date</th>
                         <th>Events</th>
                     </tr>
@@ -126,7 +126,7 @@ if (isset($_POST['action'])) {
                     <td>' . $row['username'] . '</td>
                     <td>' . $row['fullname'] . '</td>
                     <td>' . $row['gender'] . '</td>
-                    <td>' . $row['oper'] . '</td>
+                    <td>' . $row['status'] . '</td>
                     <td>' . $row['created_at'] . '</td>
                     <td>
                         <div class="btn-group p-0 btn-sm event">
