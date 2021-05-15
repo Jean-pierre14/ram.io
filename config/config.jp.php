@@ -13,6 +13,7 @@ $id = "";
 $row['id'] = "";
 
 $user = '';
+$username = '';
 $fullname = '';
 $email = '';
 $gender = '';
