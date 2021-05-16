@@ -17,8 +17,7 @@
                             <li class="app-sidebar__heading">Menu</li>
                             <li class="mm-active">
                                 <a href="#">
-                                    <!-- <i class="metismenu-icon pe-7s-rocket"></i>
-                                    Dashboards -->
+
                                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                 </a>
                                 <ul class="mm-show">
