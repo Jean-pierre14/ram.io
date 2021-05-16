@@ -6,7 +6,8 @@
             <div class="app-main__inner">
                 <div class="header-mobile-wrapper">
                     <div class="app-header__logo">
-                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="KeroUI Admin Template" class="logo-src"></a>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="KeroUI Admin Template"
+                            class="logo-src"></a>
                         <button type="button" class="hamburger hamburger--elastic mobile-toggle-sidebar-nav">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
@@ -14,7 +15,8 @@
                         </button>
                         <div class="app-header__menu">
                             <span>
-                                <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                                <button type="button"
+                                    class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
                                     <span class="btn-icon-wrapper">
                                         <i class="fa fa-ellipsis-v fa-w-6"></i>
                                     </span>
@@ -25,7 +27,7 @@
                 </div>
                 <div class="app-header">
                     <div class="page-title-heading">
-                        ramall's analytics
+                        <?= $prooject_name; ?> analytics
                         <div class="page-title-subheading">
                             <?= $prooject_name; ?>'s analytics is the simplified and summarized data representation
                         </div>
@@ -38,13 +40,16 @@
                         <div class="header-btn-lg pr-0">
                             <div class="header-dots">
                                 <div class="dropdown">
-                                    <button type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="p-0 mr-2 btn btn-link">
+                                    <button type="button" aria-haspopup="true" aria-expanded="false"
+                                        data-toggle="dropdown" class="p-0 mr-2 btn btn-link">
                                         <i class="typcn typcn-th-large-outline"></i>
                                     </button>
-                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
+                                    <div tabindex="-1" role="menu" aria-hidden="true"
+                                        class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
                                         <div class="dropdown-menu-header">
                                             <div class="dropdown-menu-header-inner bg-vicious-stance">
-                                                <div class="menu-header-image opacity-4" style="background-image: url('assets/images/dropdown-header/city5.jpg');">
+                                                <div class="menu-header-image opacity-4"
+                                                    style="background-image: url('assets/images/dropdown-header/city5.jpg');">
                                                 </div>
                                                 <div class="menu-header-content text-white">
                                                     <h5 class="menu-header-title">Grid Dashboard</h5>
@@ -56,42 +61,54 @@
                                         <div class="grid-menu grid-menu-xl grid-menu-3col">
                                             <div class="no-gutters row">
                                                 <div class="col-sm-6 col-xl-4">
-                                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                                        <i class="pe-7s-world icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
+                                                    <button
+                                                        class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                                        <i
+                                                            class="pe-7s-world icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3"></i>
                                                         Automation
                                                     </button>
                                                 </div>
                                                 <div class="col-sm-6 col-xl-4">
-                                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                                        <i class="pe-7s-piggy icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3">
+                                                    <button
+                                                        class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                                        <i
+                                                            class="pe-7s-piggy icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3">
                                                         </i>
                                                         Reports
                                                     </button>
                                                 </div>
                                                 <div class="col-sm-6 col-xl-4">
-                                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                                        <i class="pe-7s-config icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3">
+                                                    <button
+                                                        class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                                        <i
+                                                            class="pe-7s-config icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3">
                                                         </i>
                                                         Settings
                                                     </button>
                                                 </div>
                                                 <div class="col-sm-6 col-xl-4">
-                                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                                        <i class="pe-7s-browser icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3">
+                                                    <button
+                                                        class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                                        <i
+                                                            class="pe-7s-browser icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3">
                                                         </i>
                                                         Content
                                                     </button>
                                                 </div>
                                                 <div class="col-sm-6 col-xl-4">
-                                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                                        <i class="pe-7s-hourglass icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3">
+                                                    <button
+                                                        class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                                        <i
+                                                            class="pe-7s-hourglass icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3">
                                                         </i>
                                                         Activity
                                                     </button>
                                                 </div>
                                                 <div class="col-sm-6 col-xl-4">
-                                                    <button class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
-                                                        <i class="pe-7s-world icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3">
+                                                    <button
+                                                        class="btn-icon-vertical btn-square btn-transition btn btn-outline-link">
+                                                        <i
+                                                            class="pe-7s-world icon-gradient bg-night-fade btn-icon-wrapper btn-icon-lg mb-3">
                                                         </i>
                                                         Contacts
                                                     </button>
@@ -107,14 +124,17 @@
                                     </div>
                                 </div>
                                 <div class="dropdown">
-                                    <button type="button" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="p-0 btn btn-link">
+                                    <button type="button" aria-haspopup="true" aria-expanded="false"
+                                        data-toggle="dropdown" class="p-0 btn btn-link">
                                         <i class="typcn typcn-bell"></i>
                                         <span class="badge badge-dot badge-dot-sm badge-danger">Notifications</span>
                                     </button>
-                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
+                                    <div tabindex="-1" role="menu" aria-hidden="true"
+                                        class="dropdown-menu-xl rm-pointers dropdown-menu dropdown-menu-right">
                                         <div class="dropdown-menu-header mb-0">
                                             <div class="dropdown-menu-header-inner bg-night-sky">
-                                                <div class="menu-header-image opacity-5" style="background-image: url('assets/images/dropdown-header/city2.jpg');">
+                                                <div class="menu-header-image opacity-5"
+                                                    style="background-image: url('assets/images/dropdown-header/city2.jpg');">
                                                 </div>
                                                 <div class="menu-header-content text-light">
                                                     <h5 class="menu-header-title">Notifications</h5>
@@ -123,19 +143,23 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <ul class="tabs-animated-shadow tabs-animated nav nav-justified tabs-shadow-bordered p-3">
+                                        <ul
+                                            class="tabs-animated-shadow tabs-animated nav nav-justified tabs-shadow-bordered p-3">
                                             <li class="nav-item">
-                                                <a role="tab" class="nav-link active" data-toggle="tab" href="#tab-messages-header">
+                                                <a role="tab" class="nav-link active" data-toggle="tab"
+                                                    href="#tab-messages-header">
                                                     <span>Messages</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a role="tab" class="nav-link" data-toggle="tab" href="#tab-events-header">
+                                                <a role="tab" class="nav-link" data-toggle="tab"
+                                                    href="#tab-events-header">
                                                     <span>Events</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a role="tab" class="nav-link" data-toggle="tab" href="#tab-errors-header">
+                                                <a role="tab" class="nav-link" data-toggle="tab"
+                                                    href="#tab-errors-header">
                                                     <span>System</span>
                                                 </a>
                                             </li>
@@ -157,20 +181,25 @@
                                 <div class="widget-content-wrapper">
                                     <div class="widget-content-left">
                                         <div class="btn-group">
-                                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                                <img width="42" class="rounded" src="assets/images/avatars/3.jpg" alt="">
+                                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                                class="p-0 btn">
+                                                <img width="42" class="rounded" src="assets/images/avatars/3.jpg"
+                                                    alt="">
                                                 <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                             </a>
-                                            <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right">
+                                            <div tabindex="-1" role="menu" aria-hidden="true"
+                                                class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right">
                                                 <div class="dropdown-menu-header">
                                                     <div class="dropdown-menu-header-inner bg-info">
-                                                        <div class="menu-header-image opacity-2" style="background-image: url('assets/images/dropdown-header/city1.jpg');">
+                                                        <div class="menu-header-image opacity-2"
+                                                            style="background-image: url('assets/images/dropdown-header/city1.jpg');">
                                                         </div>
                                                         <div class="menu-header-content text-left">
                                                             <div class="widget-content p-0">
                                                                 <div class="widget-content-wrapper">
                                                                     <div class="widget-content-left mr-3">
-                                                                        <img width="42" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
+                                                                        <img width="42" class="rounded-circle"
+                                                                            src="assets/images/avatars/3.jpg" alt="">
                                                                     </div>
                                                                     <div class="widget-content-left">
                                                                         <div class="widget-heading">Minnie Betts
@@ -180,7 +209,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="widget-content-right mr-2">
-                                                                        <button class="btn-pill btn-shadow btn-shine btn btn-focus">Logout
+                                                                        <button
+                                                                            class="btn-pill btn-shadow btn-shine btn btn-focus">Logout
                                                                         </button>
                                                                     </div>
                                                                 </div>
@@ -201,7 +231,8 @@
                                                                 </a>
                                                             </li>
                                                             <li class="nav-item">
-                                                                <a href="javascript:void(0);" class="nav-link">Recover Password
+                                                                <a href="javascript:void(0);" class="nav-link">Recover
+                                                                    Password
                                                                 </a>
                                                             </li>
                                                             <li class="nav-item-header nav-item">My Account
@@ -231,14 +262,18 @@
                                                 <div class="grid-menu grid-menu-2col">
                                                     <div class="no-gutters row">
                                                         <div class="col-sm-6">
-                                                            <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning">
-                                                                <i class="pe-7s-chat icon-gradient bg-amy-crisp btn-icon-wrapper mb-2"></i>
+                                                            <button
+                                                                class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning">
+                                                                <i
+                                                                    class="pe-7s-chat icon-gradient bg-amy-crisp btn-icon-wrapper mb-2"></i>
                                                                 Message Inbox
                                                             </button>
                                                         </div>
                                                         <div class="col-sm-6">
-                                                            <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-danger">
-                                                                <i class="pe-7s-ticket icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
+                                                            <button
+                                                                class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-danger">
+                                                                <i
+                                                                    class="pe-7s-ticket icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
                                                                 <b>Support Tickets</b>
                                                             </button>
                                                         </div>
@@ -296,16 +331,21 @@
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link opacity-8">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="nav-link opacity-8">
                                         <span>More</span>
                                         <i class="fa fa-angle-down ml-1 opacity-6"></i>
                                     </a>
-                                    <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link dropdown-menu">
+                                    <div tabindex="-1" role="menu" aria-hidden="true"
+                                        class="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link dropdown-menu">
                                         <h6 tabindex="-1" class="dropdown-header">Header</h6>
-                                        <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-inbox"> </i><span>Menus</span></button>
-                                        <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-file-empty">
+                                        <button type="button" tabindex="0" class="dropdown-item"><i
+                                                class="dropdown-icon lnr-inbox"> </i><span>Menus</span></button>
+                                        <button type="button" tabindex="0" class="dropdown-item"><i
+                                                class="dropdown-icon lnr-file-empty">
                                             </i><span>Settings</span></button>
-                                        <button type="button" tabindex="0" class="dropdown-item"><i class="dropdown-icon lnr-book"> </i><span>Actions</span></button>
+                                        <button type="button" tabindex="0" class="dropdown-item"><i
+                                                class="dropdown-icon lnr-book"> </i><span>Actions</span></button>
                                         <div tabindex="-1" class="dropdown-divider"></div>
                                         <div class="p-3 text-right">
                                             <button class="mr-2 btn-shadow btn-sm btn btn-link">View
@@ -350,7 +390,8 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Email</span>
                                                     </div>
-                                                    <input type="email" class="form-control " placeholder="me@email.com">
+                                                    <input type="email" class="form-control "
+                                                        placeholder="me@email.com">
                                                 </div>
                                                 <div class="input-group mb-3 col-sm-4">
                                                     <div class="input-group-prepend">
@@ -369,19 +410,22 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">PoB</span>
                                                     </div>
-                                                    <input type="text" class="form-control" placeholder="Place of birth">
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Place of birth">
                                                 </div>
                                                 <div class="input-group mb-3 col-sm-2">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Age</span>
                                                     </div>
-                                                    <input type="number" name="" min="18" max="70" class="form-control" id="">
+                                                    <input type="number" name="" min="18" max="70" class="form-control"
+                                                        id="">
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                     <div class="card mb-2">
-                                        <div class="card-header center">Professional information || Spouse identities</div>
+                                        <div class="card-header center">Professional information || Spouse identities
+                                        </div>
                                         <div class="card-body ">
 
                                             <form class="row">
@@ -391,7 +435,8 @@
                                                     </div>
                                                     <!-- <input type="dropdow" class="form-control " placeholder="First name.."> -->
                                                     <select name="" id="" class="custom-select my-select text-center">
-                                                        <option value="" class="p-2" selected>--Marital Status--</option>
+                                                        <option value="" class="p-2" selected>--Marital Status--
+                                                        </option>
                                                         <option value="" class="p-2">Signle</option>
                                                         <option value="" class="p-2">Maried</option>
                                                         <option value="" class="p-2">Divorced</option>
@@ -406,14 +451,16 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Firstname</span>
                                                     </div>
-                                                    <input type="text" class="form-control " placeholder="spouse's name if any...">
+                                                    <input type="text" class="form-control "
+                                                        placeholder="spouse's name if any...">
 
                                                 </div>
                                                 <div class="input-group mb-3 col-sm-4">
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Lastname</span>
                                                     </div>
-                                                    <input type="text" class="form-control " placeholder="spouse's name if any...">
+                                                    <input type="text" class="form-control "
+                                                        placeholder="spouse's name if any...">
                                                 </div>
                                                 <div class="input-group mb-3 col-sm-4">
                                                     <div class="input-group-prepend">
@@ -459,99 +506,122 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Spouse's age</span>
                                                     </div>
-                                                    <input type="number" name="" min="18" max="80" class="form-control" id="">
+                                                    <input type="number" name="" min="18" max="80" class="form-control"
+                                                        id="">
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
-                                    <input type="button" style="font-size:20px" value="Save" class="btn btn-success  btn-actions-pane-right" />
-                                    <h3 class="text-center ">Human Ressource report</h3>
-                                    <hr>
-                                    <div class="row mx-1">
-                                        <div class="card mb-2 col-sm-7 ">
-                                            <div class="card-header center">Personal information</div>
-                                            <div class="card-body ">
+                                    <div class="container-fluid p-0">
+                                        <div class="row">
+                                            <div class="mb-2 col-md-7">
+                                                <div class="card">
+                                                    <div class="card-header center">Personal information</div>
+                                                    <div class="card-body ">
 
-                                                <form class="row">
-                                                    <table class="table table-borderless p-0 m-0">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>First Name:</th>
-                                                                <td>Peter </td>
-                                                                <th>Last Name :</th>
-                                                                <td>KAHUMUZA</td>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <th>Sirname:</th>
-                                                                <td>404Error</td>
-                                                                <th>Email:</th>
-                                                                <td>peter@kahumuza.com</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Telephone:</th>
-                                                                <td>(0) 781 987 987</td>
-                                                                <th>DoB:</th>
-                                                                <td>July-12-1960</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>PoB:</th>
-                                                                <td>California</td>
-                                                                <th>Age:</th>
-                                                                <td>59 Years Old</td>
-                                                            </tr>
-                                                            <hr>
-                                                            <tr>
-                                                                <th>Spouse's fname:</th>
-                                                                <td>Samanta</td>
-                                                                <th>Spouse's lname:</th>
-                                                                <td>Deker</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Profession:</th>
-                                                                <td>Interior Designer</td>
-                                                                <th>Kids:</th>
-                                                                <td>4</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>RAMA:</th>
-                                                                <td>$ 150</td>
-                                                                <th>Allocation:</th>
-                                                                <td>$ 200</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Marital Status:</th>
-                                                                <td>Married</td>
-                                                                <th>Spouse's Age:</th>
-                                                                <td>60 Years Old</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Net Salary</th>
-                                                                <td>$ 2000</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-2 col-sm-5">
-                                            <div class="card-header center">Personal information</div>
-                                            <div class="card-body ">
-
-                                                <form class="row">
-                                                    <div class="card" style="width:400px">
-                                                        <img class="card-img-top" src="../assets/images/avatars/img_avatar1.png" alt="profile image" style="width:100%">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Peter KAHUMUZA</h4>
-                                                            <p class="card-text ">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum architecto quod dolorem,<b>Peter KAHUMUZA</b> deleniti vero excepturi animi aliquid magnam tempore dolores atque distinctio labore possimus esse nobis totam nostrum aspernatur suscipit!</p>
-                                                            <a href="#" class="btn btn-warning" style="font-size:15px"><i class="fas fa-print p-1" style="font-size:20px;"></i>Print</a>
-                                                        </div>
+                                                        <form class="row">
+                                                            <table class="table table-borderless p-0 m-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>First Name:</th>
+                                                                        <td>Peter </td>
+                                                                        <th>Last Name :</th>
+                                                                        <td>KAHUMUZA</td>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th>Sirname:</th>
+                                                                        <td>404Error</td>
+                                                                        <th>Email:</th>
+                                                                        <td>peter@kahumuza.com</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Telephone:</th>
+                                                                        <td>(0) 781 987 987</td>
+                                                                        <th>DoB:</th>
+                                                                        <td>July-12-1960</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>PoB:</th>
+                                                                        <td>California</td>
+                                                                        <th>Age:</th>
+                                                                        <td>59 Years Old</td>
+                                                                    </tr>
+                                                                    <hr>
+                                                                    <tr>
+                                                                        <th>Spouse's fname:</th>
+                                                                        <td>Samanta</td>
+                                                                        <th>Spouse's lname:</th>
+                                                                        <td>Deker</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Profession:</th>
+                                                                        <td>Interior Designer</td>
+                                                                        <th>Kids:</th>
+                                                                        <td>4</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>RAMA:</th>
+                                                                        <td>$ 150</td>
+                                                                        <th>Allocation:</th>
+                                                                        <td>$ 200</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Marital Status:</th>
+                                                                        <td>Married</td>
+                                                                        <th>Spouse's Age:</th>
+                                                                        <td>60 Years Old</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Net Salary</th>
+                                                                        <td>$ 2000</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </form>
                                                     </div>
+                                                </div>
                                             </div>
-                                            </form>
+                                            <div class="mb-2 col-md-5">
+                                                <div class="card">
+                                                    <div class="card-header center">Personal information</div>
+                                                    <div class="card-body ">
+
+                                                        <form class="row">
+                                                            <div class="card" style="width:400px">
+                                                                <img class="card-img-top"
+                                                                    src="./assets/images/avatars/img_avatar1.png"
+                                                                    alt="profile image" style="width:100%">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Peter KAHUMUZA</h4>
+                                                                    <p class="card-text ">Lorem ipsum dolor sit, amet
+                                                                        consectetur adipisicing elit. Rerum architecto
+                                                                        quod
+                                                                        dolorem,<b>Peter KAHUMUZA</b> deleniti vero
+                                                                        excepturi
+                                                                        animi aliquid magnam tempore dolores atque
+                                                                        distinctio
+                                                                        labore possimus esse nobis totam nostrum
+                                                                        aspernatur
+                                                                        suscipit!</p>
+                                                                    <a href="#" class="btn btn-warning"
+                                                                        style="font-size:15px"><i
+                                                                            class="fas fa-print p-1"
+                                                                            style="font-size:20px;"></i>Print</a>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <input type="button" style="font-size:20px" value="Save"
+                                        class="btn btn-success  btn-actions-pane-right" />
+                                    <h3 class="text-center ">Human Ressource report</h3>
+                                    <hr>
+
                                 </div>
 
                                 <div class="mb-3 card">
@@ -563,7 +633,8 @@
                                             Professional Reports
                                         </div>
                                         <div class="btn-actions-pane-right text-capitalize">
-                                            <button class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">
+                                            <button
+                                                class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">
                                                 View All
                                             </button>
                                         </div>
