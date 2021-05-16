@@ -410,7 +410,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body" id="select2">
                                             <table style="width: 100%;" id="example"
                                                 class="table table-hover table-striped table-bordered">
                                                 <thead>

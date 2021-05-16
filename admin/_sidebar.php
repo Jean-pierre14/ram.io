@@ -1,7 +1,7 @@
 <div class="app-sidebar-wrapper">
     <div class="app-sidebar sidebar-shadow">
         <div class="app-header__logo">
-            <a href="#" data-toggle="tooltip" data-placement="bottom" title="KeroUI Admin Template"
+            <a href="#" data-toggle="tooltip" data-placement="bottom" title="<?= $prooject_name; ?>"
                 class="logo-src"></a>
             <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
                 <span class="hamburger-box">
@@ -16,7 +16,7 @@
                     <li class="mm-active">
                         <a href="#">
                             <i class="metismenu-icon pe-7s-rocket"></i>
-                            Dashboards
+                            <?= $prooject_name; ?>
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
                         <ul class="mm-show">

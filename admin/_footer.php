@@ -3,13 +3,16 @@
 <script>
 $(document).ready(function() {
     select()
+    select2()
     allEmployees()
+    M_empl()
+    W_empl()
 })
 // Dashboard
 function allEmployees() {
     let action = 'allEmployees'
     $.ajax({
-        url: '../config/config.php',
+        url: '../config/config.jp.php',
         method: 'POST',
         data: {
             action
@@ -18,8 +21,37 @@ function allEmployees() {
             $('.allEmployees').html(data)
         }
     })
-    // setTimeout('allEmployees()', 1000)
+    setTimeout('allEmployees()', 1000)
 }
+
+function M_empl() {
+    let action = 'M_emp'
+    $.ajax({
+        url: '../config/config.jp.php',
+        method: 'POST',
+        data: {
+            action
+        },
+        success: function(data) {
+            $('.M_emp').html(data)
+        }
+    })
+}
+
+function W_empl() {
+    let action = 'W_emp'
+    $.ajax({
+        url: '../config/config.jp.php',
+        method: 'POST',
+        data: {
+            action
+        },
+        success: function(data) {
+            $('.W_emp').html(data)
+        }
+    })
+}
+
 
 function select() {
     let action = 'select'
@@ -31,6 +63,20 @@ function select() {
         },
         success: function(data) {
             $('#select').html(data)
+        }
+    })
+}
+
+function select2() {
+    let action = 'select2'
+    $.ajax({
+        url: '../config/config.jp.php',
+        method: 'POST',
+        data: {
+            action
+        },
+        success: function(data) {
+            $('#select2').html(data)
         }
     })
 }

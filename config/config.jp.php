@@ -135,7 +135,34 @@ if (isset($_POST['addempl'])) {
 if (isset($_POST['action'])) {
     // Dashboard
     if ($_POST['action'] == 'allEmployees') {
-        print 'allEmployees';
+        $sql = mysqli_query($con, "SELECT COUNT(*) AS idCount FROM employees_tb WHERE oper = 'OPERATIONNEL'");
+        if (@mysqli_num_rows($sql) > 0) {
+            $row = @mysqli_fetch_array($sql);
+            $output = '<p class="text-warning">' . $row['idCount'] . '</p>';
+        } else {
+            $output = '<p class="text-warning">Zero</p>';
+        }
+        print $output;
+    }
+    if ($_POST['action'] == 'M_emp') {
+        $sql = mysqli_query($con, "SELECT COUNT(*) AS idCount FROM employees_tb WHERE gender = 'Male'");
+        if (@mysqli_num_rows($sql) > 0) {
+            $row = @mysqli_fetch_array($sql);
+            $output = '<p class="text-danger">' . $row['idCount'] . '</p>';
+        } else {
+            $output = '<p class="text-danger">Zero</p>';
+        }
+        print $output;
+    }
+    if ($_POST['action'] == 'W_emp') {
+        $sql = mysqli_query($con, "SELECT COUNT(*) AS idCount FROM employees_tb WHERE gender = 'Female'");
+        if (@mysqli_num_rows($sql) > 0) {
+            $row = @mysqli_fetch_array($sql);
+            $output = $row['idCount'];
+        } else {
+            $output = '<p class="text-success">Zero</p>';
+        }
+        print $output;
     }
     // Select
     if ($_POST['action'] == 'select') {
@@ -148,6 +175,72 @@ if (isset($_POST['action'])) {
         if (mysqli_query($con, "DROP PROCEDURE IF EXISTS selectEmpl")) {
             if (mysqli_query($con, $procedure)) {
                 $query = "CALL selectEmpl()";
+                $response = mysqli_query($con, $query);
+
+                if (mysqli_num_rows($response) > 0) {
+                    $output .= '
+                    <table style="width: 100%;" id="example" class="table table-sm table-responsive-sm table-hover table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Fullname</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>Marital Status</th>
+                                <th>Start date</th>
+                                <th>Events</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    ';
+                    while ($row = mysqli_fetch_array($response)) {
+                        $output .= '
+                        <tr>
+                            <td>' . $row['username'] . '</td>
+                            <td>' . $row['fullname'] . '</td>
+                            <td>' . $row['gender'] . '</td>
+                            <td>' . $row['status'] . '</td>
+                            <td>' . $row['created_at'] . '</td>
+                            <td>
+                                <div class="btn-group p-0 btn-sm event">
+                                    <a href="viewemployees.php?actionEdit=' . $row['id'] . '" class="btn btn-success">
+                                        <i class="fa fa-edit"></i></a>
+                                    <a href="viewemployees.php?actionDelete=' . $row['id'] . '" class="btn btn-danger" title="Delete ' . $row['fullname'] . '?"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        ';
+                    }
+                    $output .= '
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Fullame</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Events</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                    ';
+                } else {
+                    $output .= '<p class="alert alert-warning">There is no data registered</p>';
+                }
+            }
+        }
+        print $output;
+    }
+    if ($_POST['action'] == 'select2') {
+        $procedure = "CREATE PROCEDURE selectEmpl2()
+        BEGIN
+         SELECT * FROM employees_tb ORDER BY id DESC LIMIT 6;
+        END;
+        ";
+
+        if (mysqli_query($con, "DROP PROCEDURE IF EXISTS selectEmpl2")) {
+            if (mysqli_query($con, $procedure)) {
+                $query = "CALL selectEmpl2()";
                 $response = mysqli_query($con, $query);
 
                 if (mysqli_num_rows($response) > 0) {
