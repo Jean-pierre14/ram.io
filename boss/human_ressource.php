@@ -512,104 +512,116 @@
                                             </form>
                                         </div>
                                     </div>
+                                    <div class="container-fluid p-0">
+                                        <div class="row">
+                                            <div class="mb-2 col-md-7">
+                                                <div class="card">
+                                                    <div class="card-header center">Personal information</div>
+                                                    <div class="card-body ">
+
+                                                        <form class="row">
+                                                            <table class="table table-borderless p-0 m-0">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>First Name:</th>
+                                                                        <td>Peter </td>
+                                                                        <th>Last Name :</th>
+                                                                        <td>KAHUMUZA</td>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th>Sirname:</th>
+                                                                        <td>404Error</td>
+                                                                        <th>Email:</th>
+                                                                        <td>peter@kahumuza.com</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Telephone:</th>
+                                                                        <td>(0) 781 987 987</td>
+                                                                        <th>DoB:</th>
+                                                                        <td>July-12-1960</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>PoB:</th>
+                                                                        <td>California</td>
+                                                                        <th>Age:</th>
+                                                                        <td>59 Years Old</td>
+                                                                    </tr>
+                                                                    <hr>
+                                                                    <tr>
+                                                                        <th>Spouse's fname:</th>
+                                                                        <td>Samanta</td>
+                                                                        <th>Spouse's lname:</th>
+                                                                        <td>Deker</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Profession:</th>
+                                                                        <td>Interior Designer</td>
+                                                                        <th>Kids:</th>
+                                                                        <td>4</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>RAMA:</th>
+                                                                        <td>$ 150</td>
+                                                                        <th>Allocation:</th>
+                                                                        <td>$ 200</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Marital Status:</th>
+                                                                        <td>Married</td>
+                                                                        <th>Spouse's Age:</th>
+                                                                        <td>60 Years Old</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Net Salary</th>
+                                                                        <td>$ 2000</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-2 col-md-5">
+                                                <div class="card">
+                                                    <div class="card-header center">Personal information</div>
+                                                    <div class="card-body ">
+
+                                                        <form class="row">
+                                                            <div class="card" style="width:400px">
+                                                                <img class="card-img-top"
+                                                                    src="./assets/images/avatars/img_avatar1.png"
+                                                                    alt="profile image" style="width:100%">
+                                                                <div class="card-body">
+                                                                    <h4 class="card-title">Peter KAHUMUZA</h4>
+                                                                    <p class="card-text ">Lorem ipsum dolor sit, amet
+                                                                        consectetur adipisicing elit. Rerum architecto
+                                                                        quod
+                                                                        dolorem,<b>Peter KAHUMUZA</b> deleniti vero
+                                                                        excepturi
+                                                                        animi aliquid magnam tempore dolores atque
+                                                                        distinctio
+                                                                        labore possimus esse nobis totam nostrum
+                                                                        aspernatur
+                                                                        suscipit!</p>
+                                                                    <a href="#" class="btn btn-warning"
+                                                                        style="font-size:15px"><i
+                                                                            class="fas fa-print p-1"
+                                                                            style="font-size:20px;"></i>Print</a>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <input type="button" style="font-size:20px" value="Save"
                                         class="btn btn-success  btn-actions-pane-right" />
                                     <h3 class="text-center ">Human Ressource report</h3>
                                     <hr>
-                                    <div class="row mx-1">
-                                        <div class="card mb-2 col-sm-7 ">
-                                            <div class="card-header center">Personal information</div>
-                                            <div class="card-body ">
 
-                                                <form class="row">
-                                                    <table class="table table-borderless p-0 m-0">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>First Name:</th>
-                                                                <td>Peter </td>
-                                                                <th>Last Name :</th>
-                                                                <td>KAHUMUZA</td>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <th>Sirname:</th>
-                                                                <td>404Error</td>
-                                                                <th>Email:</th>
-                                                                <td>peter@kahumuza.com</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Telephone:</th>
-                                                                <td>(0) 781 987 987</td>
-                                                                <th>DoB:</th>
-                                                                <td>July-12-1960</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>PoB:</th>
-                                                                <td>California</td>
-                                                                <th>Age:</th>
-                                                                <td>59 Years Old</td>
-                                                            </tr>
-                                                            <hr>
-                                                            <tr>
-                                                                <th>Spouse's fname:</th>
-                                                                <td>Samanta</td>
-                                                                <th>Spouse's lname:</th>
-                                                                <td>Deker</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Profession:</th>
-                                                                <td>Interior Designer</td>
-                                                                <th>Kids:</th>
-                                                                <td>4</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>RAMA:</th>
-                                                                <td>$ 150</td>
-                                                                <th>Allocation:</th>
-                                                                <td>$ 200</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Marital Status:</th>
-                                                                <td>Married</td>
-                                                                <th>Spouse's Age:</th>
-                                                                <td>60 Years Old</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Net Salary</th>
-                                                                <td>$ 2000</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="card mb-2 col-sm-5">
-                                            <div class="card-header center">Personal information</div>
-                                            <div class="card-body ">
-
-                                                <form class="row">
-                                                    <div class="card" style="width:400px">
-                                                        <img class="card-img-top"
-                                                            src="../assets/images/avatars/img_avatar1.png"
-                                                            alt="profile image" style="width:100%">
-                                                        <div class="card-body">
-                                                            <h4 class="card-title">Peter KAHUMUZA</h4>
-                                                            <p class="card-text ">Lorem ipsum dolor sit, amet
-                                                                consectetur adipisicing elit. Rerum architecto quod
-                                                                dolorem,<b>Peter KAHUMUZA</b> deleniti vero excepturi
-                                                                animi aliquid magnam tempore dolores atque distinctio
-                                                                labore possimus esse nobis totam nostrum aspernatur
-                                                                suscipit!</p>
-                                                            <a href="#" class="btn btn-warning"
-                                                                style="font-size:15px"><i class="fas fa-print p-1"
-                                                                    style="font-size:20px;"></i>Print</a>
-                                                        </div>
-                                                    </div>
-                                            </div>
-                                            </form>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <div class="mb-3 card">
