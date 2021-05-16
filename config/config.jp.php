@@ -27,14 +27,14 @@ $password2 = '';
 $username = '';
 $password = '';
 
-function GetDate()
-{
+// function GetDate()
+// {
 
-    for ($i = 0; $i <= 5; $i++) {
-        print $i;
-    }
-    return 'data';
-}
+//     for ($i = 0; $i <= 5; $i++) {
+//         print $i;
+//     }
+//     return 'data';
+// }
 
 
 if (isset($_POST['signIn'])) {
