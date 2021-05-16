@@ -27,6 +27,15 @@ $password2 = '';
 $username = '';
 $password = '';
 
+function GetDate()
+{
+
+    for ($i = 0; $i <= 5; $i++) {
+        print $i;
+    }
+    return 'data';
+}
+
 
 if (isset($_POST['signIn'])) {
     $username = mysqli_real_escape_string($con, trim(htmlentities($_POST['username'])));

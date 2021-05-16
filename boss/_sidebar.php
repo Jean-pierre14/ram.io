@@ -3,7 +3,8 @@
         <div class="app-sidebar-wrapper">
             <div class="app-sidebar sidebar-shadow">
                 <div class="app-header__logo">
-                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="KeroUI Admin Template" class="logo-src"></a>
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="KeroUI Admin Template"
+                        class="logo-src"></a>
                     <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
                         <span class="hamburger-box">
                             <span class="hamburger-inner"></span>
@@ -23,9 +24,9 @@
                                 <ul class="mm-show">
                                     <li><a class="mm-active" href="index.php">Dashboard</a></li>
                                     <li><a href="addemployee.php">Add Employee</a></li>
+                                    <li><a href="viewemployee.php">View Employees</a></li>
                                     <li><a href="human_ressource.php">Human Ressource</a></li>
                                     <li><a href="retired.php">Retired Employees</a></li>
-                                    <li><a href="viewemployee.php">View Employees</a></li>
                                     <li><a href="payslip.php">Pay Slip</a></li>
                                     <li><a href="attendance.php">Attendance</a></li>
                                 </ul>
