@@ -133,6 +133,11 @@ if (isset($_POST['addempl'])) {
 
 // Actions
 if (isset($_POST['action'])) {
+    // Dashboard
+    if ($_POST['action'] == 'allEmployees') {
+        print 'allEmployees';
+    }
+    // Select
     if ($_POST['action'] == 'select') {
         $procedure = "CREATE PROCEDURE selectEmpl()
         BEGIN
