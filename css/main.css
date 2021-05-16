@@ -19,6 +19,20 @@
 /*  Basic Style 
 /* =================================== */
 
+
+/* project style */
+
+.my-select {
+    background-color: light-brown;
+    color: dark-grey;
+    border: 0 none;
+    border-radius: 20px;
+    padding: 6px 20px;
+}
+
+
+/* ========Titans ft Sniper */
+
 ::-moz-selection {
     /* Code for Firefox */
     background-color: #b68834;

@@ -5,6 +5,7 @@ $prooject_name = "RamaLL";
 $con = mysqli_connect("localhost", "root", "", "ramall") or die("Couln't connect to the database");
 
 $errors = [];
+
 $success = [];
 $output = '';
 
@@ -12,6 +13,7 @@ $id = "";
 $row['id'] = "";
 
 $user = '';
+$username = '';
 $fullname = '';
 $email = '';
 $gender = '';
@@ -22,12 +24,26 @@ $password = '';
 $password1 = '';
 $password2 = '';
 
+$username = '';
+$password = '';
+
+function GetDate()
+{
+
+    for ($i = 0; $i <= 5; $i++) {
+        print $i;
+    }
+    return 'data';
+}
+
+
 if (isset($_POST['signIn'])) {
     $username = mysqli_real_escape_string($con, trim(htmlentities($_POST['username'])));
     $password = mysqli_real_escape_string($con, trim(htmlentities($_POST['password'])));
 
     header("Location: ./admin/");
 }
+
 
 // Registration
 
@@ -90,70 +106,96 @@ if (isset($_POST['addempl'])) {
 
         // Now to hash password
         $passHash = md5($password1);
-        $sql = mysqli_query($con, "INSERT INTO employees_tb(username, fullname, email, `gender`, `status`, `woman_name`, children, `password`) VALUES('$user','$fullname','$email','$gender','$status','$woman','$children','$passHash')");
 
-        if ($sql) {
-            array_push($success, "Employee Registered ");
-        } else {
-            array_push($errors, "Somethings are wrong :(");
+        $procedure = "CREATE PROCEDURE insertEmpl(IN username VARCHAR(250), fullname VARCHAR(250), email VARCHAR(250), gender VARCHAR(250), `status` VARCHAR(250), woman VARCHAR(250), children INT, `password` VARCHAR(250))
+        BEGIN
+        INSERT INTO employees_tb(username, fullname, email, gender, `status`, woman, children, `password`) VALUES('$user', '$fullname', '$email', '$gender', '$status', '$woman', '$children', '$passHash');
+        END;
+        ";
+        if (mysqli_query($con, "DROP PROCEDURE IF EXISTS insertEmpl")) {
+            if (mysqli_query($con, $procedure)) {
+                $query = "CALL insertEmpl('" . $user . "', '" . $fullname . "', '" . $email . "', '" . $gender . "', '" . $status . "', '" . $woman . "', '" . $children . "', '" . $passHash . "')";
+                $response = mysqli_query($con, $query);
+                if ($response) {
+                    array_push($success, "Employee Registered ");
+                }
+            }
         }
+        // $sql = mysqli_query($con, "INSERT INTO employees_tb(username, fullname, email, `gender`, `status`, `woman_name`, children, `password`) VALUES('$user','$fullname','$email','$gender','$status','$woman','$children','$passHash')");
+
+        // if ($sql) {
+        //     array_push($success, "Employee Registered ");
+        // } else {
+        //     array_push($errors, "Somethings are wrong :(");
+        // }
     }
 }
 
 // Actions
 if (isset($_POST['action'])) {
     if ($_POST['action'] == 'select') {
-        $sql = mysqli_query($con, sprintf("SELECT * FROM employees_tb ORDER BY id DESC"));
+        $procedure = "CREATE PROCEDURE selectEmpl()
+        BEGIN
+         SELECT * FROM employees_tb ORDER BY id DESC;
+        END;
+        ";
 
-        if (mysqli_num_rows($sql) > 0) {
-            $output .= '
-            <table style="width: 100%;" id="example" class="table table-sm table-responsive-sm table-hover table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>Fullname</th>
-                        <th>Email</th>
-                        <th>Gender</th>
-                        <th>Marital Status</th>
-                        <th>Start date</th>
-                        <th>Events</th>
-                    </tr>
-                </thead>
-                <tbody>
-            ';
-            while ($row = mysqli_fetch_array($sql)) {
-                $output .= '
-                <tr>
-                    <td>' . $row['username'] . '</td>
-                    <td>' . $row['fullname'] . '</td>
-                    <td>' . $row['gender'] . '</td>
-                    <td>' . $row['status'] . '</td>
-                    <td>' . $row['created_at'] . '</td>
-                    <td>
-                        <div class="btn-group p-0 btn-sm event">
-                            <a href="viewemployees.php?actionEdit=' . $row['id'] . '" class="btn btn-success">
-                                <i class="fa fa-edit"></i></a>
-                            <a href="viewemployees.php?actionDelete=' . $row['id'] . '" class="btn btn-danger" title="Delete ' . $row['fullname'] . '?"><i class="fa fa-trash"></i></a>
-                        </div>
-                    </td>
-                </tr>
-                ';
+        if (mysqli_query($con, "DROP PROCEDURE IF EXISTS selectEmpl")) {
+            if (mysqli_query($con, $procedure)) {
+                $query = "CALL selectEmpl()";
+                $response = mysqli_query($con, $query);
+
+                if (mysqli_num_rows($response) > 0) {
+                    $output .= '
+                    <table style="width: 100%;" id="example" class="table table-sm table-responsive-sm table-hover table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Fullname</th>
+                                <th>Email</th>
+                                <th>Gender</th>
+                                <th>Marital Status</th>
+                                <th>Start date</th>
+                                <th>Events</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    ';
+                    while ($row = mysqli_fetch_array($response)) {
+                        $output .= '
+                        <tr>
+                            <td>' . $row['username'] . '</td>
+                            <td>' . $row['fullname'] . '</td>
+                            <td>' . $row['gender'] . '</td>
+                            <td>' . $row['status'] . '</td>
+                            <td>' . $row['created_at'] . '</td>
+                            <td>
+                                <div class="btn-group p-0 btn-sm event">
+                                    <a href="viewemployees.php?actionEdit=' . $row['id'] . '" class="btn btn-success">
+                                        <i class="fa fa-edit"></i></a>
+                                    <a href="viewemployees.php?actionDelete=' . $row['id'] . '" class="btn btn-danger" title="Delete ' . $row['fullname'] . '?"><i class="fa fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        ';
+                    }
+                    $output .= '
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Fullame</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Events</th>
+                        </tr>
+                    </tfoot>
+                </table>
+                    ';
+                } else {
+                    $output .= '<p class="alert alert-warning">There is no data registered</p>';
+                }
             }
-            $output .= '
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>Fullame</th>
-                    <th>Email</th>
-                    <th>Gender</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Events</th>
-                </tr>
-            </tfoot>
-        </table>
-            ';
-        } else {
-            $output .= '<p class="alert alert-warning">There is no data registered</p>';
         }
         print $output;
     }
