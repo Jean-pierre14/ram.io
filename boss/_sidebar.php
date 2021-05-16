@@ -23,7 +23,7 @@
                                 <ul class="mm-show">
                                     <li><a class="mm-active" href="index.php">Dashboard</a></li>
                                     <li><a href="addemployee.php">Add Employee</a></li>
-                                    <li><a href="retired.php">Human Ressource</a></li>
+                                    <li><a href="human_ressource.php">Human Ressource</a></li>
                                     <li><a href="retired.php">Retired Employees</a></li>
                                     <li><a href="viewemployee.php">View Employees</a></li>
                                     <li><a href="payslip.php">Pay Slip</a></li>
@@ -36,5 +36,5 @@
             </div>
         </div>
         <!-- <div class="app-sidebar-overlay d-none animated fadeIn"></div> -->
-</div>
+    </div>
 </div>
