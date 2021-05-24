@@ -56,8 +56,9 @@
                                             while($row = mysqli_fetch_array($sql)):?>
                                                 <div class="card mb-3">
                                                     <div class="card-header">
-                                                            <a href="viewemployees.php" class="ml-auto btn btn-sm btn-danger">Back</a>
                                                         <p class="mr-a"><?= $row['fullname'];?></p>
+                                                        <a href="viewemployees.php" class="ml-auto btn btn-sm btn-danger">Back</a>
+                                                        
                                                     </div>
                                                     <div class="card-body">
                                                         <form action="" method="post">
@@ -65,17 +66,17 @@
                                                                 <div class="col-md-4 form-group">
                                                                     <label for="username">Username</label>
                                                                     <input type="text" name="username" id="username"
-                                                                        placeholder="Username" value="<?= $username; ?>"
+                                                                        placeholder="Username" value="<?= $row['username']; ?>"
                                                                         class="form-control">
                                                                 </div>
                                                                 <div class="col-md-8 form-group">
                                                                     <label for="fullname">Fullname</label>
                                                                     <input type="text" name="fullname" id="fullname"
                                                                         placeholder="Fullname" spellcheck="false"
-                                                                        value="<?= $fullname; ?>" class="form-control">
+                                                                        value="<?= $row['fullname']; ?>" class="form-control">
                                                                 </div>
                                                                 <div class="form-group col-md-4">
-                                                                    <label for="sex">Gender</label>
+                                                                    <label for="sex">Gender &nbsp;</label><span class="badge badge-success"><?= $row['gender'];?></span>
                                                                     <select name="gender" id="sex" class="form-control">
                                                                         <option> -- Select -- </option>
                                                                         <option value="Male">Male</option>
@@ -86,10 +87,10 @@
                                                                     <label for="email">E-mail</label>
                                                                     <input type="email" name="email" id="email"
                                                                         placeholder="E-mail@ramall.cd" spellcheck="false"
-                                                                        value="<?= $email ?>" class="form-control">
+                                                                        value="<?= $row['email']; ?>" class="form-control">
                                                                 </div>
                                                                 <div class="form-group col-md-4">
-                                                                    <label for="status">Status</label>
+                                                                    <label for="status">Status &nbsp;</label><span class="badge badge-success"><?= $row['status']; ?></span>
                                                                     <select name="status" id="status" class="form-control">
                                                                         <option> -- select -- </option>
                                                                         <option value="Single">Single</option>
@@ -98,25 +99,30 @@
                                                                         <option value="Divorce">Divorce</option>
                                                                     </select>
                                                                 </div>
+                                                                <?php if($row['woman_name'] == ''):?>
+                                                                    <div class="alert alert-info">
+                                                                        <p><?= $row['fullname'];?>`s doesn't have a partern</p>
+                                                                    </div>
+                                                                <?php else:?>
                                                                 <div class="col-md-12">
                                                                     <div class="card card-body">
                                                                         <div class="row">
                                                                             <div class="form-group col-md-7">
                                                                                 <label for="woman">Woman name</label>
                                                                                 <input type="text" name="woman" id="woman"
-                                                                                    value="<?= $woman; ?>" placeholder="Woman"
+                                                                                    value="<?= $row['woman_name']; ?>" placeholder="Woman"
                                                                                     spellcheck="false" class="form-control">
                                                                             </div>
                                                                             <div class="col-md-5 form-group">
                                                                                 <label for="children">Number of children</label>
                                                                                 <input type="number" name="children" id="children"
-                                                                                    value="<?= $children; ?>"
+                                                                                    value="<?= $row['children']; ?>"
                                                                                     placeholder="Entre the number of children"
                                                                                     class="form-control">
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="mt-2 card card-body">
+                                                                    <!-- <div class="mt-2 card card-body">
                                                                         <div class="row">
                                                                             <div class="col-md-6 form-group">
                                                                                 <label for="pass">Password</label>
@@ -132,8 +138,9 @@
                                                                                     class="form-control">
                                                                             </div>
                                                                         </div>
-                                                                    </div>
+                                                                    </div> -->
                                                                 </div>
+                                                                <?php endif;?>
                                                                 <div class="form-group col-md-4 mt-2">
                                                                     <button type="submit"
                                                                         class="btn btn-block btn-warning">Update</button>
