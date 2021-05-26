@@ -45,120 +45,148 @@
                             <div class="tab-content">
                                 <div class="container-fluid">
                                     <div class="btn-group">
-                                    <a href="addemployee.php" class="mb-2 btn btn-sm btn-success">Add new</a>
-                                    <!-- <a href="viewemployees.php" class="mb-2 btn btn-sm btn-info">View list</a> -->
+                                        <a href="addemployee.php" class="mb-2 btn btn-sm btn-success">Add new</a>
+                                        <!-- <a href="viewemployees.php" class="mb-2 btn btn-sm btn-info">View list</a> -->
                                     </div>
 
-                                    <?php if (isset($_GET['actionEdit'])) : 
+                                    <?php if (isset($_GET['actionEdit'])) :
                                         $userId = $_GET['actionEdit'];
                                         $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE id = '$userId'");
-                                        if(mysqli_num_rows($sql) == 1){
-                                            while($row = mysqli_fetch_array($sql)):?>
-                                                <div class="card mb-3">
-                                                    <div class="card-header">
-                                                        <p class="mr-a"><?= $row['fullname'];?></p>
-                                                        <a href="viewemployees.php" class="ml-auto btn btn-sm btn-danger">Back</a>
-                                                        
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <form action="" method="post">
-                                                            <div class="form-row">
-                                                                <div class="col-md-4 form-group">
-                                                                    <label for="username">Username</label>
-                                                                    <input type="text" name="username" id="username"
-                                                                        placeholder="Username" value="<?= $row['username']; ?>"
-                                                                        class="form-control">
-                                                                </div>
-                                                                <div class="col-md-8 form-group">
-                                                                    <label for="fullname">Fullname</label>
-                                                                    <input type="text" name="fullname" id="fullname"
-                                                                        placeholder="Fullname" spellcheck="false"
-                                                                        value="<?= $row['fullname']; ?>" class="form-control">
-                                                                </div>
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="sex">Gender &nbsp;</label><span class="badge badge-success"><?= $row['gender'];?></span>
-                                                                    <select name="gender" id="sex" class="form-control">
-                                                                        <option> -- Select -- </option>
-                                                                        <option value="Male">Male</option>
-                                                                        <option value="Female">Female</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="email">E-mail</label>
-                                                                    <input type="email" name="email" id="email"
-                                                                        placeholder="E-mail@ramall.cd" spellcheck="false"
-                                                                        value="<?= $row['email']; ?>" class="form-control">
-                                                                </div>
-                                                                <div class="form-group col-md-4">
-                                                                    <label for="status">Status &nbsp;</label><span class="badge badge-success"><?= $row['status']; ?></span>
-                                                                    <select name="status" id="status" class="form-control">
-                                                                        <option> -- select -- </option>
-                                                                        <option value="Single">Single</option>
-                                                                        <option value="Fiance">Fiance</option>
-                                                                        <option value="Married">Married</option>
-                                                                        <option value="Divorce">Divorce</option>
-                                                                    </select>
-                                                                </div>
-                                                                <?php if($row['woman_name'] == ''):?>
-                                                                    <div class="alert alert-info">
-                                                                        <p><?= $row['fullname'];?>`s doesn't have a partern</p>
-                                                                    </div>
-                                                                <?php else:?>
-                                                                <div class="col-md-12">
-                                                                    <div class="card card-body">
-                                                                        <div class="row">
-                                                                            <div class="form-group col-md-7">
-                                                                                <label for="woman">Woman name</label>
-                                                                                <input type="text" name="woman" id="woman"
-                                                                                    value="<?= $row['woman_name']; ?>" placeholder="Woman"
-                                                                                    spellcheck="false" class="form-control">
-                                                                            </div>
-                                                                            <div class="col-md-5 form-group">
-                                                                                <label for="children">Number of children</label>
-                                                                                <input type="number" name="children" id="children"
-                                                                                    value="<?= $row['children']; ?>"
-                                                                                    placeholder="Entre the number of children"
-                                                                                    class="form-control">
-                                                                            </div>
+                                        if (mysqli_num_rows($sql) == 1) {
+                                            while ($row = mysqli_fetch_array($sql)) : ?>
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <div class="card mb-3">
+                                                <div class="card-header">
+                                                    <p class="mr-a"><?= $row['fullname']; ?></p>
+                                                    <a href="viewemployees.php"
+                                                        class="ml-auto btn btn-sm btn-danger">Back</a>
+
+                                                </div>
+                                                <div class="card-body">
+                                                    <form action="" method="post">
+                                                        <div class="form-row">
+                                                            <div class="col-md-4 form-group">
+                                                                <label for="username">Username</label>
+                                                                <input type="text" name="username" id="username"
+                                                                    placeholder="Username"
+                                                                    value="<?= $row['username']; ?>"
+                                                                    class="form-control">
+                                                            </div>
+                                                            <div class="col-md-8 form-group">
+                                                                <label for="fullname">Fullname</label>
+                                                                <input type="text" name="fullname" id="fullname"
+                                                                    placeholder="Fullname" spellcheck="false"
+                                                                    value="<?= $row['fullname']; ?>"
+                                                                    class="form-control">
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="sex">Gender &nbsp;</label><span
+                                                                    class="badge badge-success"><?= $row['gender']; ?></span>
+                                                                <select name="gender" id="sex" class="form-control">
+                                                                    <option> -- Select -- </option>
+                                                                    <option value="Male">Male</option>
+                                                                    <option value="Female">Female</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="email">E-mail</label>
+                                                                <input type="email" name="email" id="email"
+                                                                    placeholder="E-mail@ramall.cd" spellcheck="false"
+                                                                    value="<?= $row['email']; ?>" class="form-control">
+                                                            </div>
+                                                            <div class="form-group col-md-4">
+                                                                <label for="status">Status &nbsp;</label><span
+                                                                    class="badge badge-success"><?= $row['status']; ?></span>
+                                                                <select name="status" id="status" class="form-control">
+                                                                    <option> -- select -- </option>
+                                                                    <option value="Single">Single</option>
+                                                                    <option value="Fiance">Fiance</option>
+                                                                    <option value="Married">Married</option>
+                                                                    <option value="Divorce">Divorce</option>
+                                                                </select>
+                                                            </div>
+                                                            <?php if ($row['woman_name'] == '') : ?>
+                                                            <div class="alert alert-info">
+                                                                <p><?= $row['fullname']; ?>`s doesn't have a partern</p>
+                                                            </div>
+                                                            <?php else : ?>
+                                                            <div class="col-md-12">
+                                                                <div class="card card-body">
+                                                                    <div class="row">
+                                                                        <div class="form-group col-md-7">
+                                                                            <label for="woman">Woman name</label>
+                                                                            <input type="text" name="woman" id="woman"
+                                                                                value="<?= $row['woman_name']; ?>"
+                                                                                placeholder="Woman" spellcheck="false"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                        <div class="col-md-5 form-group">
+                                                                            <label for="children">Number of
+                                                                                children</label>
+                                                                            <input type="number" name="children"
+                                                                                id="children"
+                                                                                value="<?= $row['children']; ?>"
+                                                                                placeholder="Entre the number of children"
+                                                                                class="form-control">
                                                                         </div>
                                                                     </div>
-                                                                    <!-- <div class="mt-2 card card-body">
-                                                                        <div class="row">
-                                                                            <div class="col-md-6 form-group">
-                                                                                <label for="pass">Password</label>
-                                                                                <input type="password" name="password1" id="pass"
-                                                                                    value="<?= $password1; ?>"
-                                                                                    placeholder="Password" class="form-control">
-                                                                            </div>
-                                                                            <div class="col-md-6 form-group">
-                                                                                <label for="pass2">Confirm password</label>
-                                                                                <input type="password" name="password2" id="pass2"
-                                                                                    value="<?= $password2; ?>"
-                                                                                    placeholder="Confirm password"
-                                                                                    class="form-control">
-                                                                            </div>
-                                                                        </div>
-                                                                    </div> -->
-                                                                </div>
-                                                                <?php endif;?>
-                                                                <div class="form-group col-md-4 mt-2">
-                                                                    <button type="submit"
-                                                                        class="btn btn-block btn-warning">Update</button>
                                                                 </div>
                                                             </div>
-                                                        </form>
+
+                                                            <?php endif; ?>
+                                                            <div class="form-group col-md-4 mt-2">
+                                                                <button type="button"
+                                                                    class="btn btn-block btn-warning">Update</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <form action="" method="post">
+                                                        <div class="form-group">
+                                                            <label for="old_pass">Old password</label>
+                                                            <input type="password" name="old_pass" id="old_pass"
+                                                                placeholder="Old password" class="form-control">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="new_pass">new password</label>
+                                                            <input type="password" name="new_pass" id="old_pass"
+                                                                placeholder="new password" class="form-control">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <?php if ($row['status'] == 'Married') : ?>
+                                            <div class="card mt-2">
+                                                <div class="card-header">
+                                                    <p>Children</p>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div id="resultChildren">
+                                                        <p class="alert alert-warning">You may insert information about
+                                                            he/her kid but network is bad</p>
                                                     </div>
                                                 </div>
-                                            <?php endwhile;
-                                        }else{
+                                            </div>
+                                        </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <?php endwhile;
+                                        } else {
                                             ?>
-                                            <p class="alert alert-danger">
-                                                Sorry but this userID <b><?= $userId; ?></b> doesn't exist :(
-                                            </p>
-                                            <?php
+                                    <p class="alert alert-danger">
+                                        Sorry but this userID <b><?= $userId; ?></b> doesn't exist :(
+                                    </p>
+                                    <?php
                                         }
                                         ?>
-                                        
+
                                     <?php else : ?>
 
                                     <div class="card mb-3">

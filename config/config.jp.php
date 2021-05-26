@@ -133,6 +133,10 @@ if (isset($_POST['addempl'])) {
 
 // Actions
 if (isset($_POST['action'])) {
+    // children container For loop
+    if ($_POST['action'] == 'children') {
+        print 'Cool';
+    }
     // Dashboard
     if ($_POST['action'] == 'allEmployees') {
         $sql = mysqli_query($con, "SELECT COUNT(*) AS idCount FROM employees_tb WHERE oper = 'OPERATIONNEL'");

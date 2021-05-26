@@ -7,7 +7,26 @@ $(document).ready(function() {
     allEmployees()
     M_empl()
     W_empl()
+    children()
 })
+// Children
+function children() {
+    let action = 'children'
+    let countKid = $('#children').val()
+    $.ajax({
+        url: '../config/config.jp.php',
+        method: 'POST',
+        data: {
+            action,
+            countKid
+        },
+        success: function(data) {
+
+            $('#resultChildren').html(data)
+        }
+    })
+}
+
 // Dashboard
 function allEmployees() {
     let action = 'allEmployees'
