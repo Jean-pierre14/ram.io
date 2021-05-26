@@ -62,13 +62,12 @@
                                                     <p class="mr-a"><?= $row['fullname']; ?></p>
                                                     <a href="viewemployees.php"
                                                         class="ml-auto btn btn-sm btn-danger">Back</a>
-
                                                 </div>
                                                 <div class="card-body">
                                                     <?php
                                                                 include './_error.php'; ?>
                                                     <form action="" method="post">
-                                                        <input type="text" name="userIdGet"
+                                                        <input type="hidden" name="userIdGet"
                                                             value="<?= $_GET['actionEdit']; ?>" class="form-control">
                                                         <div class="form-row">
                                                             <div class="col-md-4 form-group">
