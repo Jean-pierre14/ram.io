@@ -1,6 +1,7 @@
 <?php
 $numero = "(+243) 976-353-543";
 $prooject_name = "RamaLL";
+$number_of_children = 4;
 
 $con = mysqli_connect("localhost", "root", "", "ramall") or die("Couln't connect to the database");
 
@@ -135,7 +136,23 @@ if (isset($_POST['addempl'])) {
 if (isset($_POST['action'])) {
     // children container For loop
     if ($_POST['action'] == 'children') {
-        print 'Cool';
+        $count = mysqli_real_escape_string($con, trim(htmlentities($_POST['countKid'])));
+        $output .= '<form action="" method="post">';
+        for ($i = 1; $i < $count; $i++) {
+            if ($count == 3) {
+
+                break;
+            }
+            $output .= '
+                <div class="form-group">
+                    <label for="childres' . $i . '">Kid ' . $i . '</label>
+                    <input type="text" class="form-control" placeholder="Kid ' . $i . '" name="children' . $i . '">
+                </div>';
+        }
+        $output .= '
+            <button type="submit" class="btn btn-block btn-success">Register</button>
+        </form>';
+        print $output;
     }
     // Dashboard
     if ($_POST['action'] == 'allEmployees') {

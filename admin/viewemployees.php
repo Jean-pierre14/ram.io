@@ -65,6 +65,8 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <form action="" method="post">
+                                                        <input type="text" name="userIdGet" value="<?= $row['id']; ?>"
+                                                            id="userIdGet" class="form-control">
                                                         <div class="form-row">
                                                             <div class="col-md-4 form-group">
                                                                 <label for="username">Username</label>
@@ -136,8 +138,9 @@
 
                                                             <?php endif; ?>
                                                             <div class="form-group col-md-4 mt-2">
-                                                                <button type="button"
-                                                                    class="btn btn-block btn-warning">Update</button>
+                                                                <button type="submit" name="UpdateUserGET"
+                                                                    id="<?= $row['id']; ?>"
+                                                                    class="UpdateUserGET btn btn-block btn-warning">Update</button>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -163,7 +166,7 @@
                                                 </div>
                                             </div>
                                             <?php if ($row['status'] == 'Married') : ?>
-                                            <div class="card mt-2">
+                                            <div class="card my-2">
                                                 <div class="card-header">
                                                     <p>Children</p>
                                                 </div>
