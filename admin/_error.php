@@ -29,9 +29,10 @@
 
     <?php if (count($success) > 0) : ?>
     <?php foreach ($success as $dat) : ?>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <div class="m-1 alert alert-success alert-dismissible fade show" role="alert">
         <?= $dat; ?>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">Remove</button>
+        <buttontype="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
     </div>
     <?php endforeach; ?>
 </div>

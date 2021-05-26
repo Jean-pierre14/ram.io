@@ -132,26 +132,85 @@ if (isset($_POST['addempl'])) {
     }
 }
 
+// Update
+if (isset($_POST['UpdateUserGET'])) {
+    $id = $_POST['userIdGet'];
+    $user = mysqli_real_escape_string($con, trim(htmlentities($_POST['username'])));
+    $fullname = mysqli_real_escape_string($con, trim(htmlentities($_POST['fullname'])));
+    $gender = mysqli_real_escape_string($con, trim(htmlentities($_POST['gender'])));
+    $email = mysqli_real_escape_string($con, trim(htmlentities($_POST['email'])));
+    $status = mysqli_real_escape_string($con, trim(htmlentities($_POST['status'])));
+
+    // To check if fields are not empty
+    if (empty($user)) {
+        array_push($errors, "Username is required");
+    }
+    if (empty($user)) {
+        array_push($errors, "Fullname is required");
+    }
+    if (empty($gender)) {
+        array_push($errors, "Gender is required");
+    }
+    if (empty($email)) {
+        array_push($errors, "Email is required");
+    }
+    if (empty($status)) {
+        array_push($errors, "Status is required");
+    }
+
+    $check = mysqli_query($con, "SELECT * FROM employees_tb WHERE id != $id");
+    $data = @mysqli_fetch_array($check);
+
+    if ($user == $data['username']) {
+        array_push($errors, "Username used by another user");
+    }
+    if ($fullname == $data['username']) {
+        array_push($errors, "Username used by another user");
+    }
+
+    if (count($errors) == 0) {
+        $sql = mysqli_query($con, "UPDATE employees_tb SET username = '$user', fullname = '$fullname', gender = '$gender', `status` = '$status' WHERE id = $id");
+        if ($sql) {
+?>
+<script>
+window.location.href = 'viewemployees.php'
+</script>
+<?php
+        } else {
+            array_push($errors, "Something is going wrong");
+        }
+    }
+}
+
+
 // Actions
 if (isset($_POST['action'])) {
     // children container For loop
     if ($_POST['action'] == 'children') {
-        $count = mysqli_real_escape_string($con, trim(htmlentities($_POST['countKid'])));
-        $output .= '<form action="" method="post">';
-        for ($i = 1; $i < $count; $i++) {
-            if ($count == 3) {
+        $count = '';
+        $count = @mysqli_real_escape_string($con, trim(htmlentities($_POST['countKid'])));
+        if ($count != '') {
+            $output .= '<form action="" method="post">';
+            for ($i = 1; $i < $count; $i++) {
+                if ($count == 3) {
 
-                break;
-            }
-            $output .= '
+                    break;
+                }
+                $output .= '
                 <div class="form-group">
                     <label for="childres' . $i . '">Kid ' . $i . '</label>
                     <input type="text" class="form-control" placeholder="Kid ' . $i . '" name="children' . $i . '">
                 </div>';
-        }
-        $output .= '
+            }
+            $output .= '
             <button type="submit" class="btn btn-block btn-success">Register</button>
         </form>';
+        } else {
+            $output .= '<form action="" method="post">
+                <label for="event">Entre the number of kid</label>
+                <input type="number" class="form-control" name="num_of_kid" id="num_of_kid" placeholder="Entre the number"/>
+            </form>';
+        }
         print $output;
     }
     // Dashboard

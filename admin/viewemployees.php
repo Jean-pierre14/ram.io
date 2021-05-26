@@ -56,6 +56,7 @@
                                             while ($row = mysqli_fetch_array($sql)) : ?>
                                     <div class="row">
                                         <div class="col-md-7">
+
                                             <div class="card mb-3">
                                                 <div class="card-header">
                                                     <p class="mr-a"><?= $row['fullname']; ?></p>
@@ -64,9 +65,11 @@
 
                                                 </div>
                                                 <div class="card-body">
+                                                    <?php
+                                                                include './_error.php'; ?>
                                                     <form action="" method="post">
-                                                        <input type="text" name="userIdGet" value="<?= $row['id']; ?>"
-                                                            id="userIdGet" class="form-control">
+                                                        <input type="text" name="userIdGet"
+                                                            value="<?= $_GET['actionEdit']; ?>" class="form-control">
                                                         <div class="form-row">
                                                             <div class="col-md-4 form-group">
                                                                 <label for="username">Username</label>
