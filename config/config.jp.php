@@ -173,6 +173,19 @@ window.location.href = 'viewemployees.php'
 
 // Actions
 if (isset($_POST['action'])) {
+    // UPdate account partner
+    if ($_POST['action'] == 'addPartner') {
+        $id = $_POST['id'];
+        $partner = mysqli_real_escape_string($con, trim($_POST['woman']));
+
+        if (empty($partner)) {
+            print 'error';
+        }
+        if (count($errors) == 0) {
+            $sql = mysqli_query($con, "UPDATE employees_tb SET woman_name = '$partner' WHERE id = $id");
+            print 'success';
+        }
+    }
     // children container For loop
     if ($_POST['action'] == 'children') {
         $count = '';

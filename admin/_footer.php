@@ -12,8 +12,30 @@ $(document).ready(function() {
         $('.addWomanForm').fadeToggle("slow")
     })
     $('#AddWomanBtn').click(function() {
+        let action = 'addPartner'
         let id = $('#userIdGet').val()
-        alert(id)
+        let woman = $('#woman').val()
+        if (!woman || woman === '' || woman === undefined || woman.length < 4) {
+            $('#errorsAjax').html('<p class="alert alert-danger">Invalid name</p>')
+        } else {
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    woman
+                },
+                success: function(data) {
+                    if (data === 'success') {
+                        window.location.href = `viewemployees.php?actionEdit=${id}`
+                    } else {
+                        $('#errorsAjax').html(
+                            '<p class="alert alert-danger">Invalid name</p>')
+                    }
+                }
+            })
+        }
     })
 })
 

@@ -67,7 +67,7 @@
                                                     <?php
                                                                 include './_error.php'; ?>
                                                     <form action="" method="post">
-                                                        <input type="hidden" name="userIdGet"
+                                                        <input type="hidden" name="userIdGet" id="userIdGet"
                                                             value="<?= $_GET['actionEdit']; ?>" class="form-control">
                                                         <div class="form-row">
                                                             <div class="col-md-4 form-group">
@@ -128,7 +128,8 @@
                                                                         class="addWoman btn btn-sm btn-warning">Add
                                                                         Partner
                                                                     </button>
-                                                                    <button type="button" style="display: none;"
+                                                                    <button type="button" id="AddWomanBtn"
+                                                                        style="display: none;"
                                                                         class="addWomanForm btn btn-sm btn-success">
                                                                         Register
                                                                     </button>
