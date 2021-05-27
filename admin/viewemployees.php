@@ -88,7 +88,7 @@
                                                                 <label for="sex">Gender &nbsp;</label><span
                                                                     class="badge badge-success"><?= $row['gender']; ?></span>
                                                                 <select name="gender" id="sex" class="form-control">
-                                                                    <option> -- Select -- </option>
+                                                                    <option value=""> -- Select -- </option>
                                                                     <option value="Male">Male</option>
                                                                     <option value="Female">Female</option>
                                                                 </select>
@@ -103,7 +103,7 @@
                                                                 <label for="status">Status &nbsp;</label><span
                                                                     class="badge badge-success"><?= $row['status']; ?></span>
                                                                 <select name="status" id="status" class="form-control">
-                                                                    <option> -- select -- </option>
+                                                                    <option value=""> -- select -- </option>
                                                                     <option value="Single">Single</option>
                                                                     <option value="Fiance">Fiance</option>
                                                                     <option value="Married">Married</option>
@@ -167,7 +167,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                            <?php if ($row['status'] == 'Married') : ?>
+                                            <?php if ($row['children'] != '') : ?>
                                             <div class="card my-2">
                                                 <div class="card-header">
                                                     <p>Children</p>
