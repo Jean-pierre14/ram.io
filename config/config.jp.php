@@ -107,28 +107,16 @@ if (isset($_POST['addempl'])) {
 
         // Now to hash password
         $passHash = md5($password1);
+        $oper = 'OPERATIONNEL';
 
-        $procedure = "CREATE PROCEDURE insertEmpl(IN username VARCHAR(250), fullname VARCHAR(250), email VARCHAR(250), gender VARCHAR(250), `status` VARCHAR(250), woman VARCHAR(250), children INT, `password` VARCHAR(250))
-        BEGIN
-        INSERT INTO employees_tb(username, fullname, email, gender, `status`, woman, children, `password`) VALUES('$user', '$fullname', '$email', '$gender', '$status', '$woman', '$children', '$passHash');
-        END;
-        ";
-        if (mysqli_query($con, "DROP PROCEDURE IF EXISTS insertEmpl")) {
-            if (mysqli_query($con, $procedure)) {
-                $query = "CALL insertEmpl('" . $user . "', '" . $fullname . "', '" . $email . "', '" . $gender . "', '" . $status . "', '" . $woman . "', '" . $children . "', '" . $passHash . "')";
-                $response = mysqli_query($con, $query);
-                if ($response) {
-                    array_push($success, "Employee Registered ");
-                }
-            }
+        $sql = mysqli_query($con, "INSERT INTO employees_tb(username, fullname, email, `gender`, `status`,oper, `woman_name`, children, `password`) VALUES('$user','$fullname','$email','$gender','$status', '$oper', '$woman','$children','$passHash')");
+
+        if ($sql) {
+            header("Location: viewemployees.php");
+            array_push($success, "Employee Registered ");
+        } else {
+            array_push($errors, "Somethings are wrong :(");
         }
-        // $sql = mysqli_query($con, "INSERT INTO employees_tb(username, fullname, email, `gender`, `status`, `woman_name`, children, `password`) VALUES('$user','$fullname','$email','$gender','$status','$woman','$children','$passHash')");
-
-        // if ($sql) {
-        //     array_push($success, "Employee Registered ");
-        // } else {
-        //     array_push($errors, "Somethings are wrong :(");
-        // }
     }
 }
 
@@ -191,9 +179,8 @@ if (isset($_POST['action'])) {
         $count = @mysqli_real_escape_string($con, trim(htmlentities($_POST['countKid'])));
         if ($count != '') {
             $output .= '<form action="" method="post">';
-            for ($i = 1; $i < $count; $i++) {
+            for ($i = 1; $i <= $count; $i++) {
                 if ($count == 3) {
-
                     break;
                 }
                 $output .= '

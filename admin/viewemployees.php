@@ -62,13 +62,12 @@
                                                     <p class="mr-a"><?= $row['fullname']; ?></p>
                                                     <a href="viewemployees.php"
                                                         class="ml-auto btn btn-sm btn-danger">Back</a>
-
                                                 </div>
                                                 <div class="card-body">
                                                     <?php
                                                                 include './_error.php'; ?>
                                                     <form action="" method="post">
-                                                        <input type="text" name="userIdGet"
+                                                        <input type="hidden" name="userIdGet"
                                                             value="<?= $_GET['actionEdit']; ?>" class="form-control">
                                                         <div class="form-row">
                                                             <div class="col-md-4 form-group">
@@ -89,7 +88,7 @@
                                                                 <label for="sex">Gender &nbsp;</label><span
                                                                     class="badge badge-success"><?= $row['gender']; ?></span>
                                                                 <select name="gender" id="sex" class="form-control">
-                                                                    <option> -- Select -- </option>
+                                                                    <option value=""> -- Select -- </option>
                                                                     <option value="Male">Male</option>
                                                                     <option value="Female">Female</option>
                                                                 </select>
@@ -104,7 +103,7 @@
                                                                 <label for="status">Status &nbsp;</label><span
                                                                     class="badge badge-success"><?= $row['status']; ?></span>
                                                                 <select name="status" id="status" class="form-control">
-                                                                    <option> -- select -- </option>
+                                                                    <option value=""> -- select -- </option>
                                                                     <option value="Single">Single</option>
                                                                     <option value="Fiance">Fiance</option>
                                                                     <option value="Married">Married</option>
@@ -113,7 +112,27 @@
                                                             </div>
                                                             <?php if ($row['woman_name'] == '') : ?>
                                                             <div class="alert alert-info">
-                                                                <p><?= $row['fullname']; ?>`s doesn't have a partern</p>
+                                                                <p>
+                                                                    <?= $row['fullname']; ?>`s doesn't have a partern
+                                                                </p>
+                                                                <p class="errorsAjax"></p>
+                                                                <div class="form-group addWomanForm"
+                                                                    style="display: none;">
+                                                                    <label for="woman">Partner name</label>
+                                                                    <input type="text" name="woman" id="woman"
+                                                                        placeholder="Enter the name"
+                                                                        class="form-control">
+                                                                </div>
+                                                                <div class="btn-group">
+                                                                    <button type="button"
+                                                                        class="addWoman btn btn-sm btn-warning">Add
+                                                                        Partner
+                                                                    </button>
+                                                                    <button type="button" style="display: none;"
+                                                                        class="addWomanForm btn btn-sm btn-success">
+                                                                        Register
+                                                                    </button>
+                                                                </div>
                                                             </div>
                                                             <?php else : ?>
                                                             <div class="col-md-12">
@@ -168,7 +187,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                            <?php if ($row['status'] == 'Married') : ?>
+                                            <?php if ($row['children'] != '') : ?>
                                             <div class="card my-2">
                                                 <div class="card-header">
                                                     <p>Children</p>
