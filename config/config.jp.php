@@ -188,12 +188,12 @@ if (isset($_POST['action'])) {
     }
     // children container For loop
     if ($_POST['action'] == 'children') {
-        $count = '';
+        $count = 0;
         $count = @mysqli_real_escape_string($con, trim(htmlentities($_POST['countKid'])));
-        if ($count != '') {
+        if ($count != 0) {
             $output .= '<form action="" method="post">';
             for ($i = 1; $i <= $count; $i++) {
-                if ($count == 3) {
+                if ($count == 4) {
                     break;
                 }
                 $output .= '
@@ -206,10 +206,7 @@ if (isset($_POST['action'])) {
             <button type="submit" class="btn btn-block btn-success">Register</button>
         </form>';
         } else {
-            $output .= '<form action="" method="post">
-                <label for="event">Entre the number of kid</label>
-                <input type="number" class="form-control" name="num_of_kid" id="num_of_kid" placeholder="Entre the number"/>
-            </form>';
+            $output .= '<p class="badge badge-info">Enter the number kid</p>';
         }
         print $output;
     }

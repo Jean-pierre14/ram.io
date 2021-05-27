@@ -37,6 +37,27 @@ $(document).ready(function() {
             })
         }
     })
+    $('#children').keyup(function() {
+        let action = 'children'
+        let countKid = $(this).val()
+        if (countKid < 0) {
+            $('#errorChildren').html('<p class="alert alert-danger">What do you want?</p>')
+        } else {
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'POST',
+                data: {
+                    action,
+                    countKid
+                },
+                success: function(data) {
+                    $('#errorChildren').html('')
+                    $('#resultChildren2').html(data)
+                }
+            })
+        }
+
+    })
 })
 
 var myAlert = document.getElementById('myAlert')

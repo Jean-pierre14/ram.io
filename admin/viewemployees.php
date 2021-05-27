@@ -147,9 +147,10 @@
                                                                                 class="form-control">
                                                                         </div>
                                                                         <div class="col-md-5 form-group">
+                                                                            <div id="errorChildren"></div>
                                                                             <label for="children">Number of
                                                                                 children</label>
-                                                                            <input type="number" name="children"
+                                                                            <input type="number" max="3" name="children"
                                                                                 id="children"
                                                                                 value="<?= $row['children']; ?>"
                                                                                 placeholder="Entre the number of children"
@@ -194,6 +195,7 @@
                                                     <p>Children</p>
                                                 </div>
                                                 <div class="card-body">
+                                                    <div id="resultChildren2"></div>
                                                     <div id="resultChildren">
                                                         <p class="alert alert-warning">You may insert information about
                                                             he/her kid but network is bad</p>
