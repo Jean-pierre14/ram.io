@@ -107,10 +107,12 @@ if (isset($_POST['addempl'])) {
 
         // Now to hash password
         $passHash = md5($password1);
+        $oper = 'OPERATIONNEL';
 
-        $sql = mysqli_query($con, "INSERT INTO employees_tb(username, fullname, email, `gender`, `status`, `woman_name`, children, `password`) VALUES('$user','$fullname','$email','$gender','$status','$woman','$children','$passHash')");
+        $sql = mysqli_query($con, "INSERT INTO employees_tb(username, fullname, email, `gender`, `status`,oper, `woman_name`, children, `password`) VALUES('$user','$fullname','$email','$gender','$status', '$oper', '$woman','$children','$passHash')");
 
         if ($sql) {
+            header("Location: viewemployees.php");
             array_push($success, "Employee Registered ");
         } else {
             array_push($errors, "Somethings are wrong :(");

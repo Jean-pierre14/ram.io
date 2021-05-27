@@ -32,7 +32,7 @@
         <?php foreach ($success as $dat) : ?>
         <div class="m-1 alert alert-success alert-dismissible fade show" role="alert">
             <?= $dat; ?>
-            <buttontype="button" class="close" data-dismiss="alert" aria-label="Close"><span
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                     aria-hidden="true">&times;</span></button>
         </div>
         <?php endforeach; ?>

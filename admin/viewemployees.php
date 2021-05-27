@@ -112,7 +112,27 @@
                                                             </div>
                                                             <?php if ($row['woman_name'] == '') : ?>
                                                             <div class="alert alert-info">
-                                                                <p><?= $row['fullname']; ?>`s doesn't have a partern</p>
+                                                                <p>
+                                                                    <?= $row['fullname']; ?>`s doesn't have a partern
+                                                                </p>
+                                                                <p class="errorsAjax"></p>
+                                                                <div class="form-group addWomanForm"
+                                                                    style="display: none;">
+                                                                    <label for="woman">Partner name</label>
+                                                                    <input type="text" name="woman" id="woman"
+                                                                        placeholder="Enter the name"
+                                                                        class="form-control">
+                                                                </div>
+                                                                <div class="btn-group">
+                                                                    <button type="button"
+                                                                        class="addWoman btn btn-sm btn-warning">Add
+                                                                        Partner
+                                                                    </button>
+                                                                    <button type="button" style="display: none;"
+                                                                        class="addWomanForm btn btn-sm btn-success">
+                                                                        Register
+                                                                    </button>
+                                                                </div>
                                                             </div>
                                                             <?php else : ?>
                                                             <div class="col-md-12">

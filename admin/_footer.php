@@ -8,6 +8,13 @@ $(document).ready(function() {
     M_empl()
     W_empl()
     children()
+    $('.addWoman').click(function() {
+        $('.addWomanForm').fadeToggle("slow")
+    })
+    $('#AddWomanBtn').click(function() {
+        let id = $('#userIdGet').val()
+        alert(id)
+    })
 })
 
 var myAlert = document.getElementById('myAlert')
