@@ -1,6 +1,20 @@
 <script src="../js/vendor/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="assets/scripts/main.07a59de7b920cd76b874.js"></script>
 <script>
+function Retired() {
+    let action = 'retired'
+
+    $.ajax({
+        url: '../config/config.jp.php',
+        method: 'post',
+        data: {
+            action
+        },
+        success: function(data) {
+            $('#resultRetired').html(data)
+        }
+    })
+}
 $(document).ready(function() {
     select()
     select2()
@@ -8,6 +22,8 @@ $(document).ready(function() {
     M_empl()
     W_empl()
     children()
+
+    Retired()
     $('.addWoman').click(function() {
         $('.addWomanForm').fadeToggle("slow")
     })
@@ -81,8 +97,8 @@ $(document).ready(function() {
                 },
                 success: function(data) {
                     if (data === 'success') {
-                        window.location.href = `viewemployees.php?actionEdit=${id}`
-                        $('#errorSalary').html('')
+                        window.location.href = `viewemployees.php`
+
                     } else {
                         $('#errorSalary').html(
                             '<p class="alert alert-danger">Event fail</p>')
