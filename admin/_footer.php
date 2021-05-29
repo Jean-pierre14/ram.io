@@ -98,7 +98,6 @@ $(document).ready(function() {
                 success: function(data) {
                     if (data === 'success') {
                         window.location.href = `viewemployees.php`
-
                     } else {
                         $('#errorSalary').html(
                             '<p class="alert alert-danger">Event fail</p>')

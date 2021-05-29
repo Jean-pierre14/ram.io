@@ -44,9 +44,14 @@
                         <div class="app-inner-layout__content">
                             <div class="tab-content">
                                 <div class="container-fluid">
+                                    <form action="" method="post">
+                                        <div class="form-group">
+                                            <input type="search" name="search" id="search_retired"
+                                                placeholder="Search..." class="form-control">
+                                        </div>
+                                    </form>
                                     <div class="card card-body">
                                         <div id="resultRetired"></div>
-
                                     </div>
                                 </div>
                             </div>

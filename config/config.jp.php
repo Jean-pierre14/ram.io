@@ -227,11 +227,11 @@ if (isset($_POST['action'])) {
                                 </div>
                             </div>
                             <div class="widget-content-right widget-content-actions">
-                                <button
+                                <a href="viewemployees.php?actionEdit=' . $row['id'] . '" id="' . $row['id'] . '"
                                     class="border-0 btn-transition btn btn-outline-success">
                                     <i class="fa fa-check"></i>
-                                </button>
-                                <button
+                                </a>
+                                <button id="' . $row['id'] . '"
                                     class="border-0 btn-transition btn btn-outline-danger">
                                     <i class="fa fa-trash-alt"></i>
                                 </button>
@@ -326,7 +326,7 @@ if (isset($_POST['action'])) {
     if ($_POST['action'] == 'select') {
         $procedure = "CREATE PROCEDURE selectEmpl()
         BEGIN
-         SELECT * FROM employees_tb ORDER BY id DESC;
+         SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL' ORDER BY id DESC ;
         END;
         ";
 
