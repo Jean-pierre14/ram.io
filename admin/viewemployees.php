@@ -177,16 +177,17 @@
                                                 <div class="card-body">
                                                     <form action="" method="post">
                                                         <div class="form-group">
-                                                            <label for="oper">Oper</label> <span
-                                                                class="badge badge-success"><?= $row['oper']; ?></span>
+                                                            <label for="oper">Oper</label>
+                                                            <span class="badge badge-success"><?= $row['oper']; ?>
+                                                            </span>
                                                             <select name="oper" id="oper" class="form-control">
                                                                 <option value="">-- select --</option>
                                                                 <option value="OPERATIONNEL">Operationnel</option>
                                                                 <option value="RETIRED">Retired</option>
                                                                 <option value="REMOVED">Removed</option>
                                                             </select>
-                                                            <button class="my-1 btn btn-success"
-                                                                type="button">Record</button>
+                                                            <button class="my-1 btn_oper btn btn-success" type="button"
+                                                                id="<?= $row['id']; ?>">Record</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -194,15 +195,17 @@
                                             <div class="card my-1">
                                                 <div class="card-body">
                                                     <form action="" method="post">
+                                                        <div id="errorSalary"></div>
                                                         <div class="form-group">
-                                                            <label for="old_pass">Old password</label>
-                                                            <input type="password" name="old_pass" id="old_pass"
-                                                                placeholder="Old password" class="form-control">
+                                                            <label for="salary">Salary</label> <span
+                                                                class="badge badge-success"><?= $row['salary']; ?></span>
+                                                            <input type="number" id="salary"
+                                                                value="<?= $row['salary']; ?>"
+                                                                placeholder="Enter salary" class="form-control">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="new_pass">new password</label>
-                                                            <input type="password" name="new_pass" id="old_pass"
-                                                                placeholder="new password" class="form-control">
+                                                            <button class="btn btn-success btn_salary"
+                                                                id="<?= $row['id']; ?>">Record</button>
                                                         </div>
                                                     </form>
                                                 </div>

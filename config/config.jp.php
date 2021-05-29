@@ -186,6 +186,38 @@ if (isset($_POST['action'])) {
             print 'success';
         }
     }
+    // Update oper
+    if ($_POST['action'] == 'oper') {
+        $id = $_POST['id'];
+        $oper = mysqli_real_escape_string($con, $_POST['operVal']);
+
+        $sql = mysqli_query($con, "UPDATE employees_tb SET oper = '$oper' WHERE id = $id");
+        if ($sql) {
+            print 'success';
+        } else {
+            print 'error';
+        }
+    }
+    // salary 
+    if ($_POST['action'] == 'salary') {
+        $id = $_POST['id'];
+        $salary = mysqli_real_escape_string($con, trim(htmlentities($_POST['salaryVal'])));
+
+        if (empty($salary)) {
+            array_push($errors, "Error");
+        }
+
+        if (count($errors) == 0) {
+            $sql = mysqli_query($con, "UPDATE employees_tb SET salary = '$salary' WHERE id = $id");
+            if ($sql) {
+                print 'success';
+            } else {
+                print 'error';
+            }
+        } else {
+            print 'error';
+        }
+    }
     // children container For loop
     if ($_POST['action'] == 'children') {
         $count = 0;

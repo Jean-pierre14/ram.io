@@ -37,6 +37,60 @@ $(document).ready(function() {
             })
         }
     })
+    $('.btn_oper').click(function() {
+        let id = $(this).attr('id')
+        let action = 'oper'
+        let operVal = $('#oper').val()
+        if (operVal !== '' || operVal !== undefined) {
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'POST',
+                data: {
+                    id,
+                    operVal,
+                    action
+                },
+                success: function(data) {
+                    if (data === 'success') {
+                        window.location.href = `viewemployees.php`
+                    } else {
+                        $('#errorOper').html('')
+                    }
+                }
+            })
+        } else {
+            $('#errorOper').html(
+                '<p class="alert alert-danger alert-dismissible">Change or letf joker with me</p>')
+        }
+    })
+    $('.btn_salary').click(function() {
+        let action = 'salary'
+        let id = $(this).attr('id')
+        let salaryVal = $('#salary').val()
+
+        if (salaryVal === '' || salaryVal === undefined) {
+            $('#errorSalary').html('<p class="alert alert-danger">Invalid Salary</p>')
+        } else {
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'post',
+                data: {
+                    id,
+                    action,
+                    salaryVal
+                },
+                success: function(data) {
+                    if (data === 'success') {
+                        window.location.href = `viewemployees.php?actionEdit=${id}`
+                        $('#errorSalary').html('')
+                    } else {
+                        $('#errorSalary').html(
+                            '<p class="alert alert-danger">Event fail</p>')
+                    }
+                }
+            })
+        }
+    })
     $('#children').keyup(function() {
         let action = 'children'
         let countKid = $(this).val()
