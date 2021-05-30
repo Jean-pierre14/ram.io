@@ -367,7 +367,7 @@ if (isset($_POST['action'])) {
                                 <div class="btn-group p-0 btn-sm event">
                                     <a href="viewemployees.php?actionEdit=' . $row['id'] . '" class="btn btn-success">
                                         <i class="fa fa-edit"></i></a>
-                                    <a href="viewemployees.php?actionDelete=' . $row['id'] . '" class="btn btn-danger" title="Delete ' . $row['fullname'] . '?"><i class="fa fa-trash"></i></a>
+                                    <button type="button" id="' . $row['id'] . '" class="deleteEmpl btn btn-danger" title="Delete ' . $row['fullname'] . '?"><i class="fa fa-trash"></i></button>
                                 </div>
                             </td>
                         </tr>
@@ -393,6 +393,27 @@ if (isset($_POST['action'])) {
             }
         }
         print $output;
+    }
+    // Delete
+    if ($_POST['action'] == 'deleteEmpl') {
+        $id = $_POST['id'];
+        $getEmpl = mysqli_query($con, "SELECT * FROM employees_tb WHERE id = $id");
+        if (@mysqli_num_rows($getEmpl) == 1) {
+            $fetch = mysqli_fetch_array($getEmpl);
+            $remove = mysqli_query($con, "INSERT INTO deleted_tb (username, fullname, email, gender, salary, `status`, `password`, woman_name, children, oper, created_at) VALUES('" . $fetch['username'] . "','" . $fetch['fullname'] . "','" . $fetch['email'] . "','" . $fetch['gender'] . "','" . $fetch['salary'] . "','" . $fetch['`status`'] . "', '" . $fetch['`password`'] . "','" . $fetch['woman_name'] . "', '" . $fetch['children'] . "', '" . $fetch['oper'] . "', '" . $fetch['created_at'] . "')");
+            if ($remove) {
+                $sql = mysqli_query($con, "DELETE FROM employees_tb WHERE id = $id");
+                if ($sql) {
+                    print 'success';
+                } else {
+                    print 'error sql';
+                }
+            } else {
+                print 'error remove';
+            }
+        } else {
+            print 'error';
+        }
     }
     if ($_POST['action'] == 'select2') {
         $procedure = "CREATE PROCEDURE selectEmpl2()

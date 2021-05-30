@@ -24,6 +24,25 @@ $(document).ready(function() {
     children()
 
     Retired()
+    $(document).on('click', '.deleteEmpl', function() {
+        let id = $(this).attr('id')
+        let action = 'deleteEmpl'
+        if (confirm("Do really want to delete this person?")) {
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'post',
+                data: {
+                    action,
+                    id
+                },
+                success: function(data) {
+                    select()
+                }
+            })
+        } else {
+            return false
+        }
+    })
     $('#search_retired').keyup(function() {
         let txt = $(this).val()
         let action = 'search_retired'
