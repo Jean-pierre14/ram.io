@@ -42,7 +42,34 @@ if (isset($_POST['signIn'])) {
     $username = mysqli_real_escape_string($con, trim(htmlentities($_POST['username'])));
     $password = mysqli_real_escape_string($con, trim(htmlentities($_POST['password'])));
 
-    header("Location: ./admin/");
+    if (empty($username)) {
+        array_push($errors, "Username is blank");
+    }
+    if (empty($password)) {
+        array_push($errors, "Password is blank");
+    }
+
+    if (count($errors) == 0) {
+        $pass = md5($password);
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE (username = '$username' AND `password` = '$pass')");
+        if (mysqli_num_rows($sql) == 1) {
+            session_start();
+            $_SESSION = @mysqli_fetch_array($sql, MYSQLI_ASSOC);
+            $_SESSION['autho'] = (int)$_SESSION['autho'];
+
+            if ($_SESSION['autho'] === 1) {
+                $url = './admin/';
+            } elseif ($_SESSION['autho'] === 2) {
+                $url = './boss/';
+            } else {
+                $url = './users/';
+            }
+            header("Location: " . $url);
+        } else {
+            array_push($errors, "Username or Password invalid");
+        }
+    }
+    // header("Location: ./admin/");
 }
 
 

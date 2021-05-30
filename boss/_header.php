@@ -17,7 +17,7 @@ include '../config/config.jp.php';
     <link rel="shortcut icon" href="./assets/images/ramallLogo.png" type="image/x-icon">
     <meta name="msapplication-tap-highlight" content="no">
 
-    <link href="../admin/main.07a59de7b920cd76b874.css" rel="stylesheet">
+    <link href="main.07a59de7b920cd76b874.css" rel="stylesheet">
     <style>
     .event {
         visibility: hidden;
