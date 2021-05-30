@@ -1,6 +1,8 @@
 <?php
 include '../config/config.jp.php';
+
 ?>
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />

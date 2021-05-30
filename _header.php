@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
-
-<!-- Mirrored from preview.colorlib.com/theme/coffee/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 08:36:57 GMT -->
+<html lang="en">
 
 <head>
 
@@ -31,9 +29,8 @@
 </head>
 
 <body>
-    <?php include './config/config.jp.php'; ?>
+    <?php include './config/config.jp.php';
 
-    <?php
     session_start();
     if ($_SESSION['autho'] == 1) {
         header("Location: ./admin/");
