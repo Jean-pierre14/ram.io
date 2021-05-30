@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="widget-content-right mr-2">
-        <a href="logout.php" class="btn-pill btn-shadow btn-shine btn btn-focus">Logout
+        <a href="../logout.php" class="btn-pill btn-shadow btn-shine btn btn-focus">Logout
         </a>
     </div>
 </div>

@@ -1,5 +1,9 @@
 <?php
 include '../config/config.jp.php';
+session_start();
+if ($_SESSION['autho'] != 2) {
+    header("Location: ../login.php");
+}
 ?>
 <!doctype html>
 <html lang="en">
