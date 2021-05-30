@@ -198,6 +198,7 @@ if (isset($_POST['action'])) {
             print 'error';
         }
     }
+
     if ($_POST['action'] == 'retired') {
         $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'RETIRED' ORDER BY fullname ASC");
         if (@mysqli_num_rows($sql) > 0) {
@@ -210,10 +211,10 @@ if (isset($_POST['action'])) {
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left mr-2">
                                 <div class="custom-checkbox custom-control">
-                                    <input type="checkbox" id="exampleCustomCheckbox12"
+                                    <input type="checkbox" id="exampleCustomCheckbox' . $row['id'] . '"
                                         class="custom-control-input"><label
                                         class="custom-control-label"
-                                        for="exampleCustomCheckbox12">&nbsp;</label>
+                                        for="exampleCustomCheckbox' . $row['id'] . '">&nbsp;</label>
                                 </div>
                             </div>
                             <div class="widget-content-left">
@@ -224,7 +225,7 @@ if (isset($_POST['action'])) {
                                 </div>
                                 <div class="widget-subheading">
                                     <i>' . $row['username'] . ' ' . $row['created_at'] . '</i>
-                                </div>
+                                </div>     
                             </div>
                             <div class="widget-content-right widget-content-actions">
                                 <a href="viewemployees.php?actionEdit=' . $row['id'] . '" id="' . $row['id'] . '"
@@ -246,6 +247,10 @@ if (isset($_POST['action'])) {
             $output .= '<p class="alert alert-dismissible alert-danger">There is no one Retired</p>';
         }
         print $output;
+    }
+    if ($_POST['action'] == 'search_retired') {
+        $txt = mysqli_real_escape_string($con, trim(htmlentities($_POST['txt'])));
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb LIKE (username = %%)");
     }
     // salary 
     if ($_POST['action'] == 'salary') {

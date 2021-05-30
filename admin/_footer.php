@@ -24,6 +24,27 @@ $(document).ready(function() {
     children()
 
     Retired()
+    $('#search_retired').keyup(function() {
+        let txt = $(this).val()
+        let action = 'search_retired'
+        if (txt !== '') {
+            $.ajax({
+                url: '../config/cionfig.jp.php',
+                method: 'post',
+                data: {
+                    action,
+                    txt
+                },
+                success: function(data) {
+                    $('#searchResult').html(data)
+                    $('#resultRetired').hide()
+                }
+            })
+        } else {
+            $('#resultRetired').show()
+            $('#searchResult').hide()
+        }
+    })
     $('.addWoman').click(function() {
         $('.addWomanForm').fadeToggle("slow")
     })

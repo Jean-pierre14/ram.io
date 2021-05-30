@@ -51,6 +51,7 @@
                                         </div>
                                     </form>
                                     <div class="card card-body">
+                                        <div id="searchResult"></div>
                                         <div id="resultRetired"></div>
                                     </div>
                                 </div>
