@@ -3,6 +3,7 @@ include '../config/config.jp.php';
 
 ?>
 <?php session_start(); ?>
+
 <!doctype html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -18,7 +19,6 @@ include '../config/config.jp.php';
     <meta name="description" content="Ghost and Titans">
     <link rel="shortcut icon" href="./assets/images/ramallLogo.png" type="image/x-icon">
     <meta name="msapplication-tap-highlight" content="no">
-
     <link href="main.07a59de7b920cd76b874.css" rel="stylesheet">
     <style>
     .event {

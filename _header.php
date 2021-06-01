@@ -32,10 +32,12 @@
     <?php include './config/config.jp.php';
 
     session_start();
-    if ($_SESSION['autho'] == 1) {
+    if ($_SESSION['autho'] == 1 && $_SESSION['autho'] == '') {
         header("Location: ./admin/");
-    } elseif ($_SESSION['autho'] == 2) {
+    } elseif ($_SESSION['autho'] == 2 && $_SESSION['autho'] == '') {
         header("Location: ./boss/");
-    } else {
+    } elseif ($_SESSION['autho'] == 0 && $_SESSION['autho'] == '') {
         header("Location: ./users/");
+    } else {
+        header("Location: index.php");
     }
