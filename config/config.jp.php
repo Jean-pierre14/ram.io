@@ -37,6 +37,20 @@ $password = '';
 //     return 'data';
 // }
 
+// Session user and other user
+if (isset($_SESSION['username'])) {
+    $id = $_SESSION['id'];
+    $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE id = $id");
+    if (mysqli_num_rows($sql) == 1) {
+        while ($row = mysqli_fetch_array($sql)) {
+            $output .= '<div class="card">
+            <div class="card-body"></div>
+            </div>';
+        }
+    } else {
+        header("Location: ../login.php");
+    }
+}
 
 if (isset($_POST['signIn'])) {
     $username = mysqli_real_escape_string($con, trim(htmlentities($_POST['username'])));
