@@ -38,6 +38,15 @@ if (!isset($_SESSION['username'])) {
             </div>
         </nav>
         <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-9 col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>User information</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
