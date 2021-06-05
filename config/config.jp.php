@@ -43,10 +43,11 @@ if (isset($_SESSION['username'])) {
     $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE id = $id");
     if (mysqli_num_rows($sql) == 1) {
         while ($row = mysqli_fetch_array($sql)) {
-            $output .= '<div class="card">
-            <div class="card-body">
-                <h2>My information ' . $row['fullname'] . '</h3>
-            </div>
+            $USER = '
+            <div class="card">
+                <div class="card-body">
+                    <h2>My information ' . $row['fullname'] . '</h3>
+                </div>
             </div>';
         }
     } else {

@@ -42,7 +42,7 @@ if (!isset($_SESSION['username'])) {
                 <div class="col-md-9 col-sm-12">
                     <div class="cardBox">
                         <div class="card-body">
-                            <h4>User information</h4>
+                            <?= $USER; ?>
                         </div>
                     </div>
                 </div>
