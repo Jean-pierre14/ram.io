@@ -217,6 +217,28 @@ window.location.href = 'viewemployees.php'
 
 // Actions
 if (isset($_POST['action'])) {
+    if ($_POST['action'] == 'profil') {
+        $id = $_POST['id'];
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE id = $id");
+
+        if (mysqli_num_rows($sql) == 1) {
+            $datas = array();
+            $row = mysqli_fetch_array($sql);
+            $datas['username'] = $row['username'];
+            $datas['fullname'] = $row['fullname'];
+            $datas['email'] = $row['email'];
+            $datas['salary'] = $row['salary'];
+            $datas['gender'] = $row['gender'];
+            $datas['status'] = $row['status'];
+            $datas['oper'] = $row['oper'];
+            $datas['woman'] = $row['woman_name'];
+            $datas['children'] = $row['children'];
+
+            print json_encode($datas);
+        } else {
+            print 'error';
+        }
+    }
     // UPdate account partner
     if ($_POST['action'] == 'addPartner') {
         $id = $_POST['id'];
