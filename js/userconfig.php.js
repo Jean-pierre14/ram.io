@@ -69,27 +69,13 @@ function userProfil() {
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-success">Print</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">I have a request</button>
+                        <button type="button" class="btn btn-success btn-sm">Print</button>
+                        <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal">
+                            I have a request
+                        </button>
                     </div>
                 </div>
-                <div class="modal" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">My request</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                        </div>
-                    </div>
-                </div>
+                
                 `)
             }
         })

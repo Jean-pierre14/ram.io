@@ -64,6 +64,38 @@ if (!isset($_SESSION['username'])) {
         </div>
     </div>
 
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><?= $_SESSION['fullname']; ?> Write your request</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <input type="hidden" value="<?= $_SESSION['email']; ?>" class="form-control">
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" class="form-control"
+                                placeholder="Enter your request"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success">Send</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
