@@ -1,5 +1,8 @@
 jQuery(document).ready(function() {
     userProfil()
+    $(document).on('click', '#SendRequest', function() {
+        alert('Click')
+    })
 })
 
 function userProfil() {

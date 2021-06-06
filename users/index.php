@@ -62,19 +62,18 @@ if (!isset($_SESSION['username'])) {
                 </div>
                 <div class="modal-body">
                     <form action="" method="post">
-                        <input type="hidden" value="<?= $_SESSION['email']; ?>" class="form-control">
+                        <div id="error"></div>
+                        <input type="hidden" id="user_id" value="<?= $_SESSION['email']; ?>" class="form-control">
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea name="message" id="message" class="form-control"
                                 placeholder="Enter your request"></textarea>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="btn btn-success">Send</button>
+                            <button type="button" id="SendRequest" class="btn btn-success">Send</button>
                         </div>
                     </form>
                 </div>
-
-                <!-- Modal footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
@@ -89,5 +88,41 @@ if (!isset($_SESSION['username'])) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="../js/userconfig.php.js"></script>
+<script>
+jQuery(document).ready(function() {
+
+    $(document).on('click', '#SendRequest', function() {
+        let email = $('#user_id').val()
+        let message = $('#message').val()
+        let action = 'sendrequest'
+
+        if (email === '' || message === '') {
+            $('#error').html(
+                '<p class="alert alert-danger alert-dismissible">You can\'t send an empty message</p>'
+            )
+        } else {
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'POST',
+                data: {
+                    email,
+                    message,
+                    action
+                },
+                success: function(data) {
+                    if (data === 'success') {
+                        $('#error').html('')
+                    } else {
+                        $('#error').html(
+                            '<p class="alert alert-danger alert-dismissible">You miss some data</p>'
+                        )
+                    }
+                }
+            })
+        }
+    })
+
+})
+</script>
 
 </html>
