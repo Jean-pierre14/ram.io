@@ -92,6 +92,7 @@ if (!isset($_SESSION['username'])) {
 jQuery(document).ready(function() {
 
     $(document).on('click', '#SendRequest', function() {
+
         let email = $('#user_id').val()
         let message = $('#message').val()
         let action = 'sendrequest'
@@ -110,13 +111,9 @@ jQuery(document).ready(function() {
                     action
                 },
                 success: function(data) {
-                    if (data === 'success') {
-                        $('#error').html('')
-                    } else {
-                        $('#error').html(
-                            '<p class="alert alert-danger alert-dismissible">You miss some data</p>'
-                        )
-                    }
+                    $('#error').html('')
+                    $('#user_id').val('')
+                    $('#message').val('')
                 }
             })
         }

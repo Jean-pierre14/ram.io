@@ -1,8 +1,5 @@
 jQuery(document).ready(function() {
     userProfil()
-    $(document).on('click', '#SendRequest', function() {
-        alert('Click')
-    })
 })
 
 function userProfil() {
@@ -78,7 +75,6 @@ function userProfil() {
                         </button>
                     </div>
                 </div>
-                
                 `)
             }
         })

@@ -218,8 +218,9 @@ window.location.href = 'viewemployees.php'
 // Actions
 if (isset($_POST['action'])) {
     if ($_POST['action'] == 'sendrequest') {
-        $email = mysqli_real_escape_string($con, trim(htmlentities($_POST['email'])));
-        $message = mysqli_real_escape_string($con, trim(htmlentities($_POST['message'])));
+
+        $email = $_POST['email'];
+        $message = $_POST['message'];
 
         if (empty($email)) {
             array_push($errors, "Empty");
@@ -228,13 +229,15 @@ if (isset($_POST['action'])) {
             array_push($errors, "Empty");
         }
 
-        if (count($errors)) {
-            $sql = mysqli_query($con, "INSERT INTO employees_request_tb(email, `message`) VALUES('$email','$message')");
+        if (count($errors) == 0) {
+            $sql = mysqli_query($con, "INSERT INTO employees_request_tb(`email`, `message`) VALUE('$email','$message')");
             if ($sql) {
                 print 'success';
             } else {
                 print 'error';
             }
+        } else {
+            print 'email: ' . $email . 'message: ' . $message;
         }
     }
     if ($_POST['action'] == 'profil') {
