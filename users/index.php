@@ -71,8 +71,6 @@ if (!isset($_SESSION['username'])) {
                     <h4 class="modal-title"><?= $_SESSION['fullname']; ?> Write your request</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-
-
                 <div class="modal-body">
                     <form action="" method="post">
                         <input type="hidden" value="<?= $_SESSION['email']; ?>" class="form-control">
