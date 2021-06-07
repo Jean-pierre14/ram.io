@@ -69,7 +69,7 @@ function userProfil() {
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-success btn-sm">Print</button>
+                        <button type="button" class="btn btn-success btn-sm" id="printThis">Print</button>
                         <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal">
                             I have a request
                         </button>
