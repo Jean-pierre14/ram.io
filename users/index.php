@@ -24,7 +24,7 @@ if (!isset($_SESSION['username'])) {
 </head>
 
 <body>
-    <div class="container-fliud">
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <a class="navbar-brand" href="index.php"><?= $prooject_name; ?>/<?= $_SESSION['username']; ?></a>
 
