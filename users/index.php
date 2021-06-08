@@ -99,7 +99,7 @@ jQuery(document).ready(function() {
             importCSS: true, // import parent page css
             importStyle: false, // import style tags
             printContainer: true, // print outer container/$.selector
-            loadCSS: "", // path to additional css file - use an array [] for multiple
+            loadCSS: "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", // path to additional css file - use an array [] for multiple
             pageTitle: "", // add title to print page
             removeInline: false, // remove inline styles from print elements
             removeInlineSelector: "*", // custom selectors to filter inline styles. removeInline must be true
