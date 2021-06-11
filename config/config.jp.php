@@ -229,10 +229,10 @@ if (isset($_POST['action'])) {
                     <div class="widget-content-wrapper">
                         <div class="widget-content-left mr-2">
                             <div class="custom-checkbox custom-control">
-                                <input type="checkbox" id="exampleCustomCheckbox12"
+                                <input type="checkbox" id="exampleCustomCheckbox12' . $row['id'] . '"
                                     class="custom-control-input"><label
                                     class="custom-control-label"
-                                    for="exampleCustomCheckbox12">&nbsp;</label>
+                                    for="exampleCustomCheckbox12' . $row['id'] . '">&nbsp;</label>
                             </div>
                         </div>
                         <div class="widget-content-left">
@@ -260,7 +260,7 @@ if (isset($_POST['action'])) {
                 $output .= '
                             </div>
                             <div class="widget-subheading">
-                                <i>RamaLL</i>
+                                <i>' . $row['username'] . '</i>
                             </div>
                         </div>
                         <div class="widget-content-right widget-content-actions">
