@@ -25,6 +25,7 @@
                             <div class="tab-content">
                                 <div class="container-fluid">
                                     <div class="card card-body">
+                                        <div id="payResults"></div>
                                         <ul class="todo-list-wrapper list-group list-group-flush">
                                             <li class="list-group-item">
                                                 <div class="todo-indicator bg-warning"></div>
