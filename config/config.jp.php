@@ -217,6 +217,9 @@ if (isset($_POST['UpdateUserGET'])) {
 
 // Actions
 if (isset($_POST['action'])) {
+    if ($_POST['action'] == 'search_txt') {
+        print 'seaching...';
+    }
     if ($_POST['action'] == 'payResults') {
         sleep(2);
         $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL'");

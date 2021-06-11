@@ -17,7 +17,7 @@ function Retired() {
 }
 
 function payResults() {
-    alert("Psy")
+    // alert("Psy") Test of the fetch ajax()
     let action = 'payResults'
     $.ajax({
         url: '../config/config.jp.php',
@@ -31,6 +31,7 @@ function payResults() {
     })
 }
 $(document).ready(function() {
+
     payResults()
     select()
     select2()
