@@ -25,54 +25,16 @@
                             <div class="tab-content">
                                 <div class="container-fluid">
                                     <div class="card card-body">
+                                        <div id="payResults"></div>
                                         <ul class="todo-list-wrapper list-group list-group-flush">
-                                            <li class="list-group-item">
-                                                <div class="todo-indicator bg-warning"></div>
-                                                <div class="widget-content p-0">
-                                                    <div class="widget-content-wrapper">
-                                                        <div class="widget-content-left mr-2">
-                                                            <div class="custom-checkbox custom-control">
-                                                                <input type="checkbox" id="exampleCustomCheckbox12"
-                                                                    class="custom-control-input"><label
-                                                                    class="custom-control-label"
-                                                                    for="exampleCustomCheckbox12">&nbsp;</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="widget-content-left">
-                                                            <div class="widget-heading">Wash the
-                                                                car
-                                                                <div class="badge badge-danger ml-2">
-                                                                    Rejected
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-subheading">
-                                                                <i>Written
-                                                                    by Bob</i>
-                                                            </div>
-                                                        </div>
-                                                        <div class="widget-content-right widget-content-actions">
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-success">
-                                                                <i class="fa fa-check"></i>
-                                                            </button>
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-danger">
-                                                                <i class="fa fa-trash-alt"></i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
+
                                             <li class="list-group-item">
                                                 <div class="todo-indicator bg-focus"></div>
                                                 <div class="widget-content p-0">
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-2">
                                                             <div class="custom-checkbox custom-control">
-                                                                <input type="checkbox" id="exampleCustomCheckbox1"
-                                                                    class="custom-control-input"><label
-                                                                    class="custom-control-label"
-                                                                    for="exampleCustomCheckbox1">&nbsp;</label>
+                                                                <input type="checkbox" id="exampleCustomCheckbox1" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox1">&nbsp;</label>
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left">
@@ -90,28 +52,21 @@
                                                         </div>
                                                         <div class="widget-content-right widget-content-actions">
                                                             <div class="d-inline-block dropdown">
-                                                                <button type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" data-toggle="dropdown"
-                                                                    aria-expanded="false"
-                                                                    class="border-0 btn-transition btn btn-link">
+                                                                <button type="button" data-toggle="dropdown" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false" class="border-0 btn-transition btn btn-link">
                                                                     <i class="fa fa-ellipsis-h"></i>
                                                                 </button>
-                                                                <div tabindex="-1" role="menu" aria-hidden="true"
-                                                                    class="dropdown-menu dropdown-menu-right">
+                                                                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                                                     <h6 tabindex="-1" class="dropdown-header">
                                                                         Header</h6>
-                                                                    <button type="button" disabled="" tabindex="-1"
-                                                                        class="disabled dropdown-item">
+                                                                    <button type="button" disabled="" tabindex="-1" class="disabled dropdown-item">
                                                                         Action
                                                                     </button>
-                                                                    <button type="button" tabindex="0"
-                                                                        class="dropdown-item">
+                                                                    <button type="button" tabindex="0" class="dropdown-item">
                                                                         Another Action
                                                                     </button>
                                                                     <div tabindex="-1" class="dropdown-divider">
                                                                     </div>
-                                                                    <button type="button" tabindex="0"
-                                                                        class="dropdown-item">
+                                                                    <button type="button" tabindex="0" class="dropdown-item">
                                                                         Another Action
                                                                     </button>
                                                                 </div>
@@ -126,10 +81,7 @@
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-2">
                                                             <div class="custom-checkbox custom-control">
-                                                                <input type="checkbox" id="exampleCustomCheckbox4"
-                                                                    class="custom-control-input"><label
-                                                                    class="custom-control-label"
-                                                                    for="exampleCustomCheckbox4">&nbsp;</label>
+                                                                <input type="checkbox" id="exampleCustomCheckbox4" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox4">&nbsp;</label>
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left flex2">
@@ -143,8 +95,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-right widget-content-actions">
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-success">
+                                                            <button class="border-0 btn-transition btn btn-outline-success">
                                                                 <i class="fa fa-check"></i>
                                                             </button>
                                                         </div>
@@ -162,16 +113,12 @@
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-2">
                                                             <div class="custom-checkbox custom-control">
-                                                                <input type="checkbox" id="exampleCustomCheckbox2"
-                                                                    class="custom-control-input"><label
-                                                                    class="custom-control-label"
-                                                                    for="exampleCustomCheckbox2">&nbsp;</label>
+                                                                <input type="checkbox" id="exampleCustomCheckbox2" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox2">&nbsp;</label>
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left mr-3">
                                                             <div class="widget-content-left">
-                                                                <img width="42" class="rounded"
-                                                                    src="assets/images/avatars/1.jpg" alt="">
+                                                                <img width="42" class="rounded" src="assets/images/avatars/1.jpg" alt="">
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left">
@@ -185,12 +132,10 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-right widget-content-actions">
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-success">
+                                                            <button class="border-0 btn-transition btn btn-outline-success">
                                                                 <i class="fa fa-check"></i>
                                                             </button>
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-danger">
+                                                            <button class="border-0 btn-transition btn btn-outline-danger">
                                                                 <i class="fa fa-trash-alt"></i>
                                                             </button>
                                                         </div>
@@ -203,10 +148,7 @@
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-2">
                                                             <div class="custom-checkbox custom-control">
-                                                                <input type="checkbox" id="exampleCustomCheckbox3"
-                                                                    class="custom-control-input"><label
-                                                                    class="custom-control-label"
-                                                                    for="exampleCustomCheckbox3">&nbsp;</label>
+                                                                <input type="checkbox" id="exampleCustomCheckbox3" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox3">&nbsp;</label>
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left flex2">
@@ -225,12 +167,10 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-right">
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-success">
+                                                            <button class="border-0 btn-transition btn btn-outline-success">
                                                                 <i class="fa fa-check"></i>
                                                             </button>
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-danger">
+                                                            <button class="border-0 btn-transition btn btn-outline-danger">
                                                                 <i class="fa fa-trash-alt"></i>
                                                             </button>
                                                         </div>
@@ -243,10 +183,7 @@
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-2">
                                                             <div class="custom-checkbox custom-control">
-                                                                <input type="checkbox" id="exampleCustomCheckbox12"
-                                                                    class="custom-control-input"><label
-                                                                    class="custom-control-label"
-                                                                    for="exampleCustomCheckbox12">&nbsp;</label>
+                                                                <input type="checkbox" id="exampleCustomCheckbox12" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox12">&nbsp;</label>
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left">
@@ -262,12 +199,10 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-right widget-content-actions">
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-success">
+                                                            <button class="border-0 btn-transition btn btn-outline-success">
                                                                 <i class="fa fa-check"></i>
                                                             </button>
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-danger">
+                                                            <button class="border-0 btn-transition btn btn-outline-danger">
                                                                 <i class="fa fa-trash-alt"></i>
                                                             </button>
                                                         </div>
@@ -280,10 +215,7 @@
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-2">
                                                             <div class="custom-checkbox custom-control">
-                                                                <input type="checkbox" id="exampleCustomCheckbox1"
-                                                                    class="custom-control-input"><label
-                                                                    class="custom-control-label"
-                                                                    for="exampleCustomCheckbox1">&nbsp;</label>
+                                                                <input type="checkbox" id="exampleCustomCheckbox1" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox1">&nbsp;</label>
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left">
@@ -301,28 +233,21 @@
                                                         </div>
                                                         <div class="widget-content-right widget-content-actions">
                                                             <div class="d-inline-block dropdown">
-                                                                <button type="button" data-toggle="dropdown"
-                                                                    aria-haspopup="true" data-toggle="dropdown"
-                                                                    aria-expanded="false"
-                                                                    class="border-0 btn-transition btn btn-link">
+                                                                <button type="button" data-toggle="dropdown" aria-haspopup="true" data-toggle="dropdown" aria-expanded="false" class="border-0 btn-transition btn btn-link">
                                                                     <i class="fa fa-ellipsis-h"></i>
                                                                 </button>
-                                                                <div tabindex="-1" role="menu" aria-hidden="true"
-                                                                    class="dropdown-menu dropdown-menu-right">
+                                                                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                                                     <h6 tabindex="-1" class="dropdown-header">
                                                                         Header</h6>
-                                                                    <button type="button" disabled="" tabindex="-1"
-                                                                        class="disabled dropdown-item">
+                                                                    <button type="button" disabled="" tabindex="-1" class="disabled dropdown-item">
                                                                         Action
                                                                     </button>
-                                                                    <button type="button" tabindex="0"
-                                                                        class="dropdown-item">
+                                                                    <button type="button" tabindex="0" class="dropdown-item">
                                                                         Another Action
                                                                     </button>
                                                                     <div tabindex="-1" class="dropdown-divider">
                                                                     </div>
-                                                                    <button type="button" tabindex="0"
-                                                                        class="dropdown-item">
+                                                                    <button type="button" tabindex="0" class="dropdown-item">
                                                                         Another Action
                                                                     </button>
                                                                 </div>
@@ -337,10 +262,7 @@
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-2">
                                                             <div class="custom-checkbox custom-control">
-                                                                <input type="checkbox" id="exampleCustomCheckbox4"
-                                                                    class="custom-control-input"><label
-                                                                    class="custom-control-label"
-                                                                    for="exampleCustomCheckbox4">&nbsp;</label>
+                                                                <input type="checkbox" id="exampleCustomCheckbox4" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox4">&nbsp;</label>
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left flex2">
@@ -354,8 +276,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-right widget-content-actions">
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-success">
+                                                            <button class="border-0 btn-transition btn btn-outline-success">
                                                                 <i class="fa fa-check"></i>
                                                             </button>
                                                         </div>
@@ -373,16 +294,12 @@
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-2">
                                                             <div class="custom-checkbox custom-control">
-                                                                <input type="checkbox" id="exampleCustomCheckbox2"
-                                                                    class="custom-control-input"><label
-                                                                    class="custom-control-label"
-                                                                    for="exampleCustomCheckbox2">&nbsp;</label>
+                                                                <input type="checkbox" id="exampleCustomCheckbox2" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox2">&nbsp;</label>
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left mr-3">
                                                             <div class="widget-content-left">
-                                                                <img width="42" class="rounded"
-                                                                    src="assets/images/avatars/1.jpg" alt="">
+                                                                <img width="42" class="rounded" src="assets/images/avatars/1.jpg" alt="">
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left">
@@ -396,12 +313,10 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-right widget-content-actions">
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-success">
+                                                            <button class="border-0 btn-transition btn btn-outline-success">
                                                                 <i class="fa fa-check"></i>
                                                             </button>
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-danger">
+                                                            <button class="border-0 btn-transition btn btn-outline-danger">
                                                                 <i class="fa fa-trash-alt"></i>
                                                             </button>
                                                         </div>
@@ -414,10 +329,7 @@
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-2">
                                                             <div class="custom-checkbox custom-control">
-                                                                <input type="checkbox" id="exampleCustomCheckbox3"
-                                                                    class="custom-control-input"><label
-                                                                    class="custom-control-label"
-                                                                    for="exampleCustomCheckbox3">&nbsp;</label>
+                                                                <input type="checkbox" id="exampleCustomCheckbox3" class="custom-control-input"><label class="custom-control-label" for="exampleCustomCheckbox3">&nbsp;</label>
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-left flex2">
@@ -436,12 +348,10 @@
                                                             </div>
                                                         </div>
                                                         <div class="widget-content-right">
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-success">
+                                                            <button class="border-0 btn-transition btn btn-outline-success">
                                                                 <i class="fa fa-check"></i>
                                                             </button>
-                                                            <button
-                                                                class="border-0 btn-transition btn btn-outline-danger">
+                                                            <button class="border-0 btn-transition btn btn-outline-danger">
                                                                 <i class="fa fa-trash-alt"></i>
                                                             </button>
                                                         </div>

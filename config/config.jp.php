@@ -204,9 +204,9 @@ if (isset($_POST['UpdateUserGET'])) {
         $sql = mysqli_query($con, "UPDATE employees_tb SET username = '$user', fullname = '$fullname', gender = '$gender', `status` = '$status' WHERE id = $id");
         if ($sql) {
 ?>
-<script>
-window.location.href = 'viewemployees.php'
-</script>
+            <script>
+                window.location.href = 'viewemployees.php'
+            </script>
 <?php
         } else {
             array_push($errors, "Something is going wrong");
@@ -217,6 +217,54 @@ window.location.href = 'viewemployees.php'
 
 // Actions
 if (isset($_POST['action'])) {
+    if ($_POST['action'] == 'payResults') {
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb ORDER BY salary DESC");
+        if (@mysqli_num_rows($sql) > 0) {
+            $output .= '<ul class="todo-list-wrapper list-group list-group-flush">';
+            while ($row = mysqli_fetch_array($sql)) {
+                $output .= '
+                <li class="list-group-item">
+                <div class="todo-indicator bg-warning"></div>
+                <div class="widget-content p-0">
+                    <div class="widget-content-wrapper">
+                        <div class="widget-content-left mr-2">
+                            <div class="custom-checkbox custom-control">
+                                <input type="checkbox" id="exampleCustomCheckbox12"
+                                    class="custom-control-input"><label
+                                    class="custom-control-label"
+                                    for="exampleCustomCheckbox12">&nbsp;</label>
+                            </div>
+                        </div>
+                        <div class="widget-content-left">
+                            <div class="widget-heading">' . $row['fullname'] . '
+                                <div class="badge badge-danger ml-2">
+                                    ' . $row['oper'] . '
+                                </div>
+                            </div>
+                            <div class="widget-subheading">
+                                <i>RamaLL</i>
+                            </div>
+                        </div>
+                        <div class="widget-content-right widget-content-actions">
+                            <button id="' . $row['id'] . '"
+                                class="payConfirm border-0 btn-transition btn btn-outline-success">
+                                <i class="fa fa-check"></i>
+                            </button>
+                            <button id="' . $row['id'] . '"
+                                class="border-0 btn-transition btn btn-outline-danger">
+                                <i class="fa fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+                ';
+            }
+            $output .= '</ul>';
+        } else {
+            $output .= '<p class="alert alert-danger">There no data in our system</p>';
+        }
+    }
     if ($_POST['action'] == 'sendrequest') {
 
         $email = $_POST['email'];
