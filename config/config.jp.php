@@ -204,9 +204,9 @@ if (isset($_POST['UpdateUserGET'])) {
         $sql = mysqli_query($con, "UPDATE employees_tb SET username = '$user', fullname = '$fullname', gender = '$gender', `status` = '$status' WHERE id = $id");
         if ($sql) {
 ?>
-            <script>
-                window.location.href = 'viewemployees.php'
-            </script>
+<script>
+window.location.href = 'viewemployees.php'
+</script>
 <?php
         } else {
             array_push($errors, "Something is going wrong");
@@ -237,9 +237,27 @@ if (isset($_POST['action'])) {
                         </div>
                         <div class="widget-content-left">
                             <div class="widget-heading">' . $row['fullname'] . '
-                                <div class="badge badge-danger ml-2">
+                                ';
+                if ($row['oper'] == 'OPERATIONNEL') {
+                    $output .= '
+                                    <div class="badge badge-success ml-2">
                                     ' . $row['oper'] . '
                                 </div>
+                                    ';
+                } elseif ($row['oper'] == 'RETIRED') {
+                    $output .= '
+                                    <div class="badge badge-warning ml-2">
+                                    ' . $row['oper'] . '
+                                </div>
+                                    ';
+                } else {
+                    $output .= '
+                                    <div class="badge badge-danger ml-2">
+                                    ' . $row['oper'] . '
+                                </div>
+                                    ';
+                }
+                $output .= '
                             </div>
                             <div class="widget-subheading">
                                 <i>RamaLL</i>
@@ -264,6 +282,7 @@ if (isset($_POST['action'])) {
         } else {
             $output .= '<p class="alert alert-danger">There no data in our system</p>';
         }
+        print $output;
     }
     if ($_POST['action'] == 'sendrequest') {
 
