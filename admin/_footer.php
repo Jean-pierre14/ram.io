@@ -48,7 +48,7 @@ $(document).ready(function() {
         let action = 'search_retired'
         if (txt !== '') {
             $.ajax({
-                url: '../config/cionfig.jp.php',
+                url: '../config/config.jp.php',
                 method: 'post',
                 data: {
                     action,

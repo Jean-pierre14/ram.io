@@ -94,7 +94,7 @@ jQuery(document).ready(function() {
 
     $(document).on('click', '#printThis', function() {
 
-        $("#mySelector").printThis({
+        $("#profil").printThis({
             debug: false, // show the iframe for debugging
             importCSS: true, // import parent page css
             importStyle: false, // import style tags
