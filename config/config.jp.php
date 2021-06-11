@@ -204,9 +204,9 @@ if (isset($_POST['UpdateUserGET'])) {
         $sql = mysqli_query($con, "UPDATE employees_tb SET username = '$user', fullname = '$fullname', gender = '$gender', `status` = '$status' WHERE id = $id");
         if ($sql) {
 ?>
-<script>
-window.location.href = 'viewemployees.php'
-</script>
+            <script>
+                window.location.href = 'viewemployees.php'
+            </script>
 <?php
         } else {
             array_push($errors, "Something is going wrong");
@@ -218,7 +218,8 @@ window.location.href = 'viewemployees.php'
 // Actions
 if (isset($_POST['action'])) {
     if ($_POST['action'] == 'payResults') {
-        $sql = mysqli_query($con, "SELECT * FROM employees_tb ORDER BY salary DESC");
+        sleep(2);
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL'");
         if (@mysqli_num_rows($sql) > 0) {
             $output .= '<ul class="todo-list-wrapper list-group list-group-flush">';
             while ($row = mysqli_fetch_array($sql)) {
@@ -260,17 +261,13 @@ if (isset($_POST['action'])) {
                 $output .= '
                             </div>
                             <div class="widget-subheading">
-                                <i>' . $row['username'] . '</i>
+                                <i>' . $row['username'] . ' $ <span class="badge badge-danger">' . $row['salary'] . '</span></i>
                             </div>
                         </div>
                         <div class="widget-content-right widget-content-actions">
                             <button id="' . $row['id'] . '"
                                 class="payConfirm border-0 btn-transition btn btn-outline-success">
                                 <i class="fa fa-check"></i>
-                            </button>
-                            <button id="' . $row['id'] . '"
-                                class="border-0 btn-transition btn btn-outline-danger">
-                                <i class="fa fa-trash-alt"></i>
                             </button>
                         </div>
                     </div>

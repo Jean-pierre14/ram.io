@@ -20,13 +20,19 @@
                 <div class="app-inner-layout app-inner-layout-page">
 
                     <div class="app-inner-layout__wrapper">
-
                         <div class="app-inner-layout__content">
                             <div class="tab-content">
                                 <div class="container-fluid">
-                                    <div class="card card-body">
-                                        <div id="payResults"></div>
-
+                                    <form action="" method="post" class="mb-2">
+                                        <input type="search" name="search" id="search" placeholder="Seach..."
+                                            class="form-control">
+                                    </form>
+                                    <div class="card card-body mb-2">
+                                        <div id="resultSearch"></div>
+                                        <div id="payResults" class="d-block justify-content-center">
+                                            <img src="../img/loading.gif" alt="Loadding" class="img-fluid"
+                                                class="col-md-4">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
