@@ -14,13 +14,12 @@
                             <?= $prooject_name; ?> we are the best
                         </div>
                     </div>
+                    <?php include './_app.user.php'; ?>
 
                     <div class="app-header-overlay d-none animated fadeIn"></div>
                 </div>
                 <div class="app-inner-layout app-inner-layout-page">
-
                     <div class="app-inner-layout__wrapper">
-
                         <div class="app-inner-layout__content">
                             <div class="tab-content">
                                 <div class="container-fluid">

@@ -14,11 +14,10 @@
                             <?= $prooject_name; ?> we are the best
                         </div>
                     </div>
-
+                    <?php include './_app.user.php'; ?>
                     <div class="app-header-overlay d-none animated fadeIn"></div>
                 </div>
                 <div class="app-inner-layout app-inner-layout-page">
-
                     <div class="app-inner-layout__wrapper">
                         <div class="app-inner-layout__content">
                             <div class="tab-content">
@@ -29,9 +28,11 @@
                                     </form>
                                     <div class="card card-body mb-2">
                                         <div id="resultSearch"></div>
-                                        <div id="payResults" class="d-block justify-content-center">
-                                            <img src="../img/loading.gif" alt="Loadding" class="img-fluid"
-                                                class="col-md-4">
+                                        <div id="payResults" class="row justify-content-center">
+                                            <div class="col-md-6">
+                                                <img src="../img/loading.gif" alt="Loadding" class="img-fluid"
+                                                    class="col-md-4">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
