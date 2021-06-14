@@ -14,6 +14,7 @@
                             <?= $prooject_name; ?> we are the best
                         </div>
                     </div>
+                    <?php include './_app.user.php'; ?>
                     <div class="app-header-overlay d-none animated fadeIn"></div>
                 </div>
                 <div class="app-inner-layout app-inner-layout-page">
@@ -22,14 +23,12 @@
                             <div class="tab-content">
                                 <div class="container-fluid">
                                     <form action="" method="post" class="mb-2">
-                                        <input type="search" id="search_text" placeholder="Seach..."
-                                            class="form-control">
+                                        <input type="search" id="search_text" placeholder="Seach..." class="form-control">
                                     </form>
                                     <div class="card card-body mb-2">
                                         <div id="resultSearch"></div>
                                         <div id="payResults" class="d-block justify-content-center">
-                                            <img src="../img/loading.gif" alt="Loadding" class="img-fluid"
-                                                class="col-md-4">
+                                            <img src="../img/loading.gif" alt="Loadding" class="img-fluid" class="col-md-4">
                                         </div>
                                     </div>
                                 </div>
@@ -45,29 +44,29 @@
 
 <?php include '_footer.php'; ?>
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
 
-    $('#seach_text').keyup(function() {
+        $('#seach_text').keyup(function() {
 
-        let action = 'search_txt'
-        let txt = $(this).val()
-        if (txt != '') {
-            $.ajax({
-                url: '../config/config.jp.php',
-                method: 'POST',
-                data: {
-                    action,
-                    txt
-                },
-                success: function(data) {
-                    $('#resultSearch').html(data)
-                    $('#payResults').hide(300)
-                }
-            })
-        } else {
-            $('#resultSearch').html('')
-            $('#payResults').show(300)
-        }
+            let action = 'search_txt'
+            let txt = $(this).val()
+            if (txt != '') {
+                $.ajax({
+                    url: '../config/config.jp.php',
+                    method: 'POST',
+                    data: {
+                        action,
+                        txt
+                    },
+                    success: function(data) {
+                        $('#resultSearch').html(data)
+                        $('#payResults').hide(300)
+                    }
+                })
+            } else {
+                $('#resultSearch').html('')
+                $('#payResults').show(300)
+            }
+        })
     })
-})
 </script>
