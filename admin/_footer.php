@@ -39,6 +39,26 @@ $(document).ready(function() {
             $('.none').hide()
         }
     })
+    $('#children_num').keyup(function() {
+        let u = $(this).val()
+        if (u != '') {
+            if (u > 3) {
+                alert("the number can't be above 3")
+            } else {
+                for (i = 1; i <= u; i++) {
+                    $('#uiChildren').append(`
+                <div class="col-md-4 form-group">
+                        <label for="children">Children ${i}</label>
+                        <input type="number" max="3" min="0" name="children[]" id="children_num${i}"
+                            placeholder="Name ${i}" class="form-control">
+                </div>
+                `)
+                }
+            }
+        } else {
+            $('#uiChildren').html('')
+        }
+    })
     payResults()
     select()
     select2()

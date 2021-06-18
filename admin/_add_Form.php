@@ -33,7 +33,7 @@
                 <option value="Divorce">Divorce</option>
             </select>
         </div>
-        <div class="col-md-12 " id="married_ctn">
+        <div class="col-md-12" id="married_ctn">
             <div class="card card-body none" style="display: none;">
                 <div class="row">
                     <div class="form-group col-md-7">
@@ -43,26 +43,15 @@
                     </div>
                     <div class="col-md-5 form-group">
                         <label for="children">Number of children</label>
-                        <input type="number" max="3" min="0" name="children" id="children" value="<?= $children; ?>"
+                        <input type="number" max="3" min="0" name="children" id="children_num" value="<?= $children; ?>"
                             placeholder="Entre the number of children" class="form-control">
                     </div>
+
                 </div>
-            </div>
-            <div class="mt-2 card card-body" style="display: none;">
-                <div class="row">
-                    <div class="col-md-6 form-group">
-                        <label for="pass">Password</label>
-                        <input type="password" name="password1" id="pass" value="<?= $password1; ?>"
-                            placeholder="Password" class="form-control">
-                    </div>
-                    <div class="col-md-6 form-group">
-                        <label for="pass2">Confirm password</label>
-                        <input type="password" name="password2" id="pass2" value="<?= $password2; ?>"
-                            placeholder="Confirm password" class="form-control">
-                    </div>
-                </div>
+                <div id="uiChildren" class="row justify-content-center"></div>
             </div>
         </div>
+
         <div class="form-group col-md-4 mt-2">
             <button type="submit" name="addempl" class="btn btn-block btn-success">Register</button>
         </div>
