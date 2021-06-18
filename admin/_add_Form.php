@@ -25,7 +25,7 @@
         </div>
         <div class="form-group col-md-4">
             <label for="status">Status</label>
-            <select name="status" id="status" class="form-control">
+            <select name="status" id="status_slct" class="form-control">
                 <option value="">-- select --</option>
                 <option value="Single">Single</option>
                 <option value="Fiance">Fiance</option>
@@ -33,8 +33,8 @@
                 <option value="Divorce">Divorce</option>
             </select>
         </div>
-        <div class="col-md-12" id="married_ctn">
-            <div class="card card-body">
+        <div class="col-md-12 " id="married_ctn">
+            <div class="card card-body none" style="display: none;">
                 <div class="row">
                     <div class="form-group col-md-7">
                         <label for="woman">Woman name</label>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-2 card card-body">
+            <div class="mt-2 card card-body" style="display: none;">
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <label for="pass">Password</label>

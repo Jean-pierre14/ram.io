@@ -101,8 +101,8 @@ if (isset($_POST['addempl'])) {
     $status = mysqli_real_escape_string($con, trim(htmlentities($_POST['status'])));
     $woman = mysqli_real_escape_string($con, trim(htmlentities($_POST['woman'])));
     $children = mysqli_real_escape_string($con, trim(htmlentities($_POST['children'])));
-    $password1 = mysqli_real_escape_string($con, trim(htmlentities($_POST['password1'])));
-    $password2 = mysqli_real_escape_string($con, trim(htmlentities($_POST['password2'])));
+    // $password1 = mysqli_real_escape_string($con, trim(htmlentities($_POST['password1'])));
+    // $password2 = mysqli_real_escape_string($con, trim(htmlentities($_POST['password2'])));
 
     // To errors, the fields are not empty
     if (empty($user)) {
@@ -122,17 +122,17 @@ if (isset($_POST['addempl'])) {
     }
     // if(empty($username)){array_push($errors, "Name of  required");}
     // if(empty($username)){array_push($errors, "Children is required");}
-    if (empty($password1)) {
-        array_push($errors, "Password is required");
-    }
-    if (empty($password2)) {
-        array_push($errors, "Confirm password is required");
-    }
+    // if (empty($password1)) {
+    //     array_push($errors, "Password is required");
+    // }
+    // if (empty($password2)) {
+    //     array_push($errors, "Confirm password is required");
+    // }
 
     // now to compare passwords
-    if ($password1 != $password2) {
-        array_push($errors, "Passwords are not match");
-    }
+    // if ($password1 != $password2) {
+    //     array_push($errors, "Passwords are not match");
+    // }
     // To check if the new user is not yet register
     $check = mysqli_query($con, "SELECT * FROM employees_tb");
     $datas = mysqli_fetch_array($check);
@@ -148,12 +148,13 @@ if (isset($_POST['addempl'])) {
     }
 
     if (count($errors) == 0) {
-
+        $password = 1234;
+        $salary = 1200;
         // Now to hash password
         $passHash = md5($password1);
         $oper = 'OPERATIONNEL';
 
-        $sql = mysqli_query($con, "INSERT INTO employees_tb(username, fullname, email, `gender`, `status`,oper, `woman_name`, children, `password`) VALUES('$user','$fullname','$email','$gender','$status', '$oper', '$woman','$children','$passHash')");
+        $sql = mysqli_query($con, "INSERT INTO employees_tb(salary, username, fullname, email, `gender`, `status`,oper, `woman_name`, children, `password`) VALUES('$salary','$user','$fullname','$email','$gender','$status', '$oper', '$woman','$children','$passHash')");
 
         if ($sql) {
             header("Location: viewemployees.php");
@@ -204,9 +205,9 @@ if (isset($_POST['UpdateUserGET'])) {
         $sql = mysqli_query($con, "UPDATE employees_tb SET username = '$user', fullname = '$fullname', gender = '$gender', `status` = '$status' WHERE id = $id");
         if ($sql) {
 ?>
-            <script>
-                window.location.href = 'viewemployees.php'
-            </script>
+<script>
+window.location.href = 'viewemployees.php'
+</script>
 <?php
         } else {
             array_push($errors, "Something is going wrong");

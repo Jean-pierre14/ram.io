@@ -31,7 +31,14 @@ function payResults() {
     })
 }
 $(document).ready(function() {
-
+    $('#status_slct').change(function() {
+        let d = $(this).val()
+        if (d === "Married") {
+            $('.none').show()
+        } else {
+            $('.none').hide()
+        }
+    })
     payResults()
     select()
     select2()
