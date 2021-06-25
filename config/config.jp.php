@@ -560,6 +560,7 @@ if (isset($_POST['action'])) {
             $remove = mysqli_query($con, "INSERT INTO deleted_tb (username, fullname, email, gender, salary, `status`, `password`, woman_name, children, oper, created_at) VALUES('" . $fetch['username'] . "','" . $fetch['fullname'] . "','" . $fetch['email'] . "','" . $fetch['gender'] . "','" . $fetch['salary'] . "','" . $fetch['`status`'] . "', '" . $fetch['`password`'] . "','" . $fetch['woman_name'] . "', '" . $fetch['children'] . "', '" . $fetch['oper'] . "', '" . $fetch['created_at'] . "')");
             if ($remove) {
                 $sql = mysqli_query($con, "DELETE FROM employees_tb WHERE id = $id");
+                $sql_children = mysqli_query($con, "DELETE FROM children WHERE employees_id = $id");
                 if ($sql) {
                     print 'success';
                 } else {

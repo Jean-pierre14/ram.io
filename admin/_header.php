@@ -1,7 +1,4 @@
-<?php
-include '../config/config.jp.php';
-
-?>
+<?php include '../config/config.jp.php';?>
 <?php session_start(); ?>
 
 <!doctype html>
