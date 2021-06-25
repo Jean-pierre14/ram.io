@@ -100,7 +100,8 @@ if (isset($_POST['addempl'])) {
     $gender = mysqli_real_escape_string($con, trim(htmlentities($_POST['gender'])));
     $status = mysqli_real_escape_string($con, trim(htmlentities($_POST['status'])));
     $woman = mysqli_real_escape_string($con, trim(htmlentities($_POST['woman'])));
-    $children = mysqli_real_escape_string($con, trim(htmlentities($_POST['children'])));
+    $children = mysqli_real_escape_string($con, trim($_POST['children']));
+
     // $password1 = mysqli_real_escape_string($con, trim(htmlentities($_POST['password1'])));
     // $password2 = mysqli_real_escape_string($con, trim(htmlentities($_POST['password2'])));
 
@@ -156,11 +157,29 @@ if (isset($_POST['addempl'])) {
 
         $sql = mysqli_query($con, "INSERT INTO employees_tb(salary, username, fullname, email, `gender`, `status`,oper, `woman_name`, children, `password`) VALUES('$salary','$user','$fullname','$email','$gender','$status', '$oper', '$woman','$children','$passHash')");
 
+
         if ($sql) {
-            header("Location: viewemployees.php");
-            array_push($success, "Employee Registered ");
-        } else {
-            array_push($errors, "Somethings are wrong :(");
+            if(!empty($_POST['name'])){
+                $num = count($_POST['name']);
+    
+                if ($num > 1) {
+                    for ($i = 0; $i < $num; $i++) {
+    
+                        if (trim($_POST['name'][$i]) != '') {
+    
+                            $sql = mysqli_query($con, "INSERT INTO children_tb(`name`) VALUE('" . mysqli_real_escape_string($con, $_POST['name'][$i]) . "')");
+                            if ($sql) {
+                                header("Location: viewemployees.php");
+                                array_push($success, "Employee Registered ");
+                            }else{
+                                array_push($errors, "Somethings are wrong :(");
+                            }
+                        }
+                    }
+                }
+    
+            }
+            
         }
     }
 }

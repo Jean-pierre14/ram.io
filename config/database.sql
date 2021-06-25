@@ -1,1 +1,5 @@
 CREATE TABLE `ramall`.`employees_tb` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `username` VARCHAR(255) NOT NULL , `fullname` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `gender` VARCHAR(10) NOT NULL , `status` VARCHAR(50) NOT NULL , `oper` VARCHAR(100) NOT NULL , `woman_name` VARCHAR(255) NOT NULL , `children` INT NOT NULL , `salary` BIGINT NOT NULL , `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , `password` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `ramall`.`deleted_tb` ( `username` VARCHAR(255) NOT NULL , `fullname` VARCHAR(255) NOT NULL , `email` VARCHAR(255) NOT NULL , `gender` VARCHAR(10) NOT NULL , `status` VARCHAR(50) NOT NULL , `oper` VARCHAR(100) NOT NULL , `woman_name` VARCHAR(255) NOT NULL , `children` INT NOT NULL , `salary` BIGINT NOT NULL , `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , `password` TEXT NOT NULL) ENGINE = InnoDB;
+
+CREATE TABLE `ramall`.`children_tb` ( `employee_id` INT(64) NOT NULL , `name` INT NOT NULL , `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ) ENGINE = InnoDB;
