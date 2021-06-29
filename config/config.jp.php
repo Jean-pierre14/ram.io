@@ -160,6 +160,7 @@ if (isset($_POST['addempl'])) {
 
         if ($sql) {
             if(!empty($_POST['name'])){
+                
                 $num = count($_POST['name']);
     
                 if ($num > 1) {
