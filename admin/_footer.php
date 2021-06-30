@@ -49,7 +49,7 @@ $(document).ready(function() {
                     $('#uiChildren').append(`
                 <div class="col-md-4 form-group">
                         <label for="children">Children ${i}</label>
-                        <input type="text" name="name[${i}]" id="children_num${i}"
+                        <input type="text" name="kid[]" id="children_num${i}"
                             placeholder="Name ${i}" class="form-control">
                 </div>
                 `)
