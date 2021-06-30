@@ -159,6 +159,8 @@ if (isset($_POST['addempl'])) {
 
 
         if ($sql) {
+            $thisemail = mysqli_query($con, "SELECT Id FROM employees_tb WHERE email= '$email'");
+            $ThisID = mysqli_fetch_array($thisemail);
             if(!empty($_POST['name'])){
                 
                 $num = count($_POST['name']);
@@ -168,7 +170,7 @@ if (isset($_POST['addempl'])) {
     
                         if (trim($_POST['name'][$i]) != '') {
     
-                            $sql = mysqli_query($con, "INSERT INTO children_tb(`name`) VALUE('" . mysqli_real_escape_string($con, $_POST['name'][$i]) . "')");
+                            $sql = mysqli_query($con, "INSERT INTO children_tb(employees_id, `name`) VALUE('$ThisID','" . mysqli_real_escape_string($con, $_POST['name'][$i]) . "')");
                             if ($sql) {
                                 header("Location: viewemployees.php");
                                 array_push($success, "Employee Registered ");
