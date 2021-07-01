@@ -213,13 +213,6 @@ $(document).ready(function() {
     })
 })
 
-var myAlert = document.getElementById('myAlert')
-var bsAlert = new bootstrap.Alert(myAlert)
-
-var alertList = document.querySelectorAll('.alert')
-alertList.forEach(function(alert) {
-    new bootstrap.Alert(alert)
-})
 // Children
 function children() {
     let action = 'children'
