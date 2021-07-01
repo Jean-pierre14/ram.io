@@ -48,7 +48,7 @@
                     </div>
 
                 </div>
-                <div id="uiChildren" class="row justify-content-center"></div>
+                <!-- <div id="uiChildren" class="row justify-content-center"></div> -->
             </div>
         </div>
 

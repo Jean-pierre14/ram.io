@@ -158,9 +158,8 @@ if (isset($_POST['addempl'])) {
         $sql = mysqli_query($con, "INSERT INTO employees_tb(salary, username, fullname, email, `gender`, `status`,oper, `woman_name`, children, `password`) VALUES('$salary','$user','$fullname','$email','$gender','$status', '$oper', '$woman','$children','$passHash')");
 
         if ($sql) {
-            $thisemail = mysqli_query($con, "SELECT id FROM employees_tb WHERE email= '$email'");
-            $ThisID = mysqli_fetch_array($thisemail);
-            
+            // $thisemail = mysqli_query($con, "SELECT id FROM employees_tb WHERE email= '$email'");
+            header("Location: viewemployees.php");
         }
     }
 }
