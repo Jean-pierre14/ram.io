@@ -428,12 +428,17 @@ if (isset($_POST['action'])) {
             print 'error';
         }
     }
+
     // children container For loop
     if ($_POST['action'] == 'children') {
         $count = 0;
         $count = @mysqli_real_escape_string($con, trim(htmlentities($_POST['countKid'])));
         if ($count != 0) {
-            $output .= '<form action="" method="post">';
+            $output .= '
+            <form action="" method="post" autocomplete="off" id="childrenForm">
+                <input type="hidden" class="form-control" name="action" value="childrenBtn"/>
+            ';
+
             for ($i = 1; $i <= $count; $i++) {
                 if ($count == 4) {
                     break;
@@ -441,16 +446,37 @@ if (isset($_POST['action'])) {
                 $output .= '
                 <div class="form-group">
                     <label for="childres' . $i . '">Kid ' . $i . '</label>
-                    <input type="text" class="form-control" placeholder="Kid ' . $i . '" name="children' . $i . '">
+                    <input type="text" class="form-control" placeholder="Kid ' . $i . '" name="childrenName[]">
                 </div>';
             }
             $output .= '
-            <button type="submit" class="btn btn-block btn-success">Register</button>
+            <button type="button" id="childrenBtnSubmit" class="btn btn-block btn-success">Register</button>
         </form>';
         } else {
             $output .= '<p class="badge badge-info">Enter the number kid</p>';
         }
         print $output;
+    }
+    // Insert those children now
+    if($_POST['action'] == 'childrenBtn'){
+        $data = [];
+        $userid = $_POST['userId'];
+        $data['info'] = "Cool";
+        $number = 0;
+        if($number > 0){
+            for($i=0; $i < $number; $i++){
+                if(trim($_POST['childrenName']) != ''){
+                    $sql = mysqli_query($con, "INSERT INTO children_tb() VALUES($userid, '".mysqli_real_escape_string($con, $_POST['childrenName'])."')");
+                    if($sql){
+                        $data['info'] = 'success';
+                        $data['userId'] = $userid;
+                    }else{
+                        $data['info'] = 'error';
+                    }
+                }
+            }
+        }
+        print json_encode($data);
     }
     // Dashboard
     if ($_POST['action'] == 'allEmployees') {

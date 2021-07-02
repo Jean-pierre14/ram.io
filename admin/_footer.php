@@ -192,6 +192,7 @@ $(document).ready(function() {
     })
     $('#children').keyup(function() {
         let action = 'children'
+        let UserId = $('#userId').val()
         let countKid = $(this).val()
         if (countKid < 0) {
             $('#errorChildren').html('<p class="alert alert-danger">What do you want?</p>')
@@ -200,6 +201,7 @@ $(document).ready(function() {
                 url: '../config/config.jp.php',
                 method: 'POST',
                 data: {
+                    UserId,
                     action,
                     countKid
                 },
@@ -210,6 +212,22 @@ $(document).ready(function() {
             })
         }
 
+    })
+    $(document).on('click', '#childrenBtnSubmit', function(){
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            dataType: 'JSON',
+            data: $('#childrenForm').serialize(),
+            success: function(data){
+                // if(data.info == 'success'){
+                //     window.location.href = `viewemployees.php?actionEdit=${data.userId}`
+                // }else{
+                //     $('#error').html(`<p class="alert alert-danger">Add data first ${data}</p>`)
+                // }
+                alert(data)
+            }
+        })
     })
 })
 

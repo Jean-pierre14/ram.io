@@ -164,10 +164,12 @@
                                                                     <p>Children</p>
                                                                 </div>
                                                                 <div class="card-body">
-                                                                    <div id="resultChildren2"></div>
+                                                                    <div id="error"></div>
+                                                                    <input type="hidden" value="<?= $_GET['actionEdit'];?>" id="userId" class="form-control" >
+                                                                    <!-- <div id="resultChildren2"></div> -->
                                                                     <div id="resultChildren">
-                                                                        <p class="alert alert-warning">You may insert information about
-                                                                            he/her kid but network is bad</p>
+                                                                        <p class="alert alert-warning text-center">You may insert information about
+                                                                            your kid but network is bad</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
