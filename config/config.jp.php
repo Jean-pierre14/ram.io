@@ -467,17 +467,16 @@ if (isset($_POST['action'])) {
         if($number > 0){
             for($i=0; $i < $number; $i++){
                 if(trim($_POST['childrenName']) != ''){
-                    $sql = mysqli_query($con, "INSERT INTO children_tb() VALUES($userid, '".mysqli_real_escape_string($con, $_POST['childrenName'][$i])."')");
+                    $sql = mysqli_query($con, "INSERT INTO children_tb(employee_id, `name`) VALUES($userid, '".mysqli_real_escape_string($con, $_POST['childrenName'][$i])."')");
                     if($sql){
-                        $data['info'] = 'success';
-                        $data['userId'] = $userid;
+                        $output .= 'success';
                     }else{
-                        $data['info'] = 'error';
+                        $output .= 'error';
                     }
                 }
             }
         }
-        print json_encode($data);
+        print $output;
     }
     // Dashboard
     if ($_POST['action'] == 'allEmployees') {

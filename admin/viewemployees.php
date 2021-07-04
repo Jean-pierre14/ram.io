@@ -159,6 +159,41 @@
                                                             </div>
                                                         </div>
                                                         <?php if ($row['children'] != '') : ?>
+                                                            <div class="card card-body">
+                                                                    <?php 
+                                                                        $output = '';
+                                                                        $sql = mysqli_query($con, "SELECT * FROM children_tb WHERE employee_id = '".$_GET['actionEdit']."'");
+                                                                        if($sql){
+                                                                            if(mysqli_num_rows($sql) > 0){
+                                                                                $output .= '<ul class="list-group">';
+                                                                                while($d = mysqli_fetch_array($sql)){
+                                                                                    $output .= '<li class="list-group-item" id="'.$d['id'].'">'.$d['name'].'</li>';
+                                                                                }
+                                                                                $output .= '</ul>';
+                                                                            }else{
+                                                                                $num = mysqli_query($con, "SELECT children FROM employees_tb WHERE id = '".$_GET['actionEdit']."'");
+                                                                                $number = mysqli_fetch_assoc($num);
+                                                                                $n = $number['children'];
+
+                                                                                for($i = 1; $i <= $n; $i++){
+                                                                                    $output .= '
+                                                                                    <div class="form-group">
+                                                                                        <label for="name">Enter name</label>
+                                                                                        <input type="text" name="childreName[]" placeholder="Enter name..." class="form-control"/>
+                                                                                    </div>
+                                                                                    ';
+                                                                                }
+                                                                                $output .= '
+                                                                                <div class="form-group">
+                                                                                    <button class="btn btn-sm btn-success">Register</button>
+                                                                                </div>';
+
+                                                                                // $output .= $number['children'];
+                                                                            }
+                                                                        }
+                                                                        print $output;
+                                                                    ?>
+                                                                </div>
                                                             <div class="card my-2">
                                                                 <div class="card-header">
                                                                     <p>Children</p>

@@ -221,7 +221,6 @@ $(document).ready(function() {
             dataType: 'JSON',
             data: $('#childrenForm').serialize(),
             success: function(data){
-                
                 alert(data)
             }
         })
