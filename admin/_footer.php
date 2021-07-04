@@ -214,17 +214,14 @@ $(document).ready(function() {
 
     })
     $(document).on('click', '#childrenBtnSubmit', function(){
+        
         $.ajax({
             url: '../config/config.jp.php',
             method: 'POST',
             dataType: 'JSON',
             data: $('#childrenForm').serialize(),
             success: function(data){
-                // if(data.info == 'success'){
-                //     window.location.href = `viewemployees.php?actionEdit=${data.userId}`
-                // }else{
-                //     $('#error').html(`<p class="alert alert-danger">Add data first ${data}</p>`)
-                // }
+                
                 alert(data)
             }
         })

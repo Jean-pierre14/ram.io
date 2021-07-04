@@ -459,14 +459,15 @@ if (isset($_POST['action'])) {
     }
     // Insert those children now
     if($_POST['action'] == 'childrenBtn'){
+        
         $data = [];
         $userid = $_POST['userId'];
-        $data['info'] = "Cool";
-        $number = 0;
+        $data = $_POST['childrenName'];
+        $number = 1;
         if($number > 0){
             for($i=0; $i < $number; $i++){
                 if(trim($_POST['childrenName']) != ''){
-                    $sql = mysqli_query($con, "INSERT INTO children_tb() VALUES($userid, '".mysqli_real_escape_string($con, $_POST['childrenName'])."')");
+                    $sql = mysqli_query($con, "INSERT INTO children_tb() VALUES($userid, '".mysqli_real_escape_string($con, $_POST['childrenName'][$i])."')");
                     if($sql){
                         $data['info'] = 'success';
                         $data['userId'] = $userid;
