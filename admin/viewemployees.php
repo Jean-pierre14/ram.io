@@ -159,7 +159,11 @@
                                                             </div>
                                                         </div>
                                                         <?php if ($row['children'] != '') : ?>
-                                                            <div class="card card-body">
+                                                            <div class="card">
+                                                                <div class="card-header">
+                                                                    <h6>children</h6>
+                                                                </div>
+                                                                    <div class="card-body">
                                                                     <?php 
                                                                         $output = '';
                                                                         $sql = mysqli_query($con, "SELECT * FROM children_tb WHERE employee_id = '".$_GET['actionEdit']."'");
@@ -175,24 +179,30 @@
                                                                                 $number = mysqli_fetch_assoc($num);
                                                                                 $n = $number['children'];
 
+                                                                                $output .= '<form action="../config/config.jp.php" autocomplete="off" method="post" id="myChildren">
+                                                                                
+                                                                                <input type="hidden" value="'.$_GET['actionEdit'].'" name="userId" class="form-control" />
+                                                                                ';
                                                                                 for($i = 1; $i <= $n; $i++){
                                                                                     $output .= '
                                                                                     <div class="form-group">
                                                                                         <label for="name">Enter name</label>
-                                                                                        <input type="text" name="childreName[]" placeholder="Enter name..." class="form-control"/>
+                                                                                        <input type="text" name="childrenName[]" placeholder="Enter name..." class="form-control"/>
                                                                                     </div>
                                                                                     ';
                                                                                 }
                                                                                 $output .= '
-                                                                                <div class="form-group">
-                                                                                    <button class="btn btn-sm btn-success">Register</button>
-                                                                                </div>';
+                                                                                    <div class="form-group">
+                                                                                        <button type="submit" name="childrenSaved" class="btn btn-sm btn-success" id="childrenSaved">Register</button>
+                                                                                    </div>
+                                                                                </form>';
 
                                                                                 // $output .= $number['children'];
                                                                             }
                                                                         }
                                                                         print $output;
                                                                     ?>
+                                                                    </div>
                                                                 </div>
                                                             <div class="card my-2">
                                                                 <div class="card-header">

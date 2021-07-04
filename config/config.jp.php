@@ -478,6 +478,9 @@ if (isset($_POST['action'])) {
         }
         print $output;
     }
+    if($_POST['action'] == 'childrenSaved'){
+        print 'childrenSaved';
+    }
     // Dashboard
     if ($_POST['action'] == 'allEmployees') {
         $sql = mysqli_query($con, "SELECT COUNT(*) AS idCount FROM employees_tb WHERE oper = 'OPERATIONNEL'");
@@ -664,4 +667,22 @@ if (isset($_POST['action'])) {
         }
         print $output;
     }
+}
+
+if(isset($_POST['childrenSaved'])){
+    $number = count($_POST['childrenName']);
+
+    if($number > 0){
+        for($i = 0; $i < $number; $i++){
+            if(trim($_POST['childrenName']) != ''){
+                $sql = mysqli_query($con, "INSERT INTO children_tb(employee_id, `name`) VALUES($userid, '".mysqli_real_escape_string($con, $_POST['childrenName'][$i])."')");
+                if($sql){
+                    $output .= 'success';
+                }else{
+                    $output .= 'error';
+                }
+            }
+        }
+    }
+    print $number;
 }

@@ -225,6 +225,17 @@ $(document).ready(function() {
             }
         })
     })
+    $('#childrenSaved').click(function(){
+        $.ajax({
+            url: '../config/config.php',
+            method: 'POST',
+            dataType: 'JSON',
+            data: $('#childrenSaved').serialize(),
+            success: function(data){
+                alert(data)
+            }
+        })
+    })
 })
 
 // Children
