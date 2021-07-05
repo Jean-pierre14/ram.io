@@ -175,49 +175,13 @@
                                                                                 }
                                                                                 $output .= '</ul>';
                                                                             }else{
-                                                                                $num = mysqli_query($con, "SELECT children FROM employees_tb WHERE id = '".$_GET['actionEdit']."'");
-                                                                                $number = mysqli_fetch_assoc($num);
-                                                                                $n = $number['children'];
-
-                                                                                $output .= '<form action="../config/config.jp.php" autocomplete="off" method="post" id="myChildren">
-                                                                                
-                                                                                <input type="hidden" value="'.$_GET['actionEdit'].'" name="userId" class="form-control" />
-                                                                                ';
-                                                                                for($i = 1; $i <= $n; $i++){
-                                                                                    $output .= '
-                                                                                    <div class="form-group">
-                                                                                        <label for="name">Enter name</label>
-                                                                                        <input type="text" name="childrenName[]" placeholder="Enter name..." class="form-control"/>
-                                                                                    </div>
-                                                                                    ';
-                                                                                }
-                                                                                $output .= '
-                                                                                    <div class="form-group">
-                                                                                        <button type="submit" name="childrenSaved" class="btn btn-sm btn-success" id="childrenSaved">Register</button>
-                                                                                    </div>
-                                                                                </form>';
-
-                                                                                // $output .= $number['children'];
+                                                                                include './_addChildren.php';
                                                                             }
                                                                         }
                                                                         print $output;
                                                                     ?>
                                                                     </div>
                                                                 </div>
-                                                            <div class="card my-2">
-                                                                <div class="card-header">
-                                                                    <p>Children</p>
-                                                                </div>
-                                                                <div class="card-body">
-                                                                    <div id="error"></div>
-                                                                    <input type="hidden" value="<?= $_GET['actionEdit'];?>" id="userId" class="form-control" >
-                                                                    <!-- <div id="resultChildren2"></div> -->
-                                                                    <div id="resultChildren">
-                                                                        <p class="alert alert-warning text-center">You may insert information about
-                                                                            your kid but network is bad</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
                                                     </div>
                                                 <?php endif; ?>
                                                 </div>
