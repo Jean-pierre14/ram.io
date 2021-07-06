@@ -32,13 +32,15 @@
                 <option value="Married">Married</option>
                 <option value="Divorce">Divorce</option>
             </select>
+
         </div>
+
         <div class="col-md-12" id="married_ctn">
             <div class="card card-body none" style="display: none;">
                 <div class="row">
                     <div class="form-group col-md-7">
-                        <label for="woman">Woman name</label>
-                        <input type="text" name="woman" id="woman" value="<?= $woman; ?>" placeholder="Woman"
+                        <label for="woman">Partner name</label>
+                        <input type="text" name="woman" id="woman" value="<?= $woman; ?>" placeholder="Partner name"
                             spellcheck="false" class="form-control">
                     </div>
                     <div class="col-md-5 form-group">
