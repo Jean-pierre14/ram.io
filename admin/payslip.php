@@ -28,11 +28,14 @@
                                     </form>
                                     <div class="card card-body mb-2">
                                         <div id="resultSearch"></div>
-                                        <div id="payResults" class="row justify-content-center">
-                                            <div class="col-md-6">
+                                        <div id="payResults" class="">
+                                            <div class="row justify-content-center">
+                                            <div class="col-md-4">
                                                 <img src="../img/loading.gif" alt="Loadding" class="img-fluid"
                                                     class="col-md-4">
                                             </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

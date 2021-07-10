@@ -32,7 +32,7 @@
                 <option value="Married">Married</option>
                 <option value="Divorce">Divorce</option>
             </select>
-
+ 
         </div>
 
         <div class="col-md-12" id="married_ctn">
