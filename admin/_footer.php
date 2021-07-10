@@ -105,7 +105,7 @@ $(document).ready(function() {
             })
         } else {
             $('#resultRetired').show()
-            $('#searchResult').hide()
+            $('#searchResult').html('')
         }
     })
     $('.addWoman').click(function() {

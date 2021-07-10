@@ -29,7 +29,6 @@
                                             <input type="search" name="search" id="search_retired" placeholder="Search..." class="form-control">
                                         </div>
                                     </form>
-                                    
                                         <?php if(isset($_GET['actionEdit'])):?>
                                             <div class="row justify-content-center">
                                                 <div class="col-md-6 col-sm-12">
@@ -38,11 +37,10 @@
                                             </div>
                                         <?php else:?>
                                             <div class="card card-body">
-                                            <div id="searchResult"></div>
-                                            <div id="resultRetired"></div>
+                                                <div id="searchResult"></div>
+                                                <div id="resultRetired"></div>
                                             </div>
                                         <?php endif;?>
-                                    
                                 </div>
                             </div>
                         </div>
