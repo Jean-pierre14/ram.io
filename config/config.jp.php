@@ -384,7 +384,7 @@ if (isset($_POST['action'])) {
                                 </div>     
                             </div>
                             <div class="widget-content-right widget-content-actions">
-                                <a href="viewemployees.php?actionEdit=' . $row['id'] . '" id="' . $row['id'] . '"
+                                <a href="retired.php?actionEdit=' . $row['id'] . '" id="' . $row['id'] . '"
                                     class="border-0 btn-transition btn btn-outline-success">
                                     <i class="fa fa-check"></i>
                                 </a>
