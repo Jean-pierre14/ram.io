@@ -404,9 +404,30 @@ if (isset($_POST['action'])) {
         }
         print $output;
     }
+    if ($_POST['action'] == 'search_text') {
+        $txt = mysqli_real_escape_string($con, trim(htmlentities($_POST['txt'])));
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE (username LIKE '%" . trim(htmlentities($_POST['txt'])) . "%' OR fullname LIKE '%" . trim(htmlentities($_POST['txt'])) . "%' OR email LIKE '%" . trim(htmlentities($_POST['txt'])) . "%') AND oper = 'RETIRED'");
+        
+        if(@mysqli_num_rows($sql) > 0){
+            while($row = mysqli_fetch_array($sql)){
+            $output .= '
+                <div class="content shadow-sm">
+                    <p class="d-flex justify-content-between align-item-center">
+                        <span>Username:</span>
+                        <span>'.$row['username'].'</span>
+                    </p>
+                </div>
+            ';
+            }
+        }else{
+            $output .= '<p class="alert alert-warning">This username is not found '.$txt.'</p>';
+        }
+
+        print $output;
+    }
     if ($_POST['action'] == 'search_retired') {
         $txt = mysqli_real_escape_string($con, trim(htmlentities($_POST['txt'])));
-        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE (username LIKE '%" . trim(htmlentities($_POST['txt'])) . "%' AND oper = 'RETIRED')");
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE (username LIKE '%" . trim(htmlentities($_POST['txt'])) . "%' OR fullname LIKE '%" . trim(htmlentities($_POST['txt'])) . "%' OR email LIKE '%" . trim(htmlentities($_POST['txt'])) . "%') AND oper = 'RETIRED'");
         
         if(@mysqli_num_rows($sql) > 0){
             while($row = mysqli_fetch_array($sql)){

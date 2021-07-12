@@ -87,6 +87,27 @@ $(document).ready(function() {
             return false
         }
     })
+    $('#search_text').keyup(function() {
+        let txt = $(this).val()
+        let action = 'search_text'
+        if (txt !== '') {
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'post',
+                data: {
+                    action,
+                    txt
+                },
+                success: function(data) {
+                    $('#resultSearch').html(data)
+                    $('#payResults').hide()
+                }
+            })
+        } else {
+            $('#payResults').show()
+            $('#resultSearch').html('')
+        }
+    })
     $('#search_retired').keyup(function() {
         let txt = $(this).val()
         let action = 'search_retired'

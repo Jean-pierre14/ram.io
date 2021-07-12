@@ -26,7 +26,7 @@
                                 <div class="container-fluid">
                                     <form action="" method="post">
                                         <div class="form-group">
-                                            <input type="search" name="search" id="search_retired" placeholder="Search..." class="form-control">
+                                            <input type="search" autocomplete="off" name="search" id="search_retired" placeholder="Search..." class="form-control">
                                         </div>
                                     </form>
                                         <?php if(isset($_GET['actionEdit'])):?>
