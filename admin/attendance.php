@@ -23,10 +23,15 @@
 
                         <div class="app-inner-layout__content">
                             <div class="tab-content">
-                                <div class="container-fluid bg-white">
-                                    <div id="attendanceResults" class="row justify-content-center">
-                                        <div class="col-md-4 content-fix">
-                                            <img src="../img/loading.gif" alt="Loading" class="img-fluid">
+                                <div class="container-fluid p-0 mb-5">
+                                    <div class="row justify-content-center">
+                                        <div id="" class="col-md-5 col-sm-12">
+                                            <div id="attendanceResults">
+                                                <img src="../img/loading.gif" alt="Loading" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7 col-sm-12">
+                                            <h3>Statistique</h3>
                                         </div>
                                     </div>
                                 </div>

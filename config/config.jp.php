@@ -3,6 +3,8 @@ $numero = "(+243) 976-353-543";
 $prooject_name = "RamaLL";
 $number_of_children = 4;
 
+$today = date('Y-m-d');
+
 $con = mysqli_connect("localhost", "root", "", "ramall") or die("Couln't connect to the database");
 
 $errors = [];
@@ -644,15 +646,35 @@ if (isset($_POST['action'])) {
         if(@mysqli_num_rows($sql) > 0){
             $output .= '<div class="col-md-9 col-sm-12"><ul class="list-group">';
             while($row = mysqli_fetch_array($sql)):
-                $output .= '
+                if($row['attendance'] == $today){
+                    $output .= '
+                        <li class="list-group-item d-flex justify-content-between align-item-center">
+                            <span>'.$row['fullname'].'</span>
+                            <span clss="delete">
+                                <button type="button" class="btn btn-sm btn-danger See"><i class="fa fa-eyes"></i></button>
+                            </span>
+                        </li>
+                    ';
+                }elseif($row['attendance'] == 'no'){
+                    $output .= '
+                        <li class="list-group-item d-flex justify-content-between align-item-center">
+                            <span>'.$row['fullname'].'</span>
+                            <span>
+                                <button type="button" class="btn btn-sm btn-danger See"><i class="fa fa-eyes"></i></button>
+                            </span>
+                        </li>
+                    ';
+                }else{
+                    $output .= '
                     <li class="list-group-item d-flex justify-content-between align-item-center">
                         <span>'.$row['fullname'].'</span>
                         <span class="btn-group">
-                            <button class="btn btn-sm btn-success yes" id="'.$row['id'].'"><i class="fa fa-check"></i></button>
-                            <button class="btn btn-sm btn-success no" id="'.$row['id'].'"><i class="fa fa-check"></i></button>
+                            <button type="button" class="btn btn-sm btn-success yes" id="'.$row['id'].'"><i class="fa fa-check"></i></button>
+                            <button type="button" class="btn btn-sm btn-danger no" id="'.$row['id'].'"><i class="fa fa-check"></i></button>
                         </span>
                     </li>
                 ';
+                }
             endwhile;
             $output .= '</ul></div>';
         }else{
