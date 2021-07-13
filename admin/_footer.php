@@ -68,6 +68,19 @@ $(document).ready(function() {
     children()
 
     Retired()
+    attendanceResults()
+    function attendanceResults(){
+        $.ajax({
+                url: '../config/config.jp.php',
+                method: 'post',
+                data: {
+                    action: 'attendanceResults'
+                },
+                success: function(data) {
+                    $('#attendanceResults').html(data)
+                }
+            })
+    }
     $(document).on('click', '.deleteEmpl', function() {
         let id = $(this).attr('id')
         let action = 'deleteEmpl'

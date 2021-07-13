@@ -639,6 +639,27 @@ if (isset($_POST['action'])) {
             print 'error';
         }
     }
+    if($_POST['action'] == 'attendanceResults'){
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL'");
+        if(@mysqli_num_rows($sql) > 0){
+            $output .= '<div class="col-md-9 col-sm-12"><ul class="list-group">';
+            while($row = mysqli_fetch_array($sql)):
+                $output .= '
+                    <li class="list-group-item d-flex justify-content-between align-item-center">
+                        <span>'.$row['fullname'].'</span>
+                        <span class="btn-group">
+                            <button class="btn btn-sm btn-success yes" id="'.$row['id'].'"><i class="fa fa-check"></i></button>
+                            <button class="btn btn-sm btn-success no" id="'.$row['id'].'"><i class="fa fa-check"></i></button>
+                        </span>
+                    </li>
+                ';
+            endwhile;
+            $output .= '</ul></div>';
+        }else{
+            $output .= '<p>There no data into your databse</p>';
+        }
+        print $output;
+    }
     if ($_POST['action'] == 'select2') {
         $procedure = "CREATE PROCEDURE selectEmpl2()
         BEGIN
