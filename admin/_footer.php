@@ -118,14 +118,16 @@ $(document).ready(function() {
         let d = $(this).val()
         let id = $(this).attr('id')
 
-        $.ajax({
-            url: '../config/config.jp.php',
-            method: 'POST',
-            data: {action: 'selectOnly', d, id},
-            success: function(data){
-                $('#OnlyData').html(data)
-            }
-        })
+        if(d != ''){
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'POST',
+                data: {action: 'selectOnly', d, id},
+                success: function(data){
+                    $('#OnlyData').html(data)
+                }
+            })
+        }
     })
     $('#searchAtt').keyup(function(){
         let txt = $(this).val()

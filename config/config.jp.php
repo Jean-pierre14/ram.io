@@ -708,19 +708,28 @@ if (isset($_POST['action'])) {
     }
     // To see the attendance of the user
     if($_POST['action'] == 'see'){
+
         $id = $_POST['id'];
         $sql = mysqli_query($con, "SELECT * FROM attendance_tb WHERE employee_id = $id");
 
-            $p = mysqli_query($con, "SELECT count(statistique) AS countP FROM attendance_tb WHERE statistique = 1 AND employee_id = $id");
-            $presence = mysqli_fetch_array($p);
-            $a = mysqli_query($con, "SELECT count(statistique) AS countP FROM attendance_tb WHERE statistique = 0 AND employee_id = $id");
-            $absence = mysqli_fetch_array($a);
+        $p = mysqli_query($con, "SELECT count(statistique) AS countP FROM attendance_tb WHERE statistique = 1 AND employee_id = $id");
+        $presence = mysqli_fetch_array($p);
+        $a = mysqli_query($con, "SELECT count(statistique) AS countP FROM attendance_tb WHERE statistique = 0 AND employee_id = $id");
+        $absence = mysqli_fetch_array($a);
 
+        $d = mysqli_query($con, "SELECT * FROM employeeS_tb WHERE id = $id");
+        $data = mysqli_fetch_array($d);
         if(@mysqli_num_rows($sql) > 0){
             
             $output .= '
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4>
+                        <span> Fullname: </span>
+                        <span> '.$data['fullname'].'</span>
+                    </h4>
+                </div>
+                <div class="p-5">
                     <h4 class="d-flex justify-content-between align-item-center">Presence: <span class="btn btn-sm btn-success">'.$presence['countP'].'</span></h4>
                     <h4 class="d-flex justify-content-between align-item-center">Absence: <span class="btn btn-sm btn-danger">'.$absence['countP'].'</span></h4>
                     <select class="selectOnly ml-1 form-control" id="'.$id.'">
@@ -729,14 +738,13 @@ if (isset($_POST['action'])) {
                         <option value="1">Presence</option>
                     </select>
                 </div>
-                <div class="card-body" id="OnlyData">
-
+                <div class="card-body row justify-content-center" id="OnlyData">
                 ';
 
             while($row = mysqli_fetch_array($sql)){
                 $output .= '        
-                    <span class="bg-white shadow-sm mx-1" style="padding: 8px;">
-                        <span class="mr-5">'.$row['DateTo'].'</span>';
+                    <span class="col-md-4 text-center my-1 shadow-sm" style="padding: 8px;">
+                        <span class="">'.$row['DateTo'].'</span>';
                         if($row['statistique'] == 1){
                             $output .= '<span class="btn btn-sm btn-success"><i class="fa fa-thumbs-up"></i></span>';
                         }else{
@@ -786,7 +794,7 @@ if (isset($_POST['action'])) {
             }else{
                 $situation = ':( sorry OS';
             }
-            $output .= '<p class="alert alert-warning">Sorry but this employee doesn\'t '.$situation.' the job even once</p>';
+            $output .= '<p class="alert alert-warning">Sorry but this employee doesn\'t <b><i>'.$situation.' </b></i>the job even once</p>';
         }
         print $output;
     }
