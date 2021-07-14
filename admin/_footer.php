@@ -81,6 +81,28 @@ $(document).ready(function() {
                 }
             })
     }
+    $(document).on("click", ".yes", function(){
+        let id = $(this).attr('id')
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            data: {action: 'yes', id},
+            success: function(data){
+                attendanceResults()
+            }
+        })
+    })
+    $(document).on("click", ".no", function(){
+        let id = $(this).attr('id')
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            data: {action: 'no', id},
+            success: function(data){
+                attendanceResults()
+            }
+        })
+    })
     $(document).on('click', '.deleteEmpl', function() {
         let id = $(this).attr('id')
         let action = 'deleteEmpl'

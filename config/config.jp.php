@@ -644,14 +644,14 @@ if (isset($_POST['action'])) {
     if($_POST['action'] == 'attendanceResults'){
         $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL'");
         if(@mysqli_num_rows($sql) > 0){
-            $output .= '<div class="col-md-9 col-sm-12"><ul class="list-group">';
+            $output .= '<ul class="list-group">';
             while($row = mysqli_fetch_array($sql)):
                 if($row['attendance'] == $today){
                     $output .= '
                         <li class="list-group-item d-flex justify-content-between align-item-center">
                             <span>'.$row['fullname'].'</span>
                             <span clss="delete">
-                                <button type="button" class="btn btn-sm btn-danger See"><i class="fa fa-thumbs-o-up"></i></button>
+                                <button type="button" class="btn btn-sm btn-success See" id="'.$row['id'].'"><i class="fa fa-eye"></i></button>
                             </span>
                         </li>
                     ';
@@ -660,7 +660,7 @@ if (isset($_POST['action'])) {
                         <li class="list-group-item d-flex justify-content-between align-item-center">
                             <span>'.$row['fullname'].'</span>
                             <span>
-                                <button type="button" class="btn btn-sm btn-danger See"><i class="fa fa-eyes"></i></button>
+                                <button type="button" class="btn btn-sm btn-danger See" id="'.$row['id'].'"><i class="fa fa-eye"></i></button>
                             </span>
                         </li>
                     ';
@@ -676,11 +676,35 @@ if (isset($_POST['action'])) {
                 ';
                 }
             endwhile;
-            $output .= '</ul></div>';
+            $output .= '</ul>';
         }else{
             $output .= '<p>There no data into your databse</p>';
         }
         print $output;
+    }
+    // If yes
+    if($_POST['action'] == 'yes'){
+        $today = date('Y-m-d');
+        $id = $_POST['id'];
+        
+        $sql = mysqli_query($con, "UPDATE employees_tb SET attendance = '$today' WHERE id = $id");
+        if($sql){
+            mysqli_query($con, "INSERT INTO attendance_tb(employee_id, DateTo, statistique) VALUES('$id', '$today', 1)");
+        }else{
+            print 'Error';
+        }
+    }
+    // If no
+    if($_POST['action'] == 'no'){
+        $today = date('Y-m-d');
+        $id = $_POST['id'];
+        
+        $sql = mysqli_query($con, "UPDATE employees_tb SET attendance = 'no' WHERE id = $id");
+        if($sql){
+            mysqli_query($con, "INSERT INTO attendance_tb(employee_id, DateTo, statistique) VALUES('$id', '$today', 0)");
+        }else{
+            print 'Error';
+        }
     }
     if ($_POST['action'] == 'select2') {
         $procedure = "CREATE PROCEDURE selectEmpl2()

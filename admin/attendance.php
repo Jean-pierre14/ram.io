@@ -26,8 +26,11 @@
                                 <div class="container-fluid p-0 mb-5">
                                     <div class="row justify-content-center">
                                         <div id="" class="col-md-5 col-sm-12">
-                                            <div id="attendanceResults">
-                                                <img src="../img/loading.gif" alt="Loading" class="img-fluid">
+                                            <form action="" method="post" class="mb-2">
+                                                <input type="search" id="searchAtt" name="searchAtt" autocomplete="off" placeholder="Search..." class="form-control">
+                                            </form>
+                                            <div id="attendanceResults" style="max-height: 470px; overflow-y: auto">
+                                                <img src="../img/loading.gif" alt="Loading..." class="img-fluid">
                                             </div>
                                         </div>
                                         <div class="col-md-7 col-sm-12">
