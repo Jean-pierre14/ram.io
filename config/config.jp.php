@@ -754,6 +754,86 @@ if (isset($_POST['action'])) {
         }
         print $output;
     }
+    // Select only one part of data from the attendance list
+    if($_POST['action'] == 'selectOnly'){
+        $id = $_POST['id'];
+        $select = trim(htmlentities($_POST['d']));
+
+        $sql = mysqli_query($con, "SELECT * FROM attendance_tb WHERE employee_id = $id AND statistique = $select");
+        if(@mysqli_num_rows($sql) > 0){
+            while($row = mysqli_fetch_array($sql)){
+                if($select == 1){
+                    $output .= '
+                        <span class="bg-white shadow-sm mx-1" style="padding: 8px;">
+                                <span class="mr-5">'.$row['DateTo'].'</span>
+                                <span class="btn btn-sm btn-success"><i class="fa fa-thumbs-up"></i></span>
+                            </span>
+                        ';
+                }else{
+                    $output .= '
+                    <span class="bg-white shadow-sm mx-1" style="padding: 8px;">
+                            <span class="mr-5">'.$row['DateTo'].'</span>
+                            <span class="btn btn-sm btn-danger"><i class="fa fa-thumbs-up"></i></span>
+                        </span>
+                    ';
+                }
+            }
+        }else{
+            if($select == 1){
+                $situation = 'attended';
+            }elseif($select == 0){
+                $situation = 'missed';
+            }else{
+                $situation = ':( sorry OS';
+            }
+            $output .= '<p class="alert alert-warning">Sorry but this employee doesn\'t '.$situation.' the job even once</p>';
+        }
+        print $output;
+    }
+    // Search form
+    if($_POST['action'] == 'searchAtt'){
+        $txt = mysqli_real_escape_string($con, htmlentities(trim($_POST['txt'])));
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE username LIKE '%".$txt."%' OR fullname LIKE '%".$txt."%' OR email LIKE '%".$txt."%' OR gender LIKE '%".$txt."%' ORDER BY username");
+
+        if(@mysqli_num_rows($sql) > 0){
+            $output .= '<ul class="list-group">';
+            while($row = mysqli_fetch_array($sql)):
+                if($row['attendance'] == $today){
+                    $output .= '
+                        <li class="list-group-item d-flex justify-content-between align-item-center">
+                            <span>'.$row['fullname'].'</span>
+                            <span clss="delete">
+                                <button type="button" class="btn btn-sm btn-success See" id="'.$row['id'].'"><i class="fa fa-eye"></i></button>
+                            </span>
+                        </li>
+                    ';
+                }elseif($row['attendance'] == 'no'){
+                    $output .= '
+                        <li class="list-group-item d-flex justify-content-between align-item-center">
+                            <span>'.$row['fullname'].'</span>
+                            <span>
+                                <button type="button" class="btn btn-sm btn-danger See" id="'.$row['id'].'"><i class="fa fa-eye"></i></button>
+                            </span>
+                        </li>
+                    ';
+                }else{
+                    $output .= '
+                    <li class="list-group-item d-flex justify-content-between align-item-center">
+                        <span>'.$row['fullname'].'</span>
+                        <span class="btn-group">
+                            <button type="button" class="btn btn-sm btn-success yes" id="'.$row['id'].'"><i class="fa fa-thumbs-up"></i></button>
+                            <button type="button" class="btn btn-sm btn-danger no" id="'.$row['id'].'"><i class="fa fa-thumbs-down" style="rotate: 180deg"></i></button>
+                        </span>
+                    </li>
+                ';
+                }
+            endwhile;
+            $output .= '</ul>';
+        }else{
+            $output .= '<p class="alert alert-warning">We can\'t find '.$txt.' </p>';
+        }
+        print $output;
+    }
     if ($_POST['action'] == 'select2') {
         $procedure = "CREATE PROCEDURE selectEmpl2()
         BEGIN

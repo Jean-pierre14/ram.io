@@ -127,7 +127,25 @@ $(document).ready(function() {
             }
         })
     })
-
+    $('#searchAtt').keyup(function(){
+        let txt = $(this).val()
+        
+        if(txt != ''){
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'post',
+                data: {
+                    action: 'searchAtt',
+                    txt
+                },
+                success: function(data) {
+                    $('#attendanceResults').html(data)
+                }
+            })
+        }else{
+            attendanceResults()
+        }
+    })
     $(document).on('click', '.deleteEmpl', function() {
         let id = $(this).attr('id')
         let action = 'deleteEmpl'
