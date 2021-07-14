@@ -103,6 +103,31 @@ $(document).ready(function() {
             }
         })
     })
+    $(document).on("click", ".See", function(){
+        let id = $(this).attr('id')
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            data: {action: 'see', id},
+            success: function(data){
+                $('#SeeData').html(data)
+            }
+        })
+    })
+    $(document).on('change', '.selectOnly', function(){
+        let d = $(this).val()
+        let id = $(this).attr('id')
+
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            data: {action: 'selectOnly', d, id},
+            success: function(data){
+                $('#OnlyData').html(data)
+            }
+        })
+    })
+
     $(document).on('click', '.deleteEmpl', function() {
         let id = $(this).attr('id')
         let action = 'deleteEmpl'

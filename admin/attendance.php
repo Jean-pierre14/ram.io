@@ -34,7 +34,14 @@
                                             </div>
                                         </div>
                                         <div class="col-md-7 col-sm-12">
-                                            <h3>Statistique</h3>
+                                            <div id="SeeData">
+
+                                                <div class="card card-body">
+                                                    <h3 class="text-center" class="text-center">Welcome to the Attendance</h3>
+                                                    <p class="text-center">You know how to do!</p>
+                                                    <button class="btn btn-sm btn-success"><?= date('Y-m-d');?></button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

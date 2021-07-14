@@ -706,6 +706,54 @@ if (isset($_POST['action'])) {
             print 'Error';
         }
     }
+    // To see the attendance of the user
+    if($_POST['action'] == 'see'){
+        $id = $_POST['id'];
+        $sql = mysqli_query($con, "SELECT * FROM attendance_tb WHERE employee_id = $id");
+
+            $p = mysqli_query($con, "SELECT count(statistique) AS countP FROM attendance_tb WHERE statistique = 1 AND employee_id = $id");
+            $presence = mysqli_fetch_array($p);
+            $a = mysqli_query($con, "SELECT count(statistique) AS countP FROM attendance_tb WHERE statistique = 0 AND employee_id = $id");
+            $absence = mysqli_fetch_array($a);
+
+        if(@mysqli_num_rows($sql) > 0){
+            
+            $output .= '
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="d-flex justify-content-between align-item-center">Presence: <span class="btn btn-sm btn-success">'.$presence['countP'].'</span></h4>
+                    <h4 class="d-flex justify-content-between align-item-center">Absence: <span class="btn btn-sm btn-danger">'.$absence['countP'].'</span></h4>
+                    <select class="selectOnly ml-1 form-control" id="'.$id.'">
+                        <option value="">-- Select --</option>
+                        <option value="0">Absence</option>
+                        <option value="1">Presence</option>
+                    </select>
+                </div>
+                <div class="card-body" id="OnlyData">
+
+                ';
+
+            while($row = mysqli_fetch_array($sql)){
+                $output .= '        
+                    <span class="bg-white shadow-sm mx-1" style="padding: 8px;">
+                        <span class="mr-5">'.$row['DateTo'].'</span>';
+                        if($row['statistique'] == 1){
+                            $output .= '<span class="btn btn-sm btn-success"><i class="fa fa-thumbs-up"></i></span>';
+                        }else{
+                            $output .= '<span class="btn btn-sm btn-danger"><i class="fa fa-thumbs-down"></i></span>';
+                        }
+                        $output .= '
+                    </span>
+                ';
+            }
+            $output .= '
+                </div>
+            </div>';
+        }else{
+            $output .= '<p>The user doesn\'t attende the job</p>';
+        }
+        print $output;
+    }
     if ($_POST['action'] == 'select2') {
         $procedure = "CREATE PROCEDURE selectEmpl2()
         BEGIN
