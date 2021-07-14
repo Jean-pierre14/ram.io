@@ -651,7 +651,7 @@ if (isset($_POST['action'])) {
                         <li class="list-group-item d-flex justify-content-between align-item-center">
                             <span>'.$row['fullname'].'</span>
                             <span clss="delete">
-                                <button type="button" class="btn btn-sm btn-danger See"><i class="fa fa-eyes"></i></button>
+                                <button type="button" class="btn btn-sm btn-danger See"><i class="fa fa-thumbs-o-up"></i></button>
                             </span>
                         </li>
                     ';
@@ -669,8 +669,8 @@ if (isset($_POST['action'])) {
                     <li class="list-group-item d-flex justify-content-between align-item-center">
                         <span>'.$row['fullname'].'</span>
                         <span class="btn-group">
-                            <button type="button" class="btn btn-sm btn-success yes" id="'.$row['id'].'"><i class="fa fa-check"></i></button>
-                            <button type="button" class="btn btn-sm btn-danger no" id="'.$row['id'].'"><i class="fa fa-check"></i></button>
+                            <button type="button" class="btn btn-sm btn-success yes" id="'.$row['id'].'"><i class="fa fa-thumbs-up"></i></button>
+                            <button type="button" class="btn btn-sm btn-danger no" id="'.$row['id'].'"><i class="fa fa-thumbs-down" style="rotate: 180deg"></i></button>
                         </span>
                     </li>
                 ';
