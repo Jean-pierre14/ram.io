@@ -789,7 +789,7 @@ if (isset($_POST['action'])) {
         }else{
             if($select == 1){
                 $situation = 'attended';
-            }elseif($select == 0){
+            }elseif($select == 0){ 
                 $situation = 'missed';
             }else{
                 $situation = ':( sorry OS';
