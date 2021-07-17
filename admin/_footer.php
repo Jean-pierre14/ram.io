@@ -148,6 +148,17 @@ $(document).ready(function() {
             attendanceResults()
         }
     })
+    Today()
+    function Today(){
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            data: {action: 'TodayAttendance'},
+            success: function(data){
+                attendanceResults()
+            }
+        })
+    }
     $(document).on('click', '.deleteEmpl', function() {
         let id = $(this).attr('id')
         let action = 'deleteEmpl'

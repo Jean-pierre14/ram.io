@@ -41,11 +41,8 @@ $password = '';
 
 // Session user and other user
 
-function TodayIsToday(){
-    $lastDate = $today;
-    $Today1 = $today - 1;
-    
-}
+
+
 if (isset($_SESSION['username'])) {
     $id = $_SESSION['id'];
     $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE id = $id");
