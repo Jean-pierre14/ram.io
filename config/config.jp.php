@@ -644,6 +644,13 @@ if (isset($_POST['action'])) {
             print 'error';
         }
     }
+    if($_POST['action'] == 'TodayAttendance'){
+        $select = mysqli_query($con, "SELECT attendance FROM employees_tb");
+        $r = mysqli_fetch_array($select);
+        if($r['attendance'] != $today || $r['attendance'] == 'no'){
+            mysqli_query($con, "UPDATE employees_tb SET attendance = ''");
+        }
+    }
     if($_POST['action'] == 'attendanceResults'){
         $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL'");
         if(@mysqli_num_rows($sql) > 0){
