@@ -30,10 +30,9 @@
                                         <div id="resultSearch"></div>
                                         <div id="payResults" class="">
                                             <div class="row justify-content-center">
-                                            <div class="col-md-4">
-                                                <img src="../img/loading.gif" alt="Loadding" class="img-fluid"
-                                                    class="col-md-4">
-                                            </div>
+                                                <div class="col-md-4">
+                                                    <img src="../img/loading.gif" alt="Loadding" class="img-fluid col-md-4">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
