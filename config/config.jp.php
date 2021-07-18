@@ -411,19 +411,64 @@ if (isset($_POST['action'])) {
     }
     if ($_POST['action'] == 'search_text') {
         $txt = mysqli_real_escape_string($con, trim(htmlentities($_POST['txt'])));
-        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE (username LIKE '%" . trim(htmlentities($_POST['txt'])) . "%' OR fullname LIKE '%" . trim(htmlentities($_POST['txt'])) . "%' OR email LIKE '%" . trim(htmlentities($_POST['txt'])) . "%') AND oper = 'RETIRED'");
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE (username LIKE '%" . trim(htmlentities($_POST['txt'])) . "%' OR fullname LIKE '%" . trim(htmlentities($_POST['txt'])) . "%' OR email LIKE '%" . trim(htmlentities($_POST['txt'])) . "%') AND oper = 'OPERATIONNEL'");
         
         if(@mysqli_num_rows($sql) > 0){
-            while($row = mysqli_fetch_array($sql)){
-            $output .= '
-                <div class="content shadow-sm">
-                    <p class="d-flex justify-content-between align-item-center">
-                        <span>Username:</span>
-                        <span>'.$row['username'].'</span>
-                    </p>
+            $output .= '<ul class="todo-list-wrapper list-group list-group-flush">';
+            while ($row = mysqli_fetch_array($sql)) {
+                $output .= '
+                <li class="list-group-item">
+                <div class="todo-indicator bg-warning"></div>
+                <div class="widget-content p-0">
+                    <div class="widget-content-wrapper">
+                        <div class="widget-content-left mr-2">
+                            <div class="custom-checkbox custom-control">
+                                <input type="checkbox" id="exampleCustomCheckbox12' . $row['id'] . '"
+                                    class="custom-control-input"><label
+                                    class="custom-control-label"
+                                    for="exampleCustomCheckbox12' . $row['id'] . '">&nbsp;</label>
+                            </div>
+                        </div>
+                        <div class="widget-content-left">
+                            <div class="widget-heading">' . $row['fullname'] . '
+                                ';
+                if ($row['oper'] == 'OPERATIONNEL') {
+                    $output .= '
+                                    <div class="badge badge-success ml-2">
+                                    ' . $row['oper'] . '
+                                </div>
+                                    ';
+                } elseif ($row['oper'] == 'RETIRED') {
+                    $output .= '
+                                    <div class="badge badge-warning ml-2">
+                                    ' . $row['oper'] . '
+                                </div>
+                                    ';
+                } else {
+                    $output .= '
+                                    <div class="badge badge-danger ml-2">
+                                    ' . $row['oper'] . '
+                                </div>
+                                    ';
+                }
+                $output .= '
+                            </div>
+                            <div class="widget-subheading">
+                                <i>' . $row['username'] . ' $ <span class="badge badge-danger">' . $row['salary'] . '</span></i>
+                            </div>
+                        </div>
+                        <div class="widget-content-right widget-content-actions">
+                            <button id="' . $row['id'] . '"
+                                class="payConfirm border-0 btn-transition btn btn-outline-success">
+                                <i class="fa fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            ';
+            </li>
+                ';
             }
+            $output .= '</ul>';
         }else{
             $output .= '<p class="alert alert-warning">This username is not found '.$txt.'</p>';
         }

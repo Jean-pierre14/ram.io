@@ -28,7 +28,7 @@
                                     </form>
                                     <div class="card card-body mb-2">
                                         <div id="resultSearch"></div>
-                                        <div id="payResults" class="">
+                                        <div id="payResults">
                                             <div class="row justify-content-center">
                                                 <div class="col-md-4">
                                                     <img src="../img/loading.gif" alt="Loadding" class="img-fluid col-md-4">
