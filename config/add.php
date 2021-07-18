@@ -11,7 +11,7 @@ if(isset($_POST['action'])){
         $d = mysqli_fetch_array($sql);
         $n = $d['children'];
 
-        for($i = 0; $i <= $n; $i++){
+        for($i = 1; $i <= $n; $i++){
             $output .= '
             <div class="form-group">
                 <label for="kid">Enter the name</label>
