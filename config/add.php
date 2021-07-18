@@ -6,7 +6,8 @@ $output = '';
 
 if(isset($_POST['action'])){
     if($_POST['action'] == 'GetKid'){
-        $sql = mysqli_query($con, "SELECT children FROM employees_tb");
+        $id = $_POST['id'];
+        $sql = mysqli_query($con, "SELECT children FROM employees_tb WHERE id = $id");
         $d = mysqli_fetch_array($sql);
         $n = $d['children'];
 

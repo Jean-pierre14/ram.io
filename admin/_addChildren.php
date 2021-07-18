@@ -30,10 +30,11 @@
 
     function childrenCount() {
         let action = 'GetKid'
+        let id = $('#userId').val()
         $.ajax({
             url: '../config/add.php',
             method: 'POST',
-            data: { action },
+            data: { action, id },
             success: function (data) {
                 $("#childrenCount").html(data)
             }
