@@ -1,7 +1,7 @@
 <?php include '../config/config.jp.php';
 session_start();
 
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['username']) || !isset($_SESSION['id'])) {
     header("Location: ../login.php");
 }
 
@@ -14,18 +14,26 @@ if (!isset($_SESSION['username'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Ramail.org</title>
+    <title>Ramail.org
+        <?= $id;?>
+    </title>
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="Jean-pierre14 and Titans">
+    <link rel="stylesheet" href="../admin/main.07a59de7b920cd76b874.css">
     <link rel="shortcut icon" href="../admin/assets/images/ramallLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title><?= $_SESSION['username']; ?></title>
+    <title>
+        <?= $_SESSION['username']; ?>
+    </title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="index.php"><?= $prooject_name; ?>/<?= $_SESSION['username']; ?></a>
+        <a class="navbar-brand" href="index.php">
+            <?= $prooject_name; ?> /
+            <?= $_SESSION['username']; ?>
+        </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -35,7 +43,6 @@ if (!isset($_SESSION['username'])) {
                 <li class="nav-item">
                     <a class="nav-link active" href="index.php">Profile</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="../logout.php">Logout</a>
                 </li>
@@ -43,7 +50,6 @@ if (!isset($_SESSION['username'])) {
         </div>
     </nav>
     <div class="container-fluid">
-
         <div class="container">
             <div class="row justify-content-center">
                 <input type="hidden" value="<?= $_SESSION['id']; ?>" id="myprofiledata">
@@ -58,7 +64,9 @@ if (!isset($_SESSION['username'])) {
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title"><?= $_SESSION['fullname']; ?> Write your request</h4>
+                    <h4 class="modal-title">
+                        <?= $_SESSION['fullname']; ?> Write your request
+                    </h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -85,67 +93,69 @@ if (!isset($_SESSION['username'])) {
 
 </body>
 
+<script src="../js/vendor/jquery-2.2.4.min.js"></script>
+<script src="../admin/assets/scripts/main.07a59de7b920cd76b874.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="../js/userconfig.php.js"></script>
 <script>
-jQuery(document).ready(function() {
+    jQuery(document).ready(function () {
 
-    $(document).on('click', '#printThis', function() {
+        $(document).on('click', '#printThis', function () {
 
-        $("#profil").printThis({
-            debug: false, // show the iframe for debugging
-            importCSS: true, // import parent page css
-            importStyle: false, // import style tags
-            printContainer: true, // print outer container/$.selector
-            loadCSS: "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", // path to additional css file - use an array [] for multiple
-            pageTitle: "", // add title to print page
-            removeInline: false, // remove inline styles from print elements
-            removeInlineSelector: "*", // custom selectors to filter inline styles. removeInline must be true
-            printDelay: 333, // variable print delay
-            header: null, // prefix to html
-            footer: null, // postfix to html
-            base: false, // preserve the BASE tag or accept a string for the URL
-            formValues: true, // preserve input/form values
-            canvas: false, // copy canvas content
-            doctypeString: '...', // enter a different doctype for older markup
-            removeScripts: false, // remove script tags from print content
-            copyTagClasses: false, // copy classes from the html & body tag
-            beforePrintEvent: null, // function for printEvent in iframe
-            beforePrint: null, // function called before iframe is filled
-            afterPrint: null // function called before iframe is removed
-        });
+            $("#profil").printThis({
+                debug: false, // show the iframe for debugging
+                importCSS: true, // import parent page css
+                importStyle: false, // import style tags
+                printContainer: true, // print outer container/$.selector
+                loadCSS: "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", // path to additional css file - use an array [] for multiple
+                pageTitle: "", // add title to print page
+                removeInline: false, // remove inline styles from print elements
+                removeInlineSelector: "*", // custom selectors to filter inline styles. removeInline must be true
+                printDelay: 333, // variable print delay
+                header: null, // prefix to html
+                footer: null, // postfix to html
+                base: false, // preserve the BASE tag or accept a string for the URL
+                formValues: true, // preserve input/form values
+                canvas: false, // copy canvas content
+                doctypeString: '...', // enter a different doctype for older markup
+                removeScripts: false, // remove script tags from print content
+                copyTagClasses: false, // copy classes from the html & body tag
+                beforePrintEvent: null, // function for printEvent in iframe
+                beforePrint: null, // function called before iframe is filled
+                afterPrint: null // function called before iframe is removed
+            });
+        })
+        $(document).on('click', '#SendRequest', function () {
+
+            let email = $('#user_id').val()
+            let message = $('#message').val()
+            let action = 'sendrequest'
+
+            if (email === '' || message === '') {
+                $('#error').html(
+                    '<p class="alert alert-danger alert-dismissible">You can\'t send an empty message</p>'
+                )
+            } else {
+                $.ajax({
+                    url: '../config/config.jp.php',
+                    method: 'POST',
+                    data: {
+                        email,
+                        message,
+                        action
+                    },
+                    success: function (data) {
+                        $('#error').html('')
+                        $('#user_id').val('')
+                        $('#message').val('')
+                    }
+                })
+            }
+        })
+
     })
-    $(document).on('click', '#SendRequest', function() {
-
-        let email = $('#user_id').val()
-        let message = $('#message').val()
-        let action = 'sendrequest'
-
-        if (email === '' || message === '') {
-            $('#error').html(
-                '<p class="alert alert-danger alert-dismissible">You can\'t send an empty message</p>'
-            )
-        } else {
-            $.ajax({
-                url: '../config/config.jp.php',
-                method: 'POST',
-                data: {
-                    email,
-                    message,
-                    action
-                },
-                success: function(data) {
-                    $('#error').html('')
-                    $('#user_id').val('')
-                    $('#message').val('')
-                }
-            })
-        }
-    })
-
-})
 </script>
 
 </html>
