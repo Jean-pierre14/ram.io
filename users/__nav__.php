@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<nav class="navbar navbar-expand-md navbar-fixed bg-dark navbar-dark">
     <a class="navbar-brand" href="index.php">
         <?= $prooject_name; ?> /
         <?= $_SESSION['username']; ?>

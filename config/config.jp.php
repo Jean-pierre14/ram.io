@@ -158,14 +158,16 @@ if (isset($_POST['addempl'])) {
         $password = 1234;
         $salary = 1200;
         // Now to hash password
-        $passHash = md5($password1);
+        $passHash = md5($password);
         $oper = 'OPERATIONNEL';
 
-        $sql = mysqli_query($con, "INSERT INTO employees_tb(salary, username, fullname, email, `gender`, `status`,oper, `woman_name`, children, `password`) VALUES('$salary','$user','$fullname','$email','$gender','$status', '$oper', '$woman','$children','$passHash')");
+        $sql = mysqli_query($con, "INSERT INTO employees_tb(salary, username, fullname, email, `gender`, `status`,oper, `woman_name`, children, `password`) VALUES('$salary','$user','$fullname','$email', '$gender','$status', '$oper', '$woman','$children','$passHash')");
 
         if ($sql) {
             // $thisemail = mysqli_query($con, "SELECT id FROM employees_tb WHERE email= '$email'");
             header("Location: viewemployees.php");
+        }else{
+            array_push($errors, "Sql error");
         }
     }
 }
@@ -967,18 +969,31 @@ if (isset($_POST['action'])) {
     }
     // Message fetch first
     if($_POST['action'] == 'messageFetch'){
+        $id = $_POST['myId'];
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE id != $id ORDER BY username ASC");
+
         $output .= '
         <div class="row my-2">
             <div class="col-md-5 col-sm-0 hidden-sm-sidebar">
                 <form autocomplete="off" method="POST">
                     <input type="search" placeholder="Search..." class="form-control"/>
                 </form>
-                <div class="" id="ListUser">
-                    <h3>This is the List of users</h3>
+                <div class="mt-2" id="ListUser">
+        ';
+        if(mysqli_num_rows($sql) > 0){
+            $output .= '<ul class="list-group">';
+            while($row = mysqli_fetch_array($sql)){
+                $output .= '<li class="list-group-item list-group-item-action" id="'.$row['id'].'">'.$row['fullname'].'</li>';
+            }
+            $output .= '</ul>';
+        }else{
+            $output .= '<p class="alert alert-warning">There is no data</p>';
+        }
+        $output .= '
                 </div>
             </div>
-            <div class="col-md-7 col-sm-12">
-                <div id="messageOfThisUser">
+            <div class="col-md-7 col-sm-12 p-0">
+                <div id="messageOfThisUser" class="container-fluid p-0">
                     <h4>Messages can be share trough us</h4>
                     <p>
                         We are trying to change this world 
@@ -987,6 +1002,25 @@ if (isset($_POST['action'])) {
             </div>
         </div>
         ';
+        print $output;
+    }
+    if($_POST['action'] == 'messageOfThisUser'){
+        $id = $_POST['id'];
+        $myId = $_POST['myId'];
+        $sql = mysqli_query($con, "SELECT * FROM messages_tb WHERE receiverId = $myId AND senderId = $id");
+        
+        if(@mysqli_num_rows($sql) > 0){
+            while($row = mysqli_fetch_array($sql)){
+                $output .= '
+                <div>
+                    <div>'.$row['context'].'</div>
+                    <div>'.$row['created_at'].'</div>
+                </div>
+                ';
+            }
+        }else{
+            $output .= '<p class="alert alert-info">He never text you! :( Be the first :)</p>';
+        }
         print $output;
     }
 }

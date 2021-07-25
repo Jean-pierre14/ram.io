@@ -15,13 +15,34 @@ jQuery(document).ready(function () {
         $('#messageContainer').hide(150)
     })
     messageFetch()
+    $(document).on("click", ".list-group-item", function () {
+        $('li').removeClass('list-group-item-success')
+        $(this).addClass('list-group-item-success')
+    })
+    $(document).on("click", ".list-group-item", function () {
+        let id = $(this).attr('id')
+        messageOfThisUser(id)
+    })
 })
 
-function messageFetch() {
+function messageOfThisUser(id) {
+    let myId = $('#myprofiledata').val()
     $.ajax({
         url: '../config/config.jp.php',
         method: 'POST',
-        data: { action: 'messageFetch' },
+        data: { action: 'messageOfThisUser', id, myId },
+        success: function (data) {
+            $('#messageOfThisUser').html(data)
+        }
+    })
+}
+
+function messageFetch() {
+    let myId = $('#myprofiledata').val()
+    $.ajax({
+        url: '../config/config.jp.php',
+        method: 'POST',
+        data: { action: 'messageFetch', myId },
         success: function (data) {
             $('#message').html(data)
         }
