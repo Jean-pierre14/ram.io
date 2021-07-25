@@ -179,6 +179,7 @@ $(document).ready(function() {
         }
     })
     $('#search_text').keyup(function() {
+        
         let txt = $(this).val()
         let action = 'search_text'
         if (txt !== '') {

@@ -317,6 +317,7 @@ if (isset($_POST['action'])) {
         $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE id = $id");
 
         if (mysqli_num_rows($sql) == 1) {
+            
             $datas = array();
             $row = mysqli_fetch_array($sql);
             $datas['username'] = $row['username'];

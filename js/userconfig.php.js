@@ -1,4 +1,4 @@
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     userProfil()
 })
 
@@ -17,9 +17,12 @@ function userProfil() {
                 id,
                 action
             },
-            success: function(data) {
+            success: function (data) {
                 $("#profil").html(`
                 <div class="card mt-3">
+                    <div class="card-header">
+                        <h3>Welcome ${data.fullname}</h3>
+                    </div>
                     <div class="card-body">
                         <div class="container-fluid">
                             <div class="row justify-content-center">

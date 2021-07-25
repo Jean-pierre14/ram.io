@@ -25,6 +25,7 @@
                                     <form action="" method="post" class="mb-2">
                                         <input type="search" id="search_text" placeholder="Seach..."
                                             class="form-control">
+                                            
                                     </form>
                                     <div class="card card-body mb-2">
                                         <div id="resultSearch"></div>

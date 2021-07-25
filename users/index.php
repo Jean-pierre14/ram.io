@@ -53,7 +53,7 @@ if (!isset($_SESSION['username']) || !isset($_SESSION['id'])) {
         <div class="container">
             <div class="row justify-content-center">
                 <input type="hidden" value="<?= $_SESSION['id']; ?>" id="myprofiledata">
-                <div class="col-md-9 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                     <div id="profil"></div>
                 </div>
             </div>
