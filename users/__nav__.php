@@ -1,7 +1,9 @@
 <?php
     stream_wrapper_register("foo",FooWrapper::class, STREAM_IS_URL) or die("Duplication stream wrapper registered");
     class FooWrapper{
+        // This will be modified by PHP to show the context passed in the current call
         public $context;
+        // This is to store the URLs
         private $url;
     }
 ?>
