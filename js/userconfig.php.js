@@ -27,6 +27,13 @@ jQuery(document).ready(function () {
         let id = $(this).attr('id')
         messageOfThisUser(id)
     })
+    $(document).on('click', '#SubmitMyMsg', function () {
+        let msg = $('.msgContext').val()
+        let receiverId = $('.msgContext').attr('id')
+        if (msg != '') {
+            alert(receiverId + 'This is the message ' + msg)
+        }
+    })
 })
 
 function messageOfThisUser(id) {
