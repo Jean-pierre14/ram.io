@@ -11,10 +11,10 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="index.php">Profile</a>
+                <a class="nav-link active" href="javascript:void(0)">Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="message.php">messages</a>
+                <a class="nav-link" href="javascript:void(0)">messages</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../logout.php">Logout</a>

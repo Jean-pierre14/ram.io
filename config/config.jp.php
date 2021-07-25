@@ -78,6 +78,7 @@ if (isset($_POST['signIn'])) {
             session_start();
             $_SESSION = @mysqli_fetch_array($sql, MYSQLI_ASSOC);
             $_SESSION['autho'] = (int)$_SESSION['autho'];
+            $_SESSION['id'] = (int)$_SESSION['id'];
 
             if ($_SESSION['autho'] === 1) {
                 $url = './admin/';

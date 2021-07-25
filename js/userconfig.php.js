@@ -1,5 +1,17 @@
 jQuery(document).ready(function () {
     userProfil()
+    let url = window.location.href
+    $('.nav-link').click(function () {
+        $('a').removeClass('active')
+        $(this).addClass('active')
+        let context = $(this).attr(id)
+        let div = $('.div')
+        if (div == context) {
+            context.show(150)
+        } else {
+            div.hide(100)
+        }
+    })
 })
 
 function userProfil() {
