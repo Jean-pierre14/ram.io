@@ -3,10 +3,10 @@
     <div class="container">
         <div class="row justify-content-center">
             <input type="hidden" value="<?= $_SESSION['id']; ?>" id="myprofiledata">
-            <div class="col-md-6 col-sm-12 profile">
+            <div class="col-md-6 col-sm-12 div" id="profileContainer">
                 <div id="profil"></div>
             </div>
-            <div class="col-md-8 col-sm-12 message">
+            <div class="col-md-8 col-sm-12 div" style="display: none;" id="messageContainer">
                 <div id="message" class="">
                     <div class="card card-body my-3">
                         <h3 class="display-3">Message</h3>

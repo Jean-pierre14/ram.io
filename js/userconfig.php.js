@@ -4,15 +4,29 @@ jQuery(document).ready(function () {
     $('.nav-link').click(function () {
         $('a').removeClass('active')
         $(this).addClass('active')
-        let context = $(this).attr(id)
-        let div = $('.div')
-        if (div == context) {
-            context.show(150)
-        } else {
-            div.hide(100)
+    })
+
+    $('#messageContext').click(function () {
+        $('#messageContainer').show(500)
+        $('#profileContainer').hide(200)
+    })
+    $('#profileContext').click(function () {
+        $('#profileContainer').show(500)
+        $('#messageContainer').hide(150)
+    })
+    messageFetch()
+})
+
+function messageFetch() {
+    $.ajax({
+        url: '../config/config.jp.php',
+        method: 'POST',
+        data: { action: 'messageFetch' },
+        success: function (data) {
+            $('#message').html(data)
         }
     })
-})
+}
 
 function userProfil() {
     let action = 'profil'

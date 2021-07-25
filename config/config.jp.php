@@ -965,6 +965,30 @@ if (isset($_POST['action'])) {
         }
         print $output;
     }
+    // Message fetch first
+    if($_POST['action'] == 'messageFetch'){
+        $output .= '
+        <div class="row my-2">
+            <div class="col-md-5 col-sm-0 hidden-sm-sidebar">
+                <form autocomplete="off" method="POST">
+                    <input type="search" placeholder="Search..." class="form-control"/>
+                </form>
+                <div class="" id="ListUser">
+                    <h3>This is the List of users</h3>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div id="messageOfThisUser">
+                    <h4>Messages can be share trough us</h4>
+                    <p>
+                        We are trying to change this world 
+                    </p>
+                </div>
+            </div>
+        </div>
+        ';
+        print $output;
+    }
 }
 
 if(isset($_POST['childrenSaved'])){
