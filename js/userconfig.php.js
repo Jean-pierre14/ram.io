@@ -9,15 +9,19 @@ jQuery(document).ready(function () {
     $('#messageContext').click(function () {
         $('#messageContainer').show(500)
         $('#profileContainer').hide(200)
+        userProfil()
     })
     $('#profileContext').click(function () {
         $('#profileContainer').show(500)
         $('#messageContainer').hide(150)
+        messageFetch()
     })
     messageFetch()
     $(document).on("click", ".list-group-item", function () {
         $('li').removeClass('list-group-item-success')
         $(this).addClass('list-group-item-success')
+        let id = $(this).attr('id')
+        messageOfThisUser(id)
     })
     $(document).on("click", ".list-group-item", function () {
         let id = $(this).attr('id')

@@ -1018,6 +1018,14 @@ if (isset($_POST['action'])) {
                 </div>
                 ';
             }
+            $output .= '
+            <div class="__footer-msg">
+                <form autocomplete="off" method="post" class="form-inline">
+                    <input type="text" class="form-control" name="msg" id="msg" placeholder="Tying..."/>
+                    <button type="button" class="btn btn-success">Send</button>
+                </form>
+            </div>
+            ';
         }else{
             $output .= '<p class="alert alert-info">He never text you! :( Be the first :)</p>';
         }
