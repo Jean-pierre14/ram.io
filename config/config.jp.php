@@ -1023,6 +1023,7 @@ if (isset($_POST['action'])) {
         }
         $output .= '
             <div class="__footer-msg">
+                <div class="error"></div>
                 <form autocomplete="off" method="post" id="myMsg" class="form-group">
                     <textarea class="form-control msgContext" name="msg" id="'.$id.'" placeholder="Tying..."/>
                     <button type="button" id="SubmitMyMsg" class="btn btn-success btn-sm btn-block">Send</button>
@@ -1030,6 +1031,23 @@ if (isset($_POST['action'])) {
             </div>
             ';
         print $output;
+    }
+    if($_POST['action'] == 'sendMsg'){
+        $sendId = $_POST['senderId'];
+        $receiverId = $_POST['receiverId'];
+        $msg = mysqli_real_escape_string($con, trim($_POST['msg']));
+
+        if(empty($msg)){
+            print 'Error';
+        }
+
+        $sql = mysqli_query($con, "INSERT INTO messages_tb(context, senderId, receiverId, msgStatus, viewStatus) VALUES('.$msg.', $sendId, $receiverId)");
+
+        if($sql){
+            print 'success';
+        }else{
+            print 'error';
+        }
     }
 }
 

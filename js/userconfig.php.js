@@ -42,9 +42,14 @@ function sendMsg(msg, senderId, receiverId) {
         url: '../confif/config.jp.php',
         method: 'POST',
         data: { action: 'sendMsg', msg, senderId, receiverId },
-        success: function () {
-            $('#error').html('')
-            messageOfThisUser(receiverId)
+        success: function (data) {
+            if (data === 'success') {
+                $('#error').html('')
+                messageOfThisUser(receiverId)
+                $('#myMsg')[0].reset()
+            } else {
+                $('#error').html('<p class="alert alert-warning">What do you want</p>')
+            }
         }
     })
 }
