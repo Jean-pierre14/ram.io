@@ -31,10 +31,23 @@ jQuery(document).ready(function () {
         let msg = $('.msgContext').val()
         let receiverId = $('.msgContext').attr('id')
         if (msg != '') {
-            alert(receiverId + 'This is the message ' + msg)
+            sendMsg(msg, senderId, receiverId)
+        } else {
+            $('#error').html('<p class="alert alert-danger">you can send blank message<p>')
         }
     })
 })
+function sendMsg(msg, senderId, receiverId) {
+    $.ajax({
+        url: '../confif/config.jp.php',
+        method: 'POST',
+        data: { action: 'sendMsg', msg, senderId, receiverId },
+        success: function () {
+            $('#error').html('')
+            messageOfThisUser(receiverId)
+        }
+    })
+}
 
 function messageOfThisUser(id) {
     let myId = $('#myprofiledata').val()
