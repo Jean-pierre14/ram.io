@@ -13,30 +13,39 @@
     <link rel="shortcut icon" href="../admin/assets/images/ramallLogo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Ramail.org
-        <?= $_SESSION['username']; ?>
     </title>
 </head>
 
 <body>
 
-    <div class="row justify-content-between">
+    <div class="container">
+    <div class="row justify-content-center">
         <div class="col-md-6">
+            <h3>Messager</h3>
             <?php
-                $errors = array();
+                $errors = [];
                 $con = mysqli_connect("localhost", "root", "", "ramall");
                 if(isset($_POST['submit'])){
                     $send = $_POST['SenderId'];
                     $receiver = $_POST['ReceiverId'];
+                    $msg = mysqli_real_escape_string($con, trim($_POST['msg']));
+
+                    if(empty($msg)){array_push($errors, "Empty message");}
                     if(empty($send)){array_push($errors, "Empty senderId");}
                     if(empty($receiver)){array_push($errors, "Empty ReceiverId");}
 
-                    if(count($errors)){
-                        $sql = mysqli_query($con, "INSERT INTO messages_tb(context, senderId, receiverId, msgStatus, viewStatus) VALUES('.$msg.', $send,$receiver, 'oper', 'unready')");
+                    if(count($errors) == 0){
+                        $sql = mysqli_query($con, "INSERT INTO messages_tb(context, senderId, receiverId, msgStatus, viewStatus) VALUES('$msg', $send,$receiver, 'oper', 'unready')");
                         if($sql){
-                            array_push($errors, "Your has sended");
+                            array_push($errors, "Registered");
                         }else{
-                            array_push($errors, "Sql Error");
+                            array_push($errors, "sending sms fail");
                         }
+                    }
+                }
+                if(count($errors) > 0){
+                    foreach($errors as $error){
+                        print '<p class="alert alert-danger">'.$error.'</p>';
                     }
                 }
             ?>
@@ -45,10 +54,12 @@
                     <input type="number" name="SenderId" id="SenderId" placeholder="Sender Id" class="form-control">
                     <input type="number" name="ReceiverId" id="ReceiverId" placeholder="Receiver Id" class="form-control">
                     <textarea name="msg" id="msg" class="form-control"></textarea>
-                    <button type="submit" class="btn btn-success"></button>
+                    <button type="submit" name="submit" class="btn btn-success">Send</button>
                 </form>
             </div>
         </div>
     </div>
+    </div>
 
-<?php include '__footer.php';?>
+</body>
+</html>
