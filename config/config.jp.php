@@ -1007,14 +1007,20 @@ if (isset($_POST['action'])) {
     if($_POST['action'] == 'messageOfThisUser'){
         $id = $_POST['id'];
         $myId = $_POST['myId'];
-        $sql = mysqli_query($con, "SELECT * FROM messages_tb WHERE receiverId = $myId AND senderId = $id");
+        $sql = mysqli_query($con, "SELECT * FROM messages_tb WHERE (receiverId = $id AND senderId = $myId) ||  (receiverId = $myId AND senderId = $id)");
         
         if(@mysqli_num_rows($sql) > 0){
             while($row = mysqli_fetch_array($sql)){
                 $output .= '
-                <div>
-                    <div>'.$row['context'].'</div>
-                    <div>'.$row['created_at'].'</div>
+                <div class="msgBox">
+                    <div>
+                        <p>'.$row['context'].'</p>
+                    </div>
+                    <div>
+                        <small>
+                            <i>'.$row['created_at'].'</i>
+                        </small>
+                    </div>
                 </div>
                 ';
             }
@@ -1041,7 +1047,7 @@ if (isset($_POST['action'])) {
             print 'Error';
         }
 
-        $sql = mysqli_query($con, "INSERT INTO messages_tb(context, senderId, receiverId, msgStatus, viewStatus) VALUES('.$msg.', $sendId, $receiverId)");
+        $sql = mysqli_query($con, "INSERT INTO messages_tb(context, senderId, receiverId, msgStatus, viewStatus) VALUES('$msg', $sendId, $receiverId, 'oper', 'unready')");
 
         if($sql){
             print 'success';

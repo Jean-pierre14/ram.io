@@ -32,6 +32,21 @@ if (!isset($_SESSION['username'])) {
     <title>Ramail.org
         <?= $_SESSION['username']; ?>
     </title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        .msgBox {
+            position: relative;
+            padding: 10px;
+            width: 70%;
+            display: block;
+            margin: 5px 0;
+            border-radius: 0.5rem;
+            background: rgb(248, 253, 179);
+        }
+    </style>
 </head>
 
 <body>

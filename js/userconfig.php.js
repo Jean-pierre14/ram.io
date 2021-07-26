@@ -29,24 +29,26 @@ jQuery(document).ready(function () {
     })
     $(document).on('click', '#SubmitMyMsg', function () {
         let msg = $('.msgContext').val()
+        let senderId = $('#myprofiledata').val()
         let receiverId = $('.msgContext').attr('id')
         if (msg != '') {
             sendMsg(msg, senderId, receiverId)
         } else {
             $('#error').html('<p class="alert alert-danger">you can send blank message<p>')
         }
+        // alert(msg + ' ' + receiverId + " " + senderId)
     })
 })
 function sendMsg(msg, senderId, receiverId) {
     $.ajax({
-        url: '../confif/config.jp.php',
+        url: '../config/config.jp.php',
         method: 'POST',
         data: { action: 'sendMsg', msg, senderId, receiverId },
         success: function (data) {
             if (data === 'success') {
                 $('#error').html('')
                 messageOfThisUser(receiverId)
-                $('#myMsg')[0].reset()
+                console.log(data)
             } else {
                 $('#error').html('<p class="alert alert-warning">What do you want</p>')
             }
