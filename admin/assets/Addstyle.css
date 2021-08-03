@@ -4,7 +4,14 @@
     box-sizing: border-box;
 }
 .add-btn{
-    position: absolute;
+    position: fixed;
     bottom: 30px;
     right: 30px;
+    z-index: 9999;
+
+    background: rgba(252, 112, 61, 0.9);
+    box-shadow: 5px 4px 5px rgba(0,0,0,0.500);
+    color: #ccc;
+    padding: 10px 20px;
+    border-radius: 4rem;
 }
