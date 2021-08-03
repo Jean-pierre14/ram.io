@@ -48,3 +48,4 @@
 </head>
 
 <body>
+    <?php include 'add.php';?>

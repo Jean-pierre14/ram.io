@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.add-btn{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
