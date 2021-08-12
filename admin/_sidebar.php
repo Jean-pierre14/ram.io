@@ -26,6 +26,7 @@
                             <li><a href="retired.php">Retired</a></li>
                             <li><a href="payslip.php">Pay Slip</a></li>
                             <li><a href="attendance.php">Attendance</a></li>
+                            <li><a href="message.php">Messages</a></li>
                         </ul>
                     </li>
                 </ul>
