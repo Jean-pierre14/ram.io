@@ -49,6 +49,8 @@
         cursor: pointer;
     }
     .UI{
+        position: relative;
+        width: 100%;
         margin: 10px 0;
         overflow-y: scroll;
         overflow-x:unset;

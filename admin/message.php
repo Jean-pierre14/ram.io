@@ -27,10 +27,8 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
                                             <div id="MessagesOfThis">
-                                                <h2>Message</h2>
-                                                <p>
-                                                    Welcome to messager center of RamLL company
-                                                </p>
+                                                <img src="../img/undraw_Random_thoughts_re_cob6.png" alt=""
+                                                    class="img-fluid">
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-sm-0">
@@ -64,7 +62,7 @@
     $(document).ready(function () {
         UsersMessage()
         $('#search').keyup(function () {
-
+            $('#SearchResult').html('')
             const id = $('#myId').val()
             let text = $(this).val()
             let txt = text.trim()
@@ -85,6 +83,14 @@
                 $('#UsersMessage').show()
                 UsersMessage()
             }
+        })
+        $(document).on("click", ".list-group-item", function () {
+            $id = $(this).val()
+            $('.list-group-item').removeClass('list-group-item-success')
+            $(this).addClass('list-group-item-success')
+            $.ajax({
+                url: ''
+            })
         })
     })
     function UsersMessage() {

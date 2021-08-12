@@ -1081,7 +1081,7 @@ if (isset($_POST['action'])) {
             $output .= '</ul>';
         }else{
             $output .= '<div class="alert alert-warning text-center">
-                <span>We can\'t found this '.$txt.'</span>
+                <span>We can\'t found this <b>'.$txt.'</b></span>
             </div>';
         }
         print $output;
