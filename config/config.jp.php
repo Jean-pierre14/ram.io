@@ -1055,6 +1055,19 @@ if (isset($_POST['action'])) {
             print 'error';
         }
     }
+    if($_POST['action'] == 'UsersMessage'){
+        $sql = mysqli_query($con, "SELECT id, fullname FROM employees_tb ORDER BY fullname");
+        if(@mysqli_num_rows($sql) > 0){
+            $output .= '<ul>';
+                while($row = mysqli_fetch_array($sql)):
+                    $output .= '<li id="'.$row['id'].'">'.$row['fullname'].'</li>';
+                endwhile;
+            $output .= '</ul>';
+        }else{
+            $output .= '<p class="alert alert-danger">There no Users registered</p>';
+        }
+        print $output;
+    }
 }
 
 if(isset($_POST['childrenSaved'])){

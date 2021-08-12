@@ -1,6 +1,24 @@
 <?php include '../config/config.jp.php';?>
 <?php session_start(); ?>
 
+<?php
+    if(!isset($_SESSION['username'])){
+        header("Location: ../login.php");
+    }else{
+        $id = $_SESSION['id'];
+        $email = $_SESSION['email'];
+        $UserName = $_SESSION['username'];
+        $checkAuth = mysqli_query($con, "SELECT id,username FROM employees_tb WHERE id = $id AND username = '$UserName' AND email = '$email'");
+        
+
+        if(@mysqli_num_rows($checkAuth) == 1){
+            $coll = 1;
+        }else{
+            header("Location: ../login.php");
+        }
+    }
+?>
+
 <!doctype html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -18,6 +36,15 @@
     <meta name="msapplication-tap-highlight" content="no">
     <link href="main.07a59de7b920cd76b874.css" rel="stylesheet">
     <style>
+    ::-webkit-scrollbar{
+        width: 5px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: coral;
+    }
+    ::-webkit-scrollbar-track{
+        background-color: #ccc;
+    }
     .event {
         visibility: hidden;
         transition: all ease 0.2s;

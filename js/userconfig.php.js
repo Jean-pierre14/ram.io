@@ -38,7 +38,9 @@ jQuery(document).ready(function () {
         }
         // alert(msg + ' ' + receiverId + " " + senderId)
     })
+
 })
+
 function sendMsg(msg, senderId, receiverId) {
     $.ajax({
         url: '../config/config.jp.php',
