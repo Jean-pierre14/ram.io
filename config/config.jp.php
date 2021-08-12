@@ -1056,15 +1056,33 @@ if (isset($_POST['action'])) {
         }
     }
     if($_POST['action'] == 'UsersMessage'){
-        $sql = mysqli_query($con, "SELECT id, fullname FROM employees_tb ORDER BY fullname");
+        $id = $_POST['id'];
+        $sql = mysqli_query($con, "SELECT id, fullname FROM employees_tb WHERE id != $id ORDER BY fullname");
         if(@mysqli_num_rows($sql) > 0){
-            $output .= '<ul>';
+            $output .= '<ul class="list-group">';
                 while($row = mysqli_fetch_array($sql)):
-                    $output .= '<li id="'.$row['id'].'">'.$row['fullname'].'</li>';
+                    $output .= '<li class="list-group-item list-group-item-action" id="'.$row['id'].'">'.$row['fullname'].'</li>';
                 endwhile;
             $output .= '</ul>';
         }else{
             $output .= '<p class="alert alert-danger">There no Users registered</p>';
+        }
+        print $output;
+    }
+    if($_POST['action'] == 'SeachMessageUser'){
+        $id = $_POST['id'];
+        $txt = $_POST['txt'];
+        $sql = mysqli_query($con, "SELECT id, fullname FROM employees_tb WHERE fullname LIKE '%".$txt."%'");
+        if(@mysqli_num_rows($sql) > 0){
+            $output .= '<ul class="list-group">';
+            while($row = mysqli_fetch_array($sql)):
+                $output .= '<li class="list-group-item list-group-item-action" id="'.$row['id'].'">'.$row['fullname'].'</li>';
+            endwhile;
+            $output .= '</ul>';
+        }else{
+            $output .= '<div class="alert alert-warning text-center">
+                <span>We can\'t found this '.$txt.'</span>
+            </div>';
         }
         print $output;
     }

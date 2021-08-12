@@ -21,6 +21,8 @@
                     <div class="app-inner-layout__wrapper">
                         <div class="app-inner-layout__content">
                             <div class="tab-content">
+                                <input type="hidden" name="myId" id="myId" value="<?= $_SESSION['id'];?>"
+                                    class="form-control">
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-md-8 col-sm-12">
@@ -33,10 +35,15 @@
                                         </div>
                                         <div class="col-md-4 col-sm-0">
                                             <form method="POST" autocomplete="off">
-                                                <input type="text" name="search" id="search" placeholder="Search..." class="form-control">
+                                                <input type="text" name="search" id="search" placeholder="Search..."
+                                                    class="form-control">
                                             </form>
-                                            <div id="UsersMessage">
-                                                <img src="./assets/images/ajax-loader.gif" alt="Loading" class="img-fluid img-center">
+                                            <div class="UI">
+                                                <div id="SearchResult"></div>
+                                                <div id="UsersMessage">
+                                                    <img src="./assets/images/ajax-loader.gif" alt="Loading"
+                                                        class="img-fluid img-center">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -54,15 +61,39 @@
 <?php include '_footer.php'; ?>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         UsersMessage()
+        $('#search').keyup(function () {
+
+            const id = $('#myId').val()
+            let text = $(this).val()
+            let txt = text.trim()
+
+            if (!txt == '') {
+                // alert(txt)
+                $.ajax({
+                    url: '../config/config.jp.php',
+                    method: 'POST',
+                    data: { action: 'SeachMessageUser', txt, id },
+                    success: function (data) {
+                        $('#UsersMessage').hide()
+                        $('#SearchResult').html(data)
+                    }
+                })
+            } else {
+                $('#SearchResutl').html('')
+                $('#UsersMessage').show()
+                UsersMessage()
+            }
+        })
     })
-    function UsersMessage(){
+    function UsersMessage() {
+        const id = $('#myId').val()
         $.ajax({
             url: '../config/config.jp.php',
             method: 'POST',
-            data: {action: 'UsersMessage'},
-            success: function(data){
+            data: { action: 'UsersMessage', id },
+            success: function (data) {
                 $('#UsersMessage').html(data)
             }
         })

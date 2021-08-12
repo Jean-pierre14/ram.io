@@ -45,6 +45,15 @@
     ::-webkit-scrollbar-track{
         background-color: #ccc;
     }
+    .list-group-item-action{
+        cursor: pointer;
+    }
+    .UI{
+        margin: 10px 0;
+        overflow-y: scroll;
+        overflow-x:unset;
+        height: calc(70vh - 50px)
+    }
     .event {
         visibility: hidden;
         transition: all ease 0.2s;
