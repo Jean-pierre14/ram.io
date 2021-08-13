@@ -85,11 +85,17 @@
             }
         })
         $(document).on("click", ".list-group-item", function () {
-            $id = $(this).val()
-            $('.list-group-item').removeClass('list-group-item-success')
-            $(this).addClass('list-group-item-success')
+            let id = $(this).attr('id');
+            let myId = $('#myId').val();
+            $('.list-group-item').removeClass('list-group-item-success');
+            $(this).addClass('list-group-item-success');
             $.ajax({
-                url: ''
+                url: '../config/config.jp.php',
+                method: 'POST',
+                data: { id, myId, action: 'GetUserMessages' },
+                success: function (data) {
+                    alert(data)
+                }
             })
         })
     })

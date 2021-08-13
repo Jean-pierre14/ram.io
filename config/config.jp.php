@@ -1086,6 +1086,11 @@ if (isset($_POST['action'])) {
         }
         print $output;
     }
+    if($_POST['action'] == 'GetUserMessages'){
+        $id = $_POST['id'];
+        $myId = $_POST['myId'];
+        print $id .' '. $myId;
+    }
 }
 
 if(isset($_POST['childrenSaved'])){
