@@ -56,6 +56,55 @@
         overflow-x:unset;
         height: calc(70vh - 50px)
     }
+    .Messages{
+        position: relative;
+        width: 100%;
+        height: calc(75vh - 50px);
+        /* background: red; */
+    }
+    .MessagesContent{
+        position: relative;
+        width: 100%;
+        height: 350px;
+        overflow-y: auto;
+    }
+    .boxMsg{
+        position: relative;
+        width: fit-content;
+        max-width: 60%;
+        padding: 10px;
+        margin: 5px 0;
+        color: #000;
+        border-radius: 20px 20px 20px 0;
+        background: #ccc;
+    }
+    .footerMessage{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: block;
+    }
+    .footerMessage .form-inline{
+        position: relative;
+        display: flex;
+        align-items: center;
+        /* justify-content: flex-end; */
+    }
+    .footerMessage .form-control{
+        flex: 10;
+        padding: 12px;
+        outline: none;
+        border: 1px solid #ccc;
+    }
+    .footerMessage input{
+        border: 1px solid #000;
+        border-radius: 5px;
+    }
+    .footerMessage .button{
+        flex: 2;
+        padding: 10px;
+        /* height: 100%; */
+    }
     .event {
         visibility: hidden;
         transition: all ease 0.2s;

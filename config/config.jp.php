@@ -1089,7 +1089,77 @@ if (isset($_POST['action'])) {
     if($_POST['action'] == 'GetUserMessages'){
         $id = $_POST['id'];
         $myId = $_POST['myId'];
-        print $id .' '. $myId;
+
+        $sql = mysqli_query($con, "SELECT * FROM messages_tb WHERE (senderId = $id AND receiverId = $myId) OR (senderId = $myId AND receiverId = $id)");
+
+        
+        $Receiver = mysqli_query($con, "SELECT fullname FROM employees_tb WHERE id = $id");
+        $ReceiverRoW = mysqli_fetch_array($Receiver);        
+        $output .= '
+        <div class="Messages">
+        ';
+        if(@mysqli_num_rows($sql) > 0){
+            
+            $output .= '
+                
+                    <div class="MessagesBox">
+                        <div class="bg-white mb-2 p-2">
+                            <h3>'.$ReceiverRoW['fullname'].'<h3>
+                        </div>
+                    <div class="MessagesContent">
+            ';
+                
+            while($row = mysqli_fetch_array($sql)):
+                $Sender = mysqli_query($con, "SELECT * FROM employees_tb WHERE id = '".$row['senderId']."'");
+                $SenderRow = mysqli_fetch_array($Sender);
+                $Receiver = mysqli_query($con, "SELECT * FROM employees_tb WHERE id = '".$row['receiverId']."'");
+                $ReceiverRow = mysqli_fetch_array($Receiver);
+                $output .= '
+                <div class="boxMsg">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="">'.$SenderRow['username'].'</span>
+                        <small>'.$row['created_at'].'</small>
+                    </div>
+                    <span class="my-1 text-bold">'.$row['context'].'</span>
+                </div>';
+            endwhile;
+            $output .= '
+            </div>
+            </div>
+            ';
+        }else{
+            $output .= '<div class="alert alert-success">
+                <h4>Be the first to write...</h4>
+            </div>';
+        }
+        $output .= '
+
+                <div class="footerMessage">
+                    <input type="hidden" value="'.$id.'" id="ReceiverId" class="form">
+                    <form method="post" autocomplete="off" class="form-inline">
+                        <input type="text" class="form-control" id="messageTXT" placeholder="Typing...">
+                        <button type="button" id="SendMessage" class="button btn btn-success">Send</button>
+                    </form>
+                </div>
+            </div>
+        ';
+        print $output;
+    }
+    if($_POST['action'] == 'SendMessageAdmin'){
+        $id = $_POST['id'];
+        $myId = $_POST['myId'];
+        $msg = trim($_POST['msg']);
+
+        if(empty($msg)){
+            print 'error';
+        }else{
+            $sql = mysqli_query($con, "INSERT INTO messages_tb(context, senderId, receiverId, msgStatus, viewStatus) VALUES('$msg', $myId, $id, 'oper', 'unready')");
+            if($sql){
+                print 'success';
+            }else{
+                print 'error';
+            }
+        }
     }
 }
 

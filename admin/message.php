@@ -61,6 +61,29 @@
 <script>
     $(document).ready(function () {
         UsersMessage()
+        $(document).on("click", "#SendMessage", function () {
+            let msgText = $('#messageTXT').val()
+            let myId = $('#myId').val()
+            let id = $('#ReceiverId').val()
+            // alert(`Receiver id: ${id} the sender id: ${myId} message: ${msg}`) Simple test to check if the message can be sended!
+            let msg = msgText.trim()
+            if (!msg) {
+                alert('You can\'t send an empty message')
+            } else {
+                $.ajax({
+                    url: '../config/config.jp.php',
+                    method: 'POST',
+                    data: {
+                        action: 'SendMessageAdmin', id, myId, msg
+                    },
+                    success: function (data) {
+                        $('#messageTXT').val('')
+                        FetchMessages(id, myId)
+                    }
+                })
+            }
+
+        })
         $('#search').keyup(function () {
             $('#SearchResult').html('')
             const id = $('#myId').val()
@@ -89,16 +112,21 @@
             let myId = $('#myId').val();
             $('.list-group-item').removeClass('list-group-item-success');
             $(this).addClass('list-group-item-success');
-            $.ajax({
-                url: '../config/config.jp.php',
-                method: 'POST',
-                data: { id, myId, action: 'GetUserMessages' },
-                success: function (data) {
-                    alert(data)
-                }
-            })
+            FetchMessages(id, myId)
         })
     })
+    function FetchMessages(id, myId) {
+
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            data: { id, myId, action: 'GetUserMessages' },
+            success: function (data) {
+                $('#MessagesOfThis').html(data)
+            }
+        })
+        setTimeout('FetchMessages(id, myId)', 500)
+    }
     function UsersMessage() {
         const id = $('#myId').val()
         $.ajax({
