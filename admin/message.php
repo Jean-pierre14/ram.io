@@ -125,6 +125,7 @@
                 $('#MessagesOfThis').html(data)
             }
         })
+        $('.MessagesContent').animate({ scrollTop: $('.MessagesContent')[0].scrollHeight })
         setTimeout('FetchMessages(id, myId)', 500)
     }
     function UsersMessage() {
