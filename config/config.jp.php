@@ -1161,6 +1161,9 @@ if (isset($_POST['action'])) {
             }
         }
     }
+    if($_POST['action'] == 'ResultEmployees'){
+        print 'ResultEmployees()';
+    }
 }
 
 if(isset($_POST['childrenSaved'])){

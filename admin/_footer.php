@@ -178,6 +178,18 @@ $(document).ready(function() {
             return false
         }
     })
+    var Url = '../config/config.jp.php'
+    ResultEmployees()
+    function ResultEmployees(){
+        $.ajax({
+            url: Url,
+            method: 'post',
+            data: {action: 'ResultEmployees'},
+            success: function(data){
+                $('#ResultEmployees').html(data)
+            }
+        })
+    }
     $('#search_text').keyup(function() {
         
         let txt = $(this).val()
