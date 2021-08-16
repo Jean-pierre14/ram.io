@@ -376,8 +376,7 @@ if (isset($_POST['action'])) {
                         <div class="widget-content-wrapper">
                             <div class="widget-content-left mr-2">
                                 <div class="custom-checkbox custom-control">
-                                    <input type="checkbox" id="exampleCustomCheckbox' . $row['id'] . '"
-                                        class="custom-control-input"><label
+                                    <label
                                         class="custom-control-label"
                                         for="exampleCustomCheckbox' . $row['id'] . '">&nbsp;</label>
                                 </div>
@@ -395,12 +394,8 @@ if (isset($_POST['action'])) {
                             <div class="widget-content-right widget-content-actions">
                                 <a href="retired.php?actionEdit=' . $row['id'] . '" id="' . $row['id'] . '"
                                     class="border-0 btn-transition btn btn-outline-success">
-                                    <i class="fa fa-check"></i>
+                                    <i class="fa fa-eye"></i>
                                 </a>
-                                <button id="' . $row['id'] . '"
-                                    class="border-0 btn-transition btn btn-outline-danger">
-                                    <i class="fa fa-trash-alt"></i>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -1162,7 +1157,59 @@ if (isset($_POST['action'])) {
         }
     }
     if($_POST['action'] == 'ResultEmployees'){
-        print 'ResultEmployees()';
+        $id = $_POST['myId'];
+        $sql = mysqli_query($con, "SELECT fullname, id FROM employees_tb WHERE oper = 'OPERATIONNEL' AND id != $id ORDER BY fullname");
+        // Check if the table is not blank or empty
+
+        if(@mysqli_num_rows($sql) > 0){
+            $output .= '<ul class="list-group">';
+            while($row = mysqli_fetch_array($sql)):
+                $output .= '<li class="list-group-item d-flex justify-content-between align-item-center list-group-item-action">
+                        <span>'.$row['fullname'].'</span>
+                        <span>
+                            <button id="'.$row['id'].'" class="btn btn-sm btn-success addRetired">
+                                <i class="fa fa-check"></i>
+                            </button>
+                        </span>
+                    </li>';
+            endwhile;
+            $output .= '</ul>';
+        }else{
+            $output .= '<p>There is no Employee registered</p>';
+        }
+        print $output;
+    }
+    if($_POST['action'] == 'employeesSearch'){
+        $txt = htmlentities(trim($_POST['txt']));
+        $id = $_POST['myId'];
+
+        $sql = mysqli_query($con, "SELECT fullname, id FROM employees_tb WHERE fullname LIKE '%".$txt."%' AND id != $id ORDER BY fullname");
+        if(@mysqli_num_rows($sql) > 0){
+            $output .= '<ul class="list-group">';
+            while($row = mysqli_fetch_array($sql)):
+                $output .= '<li class="list-group-item d-flex justify-content-between align-item-center list-group-item-action">
+                        <span>'.$row['fullname'].'</span>
+                        <span>
+                            <button id="'.$row['id'].'" class="btn btn-sm btn-success addRetired">
+                                <i class="fa fa-check"></i>
+                            </button>
+                        </span>
+                    </li>';
+            endwhile;
+            $output .= '</ul>';
+        }else{
+            $output .= '<p class="alert alert-danger text-center">We can found this name</p>';
+        }
+        print $output;
+    }
+    if($_POST['action'] == 'addRetired'){
+        $id = $_POST['id'];
+        $sql = mysqli_query($con, "UPDATE employees_tb SET oper = 'RETIRED' WHERE id = $id");
+        if($sql){
+            print 'success';
+        }else{
+            print 'error';
+        }
     }
 }
 

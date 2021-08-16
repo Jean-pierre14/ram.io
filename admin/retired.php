@@ -29,7 +29,7 @@
                                             <form action="" method="post">
                                                 <input type="text" id="employeesSearch" name="search" placeholder="Search..." class="form-control">
                                             </form>
-                                            <div id="ResultEmployees"></div>
+                                            <div id="ResultEmployees" class="my-3"></div>
                                         </div>
                                         <div class="col-md-9 col-sm-12">
                                         <h4>Retired List and informations</h4>

@@ -126,6 +126,11 @@
     ul li:hover .delete{
         visibility: visible;
     }
+    #ResultEmployees{
+        width: 100%;
+        height: 450px;
+        overflow-y: scroll;
+    }
 
     </style>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -135,4 +140,5 @@
 </head>
 
 <body>
+    <input type="hidden" value="<?= $_SESSION['id']?>" class='myId' class="form-control">
     <?php include 'add.php';?>
