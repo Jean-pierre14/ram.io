@@ -230,13 +230,19 @@ if (isset($_POST['action'])) {
     }
     if ($_POST['action'] == 'payResults') {
         sleep(2);
-        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL'");
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL' ORDER BY fullname");
         if (@mysqli_num_rows($sql) > 0) {
             $output .= '<ul class="todo-list-wrapper list-group list-group-flush">';
             while ($row = mysqli_fetch_array($sql)) {
                 $output .= '
                 <li class="list-group-item">
-                <div class="todo-indicator bg-warning"></div>
+                ';
+                if($row['payMonth'] !== ''):
+                    $output .= '<div class="todo-indicator bg-success"></div>';
+                else:
+                    $output .= '<div class="todo-indicator bg-danger"></div>';
+                endif;
+                $output .= '
                 <div class="widget-content p-0">
                     <div class="widget-content-wrapper">
                         <div class="widget-content-left mr-2">
@@ -272,14 +278,23 @@ if (isset($_POST['action'])) {
                 $output .= '
                             </div>
                             <div class="widget-subheading">
-                                <i>' . $row['username'] . ' $ <span class="badge badge-danger">' . $row['salary'] . '</span></i>
+                                <i>' . $row['username'] . ' $ <small class="badge badge-danger">' . $row['salary'] . '</small></i>
                             </div>
                         </div>
                         <div class="widget-content-right widget-content-actions">
-                            <button id="' . $row['id'] . '"
-                                class="payConfirm border-0 btn-transition btn btn-outline-success">
+                            ';
+                            if($row['payMonth'] !== ''):
+                                $output .= '<button id="' . $row['id'] . '"
+                                class=" border-0 btn-transition btn btn-sm btn-success">
+                                <i class="fa fa-eye"></i>
+                            </button>';
+                            else:
+                                $output .= '<button value="'.$row['salary'].'" id="' . $row['id'] . '"
+                                class="payConfirm border-0 btn-transition btn btn-sm btn-outline-success">
                                 <i class="fa fa-check"></i>
-                            </button>
+                            </button>';
+                            endif;
+                            $output .= '
                         </div>
                     </div>
                 </div>
@@ -291,6 +306,57 @@ if (isset($_POST['action'])) {
             $output .= '<p class="alert alert-danger">There no data in our system</p>';
         }
         print $output;
+    }
+    if($_POST['action'] == 'PayedData'){
+        $thisMonth = date('m-Y');
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL' AND payMonth = '$thisMonth' ORDER BY fullname");
+        if(@mysqli_num_rows($sql) > 0){
+            $output .= '<ul class="list-group">';
+            while($row = mysqli_fetch_array($sql)):
+                $output .= '
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>'.$row['fullname'].'</span>
+                    <span>
+                        <button class="btn btns-m btn-success">
+                            payed
+                        </button>
+                    </span>
+                </li>';
+            endwhile;
+            $output .= '</ul>';
+        }else{
+            $output .= '
+            
+                <p class="alert alert-danger text-center">No one is Payed This month</p>
+            ';
+        }
+        print $output;
+    }
+    if($_POST['action'] == 'PayMonth'){
+        $thisMonth = date('m-Y');
+        $thisSql = mysqli_query($con, "SELECT payMonth FROM employees_tb");
+        $Row = mysqli_fetch_array($thisSql);
+
+        if($Row['payMonth'] != $thisMonth){
+            $sql = mysqli_query($con, "UPDATE employees_tb SET payMonth= ''");
+            if($sql){
+                print 'success';
+            }else{
+                print 'error';
+            }
+        }
+    }
+    if($_POST['action'] == 'payConfirm'){
+        $id = $_POST['id'];
+        $amount = $_POST['salary'];
+        $thisMonth = date('m-Y');
+        $sql = mysqli_query($con, "UPDATE employees_tb SET payMonth = '$thisMonth' WHERE id = $id");
+        if($sql){
+            mysqli_query($con, "INSERT INTO payement_tb(employee_id, amount) VALUES($id, $amount)");
+            print 'success';
+        }else{
+            print 'error';
+        }
     }
     if ($_POST['action'] == 'sendrequest') {
 
@@ -457,7 +523,7 @@ if (isset($_POST['action'])) {
                             </div>
                         </div>
                         <div class="widget-content-right widget-content-actions">
-                            <button id="' . $row['id'] . '"
+                            <button id="' . $row['id'] . '" value="'.$row['salary'].'"
                                 class="payConfirm border-0 btn-transition btn btn-outline-success">
                                 <i class="fa fa-check"></i>
                             </button>

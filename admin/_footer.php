@@ -191,6 +191,39 @@ $(document).ready(function() {
             }
         })
     }
+    $(document).on("click", ".payConfirm", function(){
+        let id = $(this).attr('id')
+        let salary = $(this).val()
+        
+        if(confirm("Do you need to pay this user?")){
+            $.ajax({
+                url: Url,
+                method: 'POST',
+                data: {action: 'payConfirm', id, salary},
+                success: function(data){
+                    if(data === 'success'){
+                        payResults()
+                        PayedData()
+                    }else{
+                        alert('Error')
+                    }
+                }
+            })
+        }else{
+            return false
+        }
+    })
+    PayedData()
+    function PayedData(){
+        $.ajax({
+            url: Url,
+            method: 'POST',
+            data:{action:'PayedData'},
+            success: function(data){
+                $('#PayedData').html(data)
+            }
+        })
+    }
     $(document).on("click", ".addRetired", function(){
         let id = $(this).attr('id')
         if(confirm("Do you want to add this user to retired list?")){
@@ -209,6 +242,20 @@ $(document).ready(function() {
             return false
         }
     })
+
+    PayMonth()
+    function PayMonth(){
+        $.ajax({
+            url: Url,
+            method: 'POST',
+            data: {action: 'PayMonth'},
+            success: function(data){
+                if(data === 'success'){
+                    payResults()
+                }
+            }
+        })
+    }
     $('#employeesSearch').keyup(function() {
         
         let text = $(this).val()

@@ -131,10 +131,20 @@
         max-height: 350px;
         overflow-y: auto;
     }
-    #ResultEmployees{
+    .max-height,#ResultEmployees{
         width: 100%;
         height: 450px;
         overflow-y: auto;
+    }
+    .imgLoading{
+        position: relative;
+        margin: 20px auto;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border: 2px solid #fff;
+        border-radius: 50%;       
+        margin: 0 auto;
     }
 
     </style>

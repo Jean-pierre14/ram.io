@@ -23,22 +23,22 @@
                             <div class="tab-content">
                                 <div class="container-fluid">
                                     <div class="row">
-                                        <div class="col-md-9 col-sm-12">
-                                            <form action="" method="post" class="mb-2">
-                                                <input type="search" id="search_text" placeholder="Seach..."
-                                                    class="form-control">
-                                            </form>
+                                        <div class="col-md-7 col-sm-12">
+                                            <h4>List of employees payed <?= date('m-Y');?></h4>
                                             <div class="card card-body mb-2">
-                                                <div id="resultSearch"></div>
-                                                <div id="payResults text-center">
-                                                    <img src="../img/loading.gif" alt="Loadding" class="img-fluid">
+                                                
+                                                <div id="PayedData" class="max-height">
+                                                    <img src="../img/loading.gif" alt="Loadding" class="imgLoading">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-9 col-sm-12">
-                                            <form action="" method="post">
-                                                <input type="text" name="search" id="searchPayslip" placeholder="Search..." class="form-control">
+                                        <div class="col-md-5 col-sm-12">
+                                            <form action="" method="post" class="mb-2">
+                                                <input type="search" id="search_text" placeholder="Search..."
+                                                    class="form-control"/>
                                             </form>
+                                            <div id="payResults" class="max-height"></div>
+                                            <div id="resultSearch" class="max-height"></div>
                                         </div>
                                     </div>
                                 </div>
