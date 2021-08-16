@@ -1,11 +1,12 @@
 <script src="../js/vendor/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="assets/scripts/main.07a59de7b920cd76b874.js"></script>
 <script>
+    var Url = Url
 function Retired() {
     let action = 'retired'
 
     $.ajax({
-        url: '../config/config.jp.php',
+        url: Url,
         method: 'post',
         data: {
             action
@@ -20,7 +21,7 @@ function payResults() {
     // alert("Psy") Test of the fetch ajax()
     let action = 'payResults'
     $.ajax({
-        url: '../config/config.jp.php',
+        url: Url,
         method: 'POST',
         data: {
             action
@@ -71,7 +72,7 @@ $(document).ready(function() {
     attendanceResults()
     function attendanceResults(){
         $.ajax({
-                url: '../config/config.jp.php',
+                url: Url,
                 method: 'post',
                 data: {
                     action: 'attendanceResults'
@@ -84,7 +85,7 @@ $(document).ready(function() {
     $(document).on("click", ".yes", function(){
         let id = $(this).attr('id')
         $.ajax({
-            url: '../config/config.jp.php',
+            url: Url,
             method: 'POST',
             data: {action: 'yes', id},
             success: function(data){
@@ -95,7 +96,7 @@ $(document).ready(function() {
     $(document).on("click", ".no", function(){
         let id = $(this).attr('id')
         $.ajax({
-            url: '../config/config.jp.php',
+            url: Url,
             method: 'POST',
             data: {action: 'no', id},
             success: function(data){
@@ -106,7 +107,7 @@ $(document).ready(function() {
     $(document).on("click", ".See", function(){
         let id = $(this).attr('id')
         $.ajax({
-            url: '../config/config.jp.php',
+            url: Url,
             method: 'POST',
             data: {action: 'see', id},
             success: function(data){
@@ -120,7 +121,7 @@ $(document).ready(function() {
 
         if(d != ''){
             $.ajax({
-                url: '../config/config.jp.php',
+                url: Url,
                 method: 'POST',
                 data: {action: 'selectOnly', d, id},
                 success: function(data){
@@ -134,7 +135,7 @@ $(document).ready(function() {
         
         if(txt != ''){
             $.ajax({
-                url: '../config/config.jp.php',
+                url: Url,
                 method: 'post',
                 data: {
                     action: 'searchAtt',
@@ -151,7 +152,7 @@ $(document).ready(function() {
     Today()
     function Today(){
         $.ajax({
-            url: '../config/config.jp.php',
+            url: Url,
             method: 'POST',
             data: {action: 'TodayAttendance'},
             success: function(data){
@@ -164,7 +165,7 @@ $(document).ready(function() {
         let action = 'deleteEmpl'
         if (confirm("Do really want to delete this person?")) {
             $.ajax({
-                url: '../config/config.jp.php',
+                url: Url,
                 method: 'post',
                 data: {
                     action,
@@ -178,7 +179,7 @@ $(document).ready(function() {
             return false
         }
     })
-    var Url = '../config/config.jp.php'
+    
     ResultEmployees()
     function ResultEmployees(){
         $.ajax({
@@ -196,7 +197,7 @@ $(document).ready(function() {
         let action = 'search_text'
         if (txt !== '') {
             $.ajax({
-                url: '../config/config.jp.php',
+                url: Url,
                 method: 'post',
                 data: {
                     action,
@@ -217,7 +218,7 @@ $(document).ready(function() {
         let action = 'search_retired'
         if (txt !== '') {
             $.ajax({
-                url: '../config/config.jp.php',
+                url: Url,
                 method: 'post',
                 data: {
                     action,
@@ -244,7 +245,7 @@ $(document).ready(function() {
             $('#errorsAjax').html('<p class="alert alert-danger">Invalid name</p>')
         } else {
             $.ajax({
-                url: '../config/config.jp.php',
+                url: Url,
                 method: 'post',
                 data: {
                     action,
@@ -268,7 +269,7 @@ $(document).ready(function() {
         let operVal = $('#oper').val()
         if (operVal !== '' || operVal !== undefined) {
             $.ajax({
-                url: '../config/config.jp.php',
+                url: Url,
                 method: 'POST',
                 data: {
                     id,
@@ -297,7 +298,7 @@ $(document).ready(function() {
             $('#errorSalary').html('<p class="alert alert-danger">Invalid Salary</p>')
         } else {
             $.ajax({
-                url: '../config/config.jp.php',
+                url: Url,
                 method: 'post',
                 data: {
                     id,
@@ -323,7 +324,7 @@ $(document).ready(function() {
             $('#errorChildren').html('<p class="alert alert-danger">What do you want?</p>')
         } else {
             $.ajax({
-                url: '../config/config.jp.php',
+                url: Url,
                 method: 'POST',
                 data: {
                     UserId,
@@ -341,7 +342,7 @@ $(document).ready(function() {
     $(document).on('click', '#childrenBtnSubmit', function(){
         
         $.ajax({
-            url: '../config/config.jp.php',
+            url: Url,
             method: 'POST',
             dataType: 'JSON',
             data: $('#childrenForm').serialize(),
@@ -368,7 +369,7 @@ function children() {
     let action = 'children'
     let countKid = $('#children').val()
     $.ajax({
-        url: '../config/config.jp.php',
+        url: Url,
         method: 'POST',
         data: {
             action,
@@ -385,7 +386,7 @@ function children() {
 function allEmployees() {
     let action = 'allEmployees'
     $.ajax({
-        url: '../config/config.jp.php',
+        url: Url,
         method: 'POST',
         data: {
             action
@@ -400,7 +401,7 @@ function allEmployees() {
 function M_empl() {
     let action = 'M_emp'
     $.ajax({
-        url: '../config/config.jp.php',
+        url: Url,
         method: 'POST',
         data: {
             action
@@ -414,7 +415,7 @@ function M_empl() {
 function W_empl() {
     let action = 'W_emp'
     $.ajax({
-        url: '../config/config.jp.php',
+        url: Url,
         method: 'POST',
         data: {
             action
@@ -429,7 +430,7 @@ function W_empl() {
 function select() {
     let action = 'select'
     $.ajax({
-        url: '../config/config.jp.php',
+        url: Url,
         method: 'POST',
         data: {
             action
@@ -443,7 +444,7 @@ function select() {
 function select2() {
     let action = 'select2'
     $.ajax({
-        url: '../config/config.jp.php',
+        url: Url,
         method: 'POST',
         data: {
             action
