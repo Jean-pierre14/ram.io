@@ -22,19 +22,23 @@
                         <div class="app-inner-layout__content">
                             <div class="tab-content">
                                 <div class="container-fluid">
-                                    <form action="" method="post" class="mb-2">
-                                        <input type="search" id="search_text" placeholder="Seach..."
-                                            class="form-control">
-                                            
-                                    </form>
-                                    <div class="card card-body mb-2">
-                                        <div id="resultSearch"></div>
-                                        <div id="payResults">
-                                            <div class="row justify-content-center">
-                                                <div class="col-md-4">
-                                                    <img src="../img/loading.gif" alt="Loadding" class="img-fluid col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-9 col-sm-12">
+                                            <form action="" method="post" class="mb-2">
+                                                <input type="search" id="search_text" placeholder="Seach..."
+                                                    class="form-control">
+                                            </form>
+                                            <div class="card card-body mb-2">
+                                                <div id="resultSearch"></div>
+                                                <div id="payResults text-center">
+                                                    <img src="../img/loading.gif" alt="Loadding" class="img-fluid">
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="col-md-9 col-sm-12">
+                                            <form action="" method="post">
+                                                <input type="text" name="search" id="searchPayslip" placeholder="Search..." class="form-control">
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
