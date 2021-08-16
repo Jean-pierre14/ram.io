@@ -36,12 +36,32 @@ if (!isset($_SESSION['username'])) {
         * {
             box-sizing: border-box
         }
+        ::-webkit-scrollbar{
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: #ccc;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: coral;
+        }
+        #ListUser{
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 100px);
+            overflow-y: auto;
+        }
+        #messageOfThisUser{
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
         #profileContainer,
         #messageContainer,
         #salaryContainer
         {
             width: 100%;
-            max-height: calc(100vh - 50px);
+            max-height: calc(100vh - 70px);
             overflow-y:auto;
         }
 

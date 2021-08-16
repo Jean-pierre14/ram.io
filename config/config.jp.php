@@ -1054,7 +1054,7 @@ if (isset($_POST['action'])) {
                 </div>
             </div>
             <div class="col-md-7 col-sm-12 p-0">
-                <div id="messageOfThisUser" class="container-fluid p-0">
+                <div id="messageOfThisUser">
                     <h4>Messages can be share trough us</h4>
                     <p>
                         We are trying to change this world 
