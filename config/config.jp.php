@@ -1277,6 +1277,40 @@ if (isset($_POST['action'])) {
             print 'error';
         }
     }
+    if($_POST['action'] == 'salaryResult'){
+        $id = $_POST['id'];
+        $sql = mysqli_query($con, "SELECT * FROM payement_tb WHERE employee_id = $id");
+
+        if(@mysqli_num_rows($sql) > 0){
+            while($row = mysqli_fetch_array($sql)):
+                $output .= '
+                    <div class="card my-2 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="text-center">Salary of this month</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>Month and Year:</span>
+                                <span>25000$</span>
+                            </div>
+                        </div>
+                    </div>
+                ';
+            endwhile;
+        }else{
+            $output .= '
+            <div class="card my-2 shadow-sm">
+                <div class="card-header">
+                    <h4 class="text-center">Salary of this month</h4>
+                </div>
+                <div class="card-body">
+                    <h3 class="text-center text-danger">You are new to this system</h3>
+                </div>
+            </div>
+            ';
+        }
+        print $output;
+    }
 }
 
 if(isset($_POST['childrenSaved'])){

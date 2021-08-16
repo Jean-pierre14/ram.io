@@ -5,12 +5,24 @@ jQuery(document).ready(function () {
         $('a').removeClass('active')
         $(this).addClass('active')
     })
-
+    salaryResult()
+    var Url = '../config/config.jp.php'
+    function salaryResult() {
+        let id = $('#myprofiledata').val()
+        $.ajax({
+            url: Url,
+            method: 'POST',
+            data: { action: 'salaryResult', id },
+            success: function (data) {
+                $('#salaryResult').html(data)
+            }
+        })
+    }
     $('#salaryContext').click(function () {
         $('#messageContainer').hide(200)
         $('#profileContainer').hide(400)
         $('#salaryContainer').show(300)
-        userProfil()
+        salaryResult()
     })
     $('#messageContext').click(function () {
         $('#messageContainer').show(500)
@@ -170,5 +182,4 @@ function userProfil() {
             }
         })
     }
-    // setTimeout('userProfil()', 1000)
 }

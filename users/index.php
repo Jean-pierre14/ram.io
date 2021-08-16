@@ -13,8 +13,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 my-3 col-sm-12 div" style="display: none;" id="salaryContainer">
-                <h2>salary</h2>
+            <div class="col-md-8 my-3 col-sm-12" style="display: none;" id="salaryContainer">
+                <div id="salaryResult">
+                    <div class="card my-2 shadow-sm">
+                        <div class="card-header">
+                            <h4 class="text-center">Salary of this month</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>Month and Year:</span>
+                                <span>25000$</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
