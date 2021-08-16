@@ -36,6 +36,14 @@ if (!isset($_SESSION['username'])) {
         * {
             box-sizing: border-box
         }
+        #profileContainer,
+        #messageContainer,
+        #salaryContainer
+        {
+            width: 100%;
+            max-height: calc(100vh - 50px);
+            overflow-y:auto;
+        }
 
         .msgBox {
             position: relative;

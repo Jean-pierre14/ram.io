@@ -7,11 +7,14 @@
                 <div id="profil"></div>
             </div>
             <div class="col-md-8 col-sm-12 div" style="display: none;" id="messageContainer">
-                <div id="message" class="">
+                <div id="message" class="container-fluid">
                     <div class="card card-body my-3">
                         <h3 class="display-3">Message</h3>
                     </div>
                 </div>
+            </div>
+            <div class="col-md-8 my-3 col-sm-12 div" style="display: none;" id="salaryContainer">
+                <h2>salary</h2>
             </div>
         </div>
     </div>

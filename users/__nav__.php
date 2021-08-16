@@ -17,6 +17,9 @@
                 <a class="nav-link" id="messageContext" href="javascript:void(0)">messages</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" id="salaryContext" href="javascript:void(0)">Salary</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="../logout.php">Logout</a>
             </li>
         </ul>

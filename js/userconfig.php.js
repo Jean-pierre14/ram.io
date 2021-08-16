@@ -6,14 +6,22 @@ jQuery(document).ready(function () {
         $(this).addClass('active')
     })
 
+    $('#salaryContext').click(function () {
+        $('#messageContainer').hide(200)
+        $('#profileContainer').hide(400)
+        $('#salaryContainer').show(300)
+        userProfil()
+    })
     $('#messageContext').click(function () {
         $('#messageContainer').show(500)
         $('#profileContainer').hide(200)
+        $('#salaryContainer').hide(200)
         userProfil()
     })
     $('#profileContext').click(function () {
         $('#profileContainer').show(500)
         $('#messageContainer').hide(150)
+        $('#salaryContainer').hide(150)
         messageFetch()
     })
     messageFetch()
