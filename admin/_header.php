@@ -126,10 +126,15 @@
     ul li:hover .delete{
         visibility: visible;
     }
+    #resultRetired{
+        width: 100%;
+        max-height: 350px;
+        overflow-y: auto;
+    }
     #ResultEmployees{
         width: 100%;
         height: 450px;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     </style>
