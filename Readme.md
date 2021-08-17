@@ -46,14 +46,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
---
--- Database: `ramall`
---
-
 DELIMITER $$
---
--- Procedures
---
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `selectEmpl` ()  BEGIN
          SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL' ORDER BY id DESC ;
         END$$
@@ -63,10 +57,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `selectEmpl2` ()  BEGIN
         END$$
 
 DELIMITER ;
-
---
--- Table structure for table `attendance_tb`
---
 
 CREATE TABLE `attendance_tb` (
   `id` int(11) NOT NULL,
