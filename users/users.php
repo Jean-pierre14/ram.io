@@ -45,8 +45,8 @@ body, html {
 </head>
 <body>
 
-<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
-<button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button>
+<button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('News', this, 'green')">News</button>
 <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
 <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
 
@@ -68,6 +68,7 @@ body, html {
 <div id="About" class="tabcontent">
   <h3>About</h3>
   <p>Who we are and what we do.</p>
+  
 </div>
 
 <script>
