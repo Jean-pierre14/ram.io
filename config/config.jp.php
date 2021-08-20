@@ -398,6 +398,7 @@ if (isset($_POST['action'])) {
             $datas['oper'] = $row['oper'];
             $datas['woman'] = $row['woman_name'];
             $datas['children'] = $row['children'];
+            $datas['created_at'] = $row['created_at'];
 
             print json_encode($datas);
         } else {
@@ -1277,39 +1278,17 @@ if (isset($_POST['action'])) {
             print 'error';
         }
     }
-    if($_POST['action'] == 'salaryResult'){
+    if($_POST['action'] == 'salaryEmployee'){
         $id = $_POST['id'];
-        $sql = mysqli_query($con, "SELECT * FROM payement_tb WHERE employee_id = $id");
+        $sql = mysqli_query($con, "SELECT * FROM `payement_tb` WHERE employee_id = 26");
 
-        if(@mysqli_num_rows($sql) > 0){
-            while($row = mysqli_fetch_array($sql)){
-                $output .= '
-                    <div class="card my-2 shadow-sm">
-                        <div class="card-header">
-                            <h4 class="text-center">Salary of this month '.$row['created_at'].'</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span>Month and Year:</span>
-                                <span>'.$row['amount'].'$</span>
-                            </div>
-                        </div>
-                    </div>
-                ';
-            }
-        }else{
-            $output .= '
-            <div class="card my-2 shadow-sm">
-                <div class="card-header">
-                    <h4 class="text-center text-danger">Salary of this month</h4>
-                </div>
-                <div class="card-body">
-                    <h3 class="text-center text-danger">You are new to this system</h3>
-                </div>
-            </div>
-            ';
+        if($sql){
+            $row = mysqli_fetch_array($sql);
+            $datas = array();
+            $datas['amount'] = $row['amount'];
+            $datas['created_at'] = $row['created_at'];
         }
-        print $output;
+        print json_encode($datas);
     }
 }
 
