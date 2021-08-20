@@ -30,17 +30,17 @@
         </div>
         <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#linka">
+            <a class="nav-link active text-white" data-toggle="tab" href="#linka">
               Profil
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#linkb">
+            <a class="nav-link text-white" data-toggle="tab" href="#linkb">
               Salary
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#linkc">
+            <a class="nav-link text-white" data-toggle="tab" href="#linkc">
               News
             </a>
           </li>
