@@ -91,15 +91,15 @@
               discretion understood to we interested he excellence. Him remarkably use projection collecting. Going
               about eat forty world has round miles.</p>
             <div class="btn-wrapper profile pt-3">
-              <a target="_blank" href="https://twitter.com/creativetim" class="btn btn-icon btn-twitter btn-round"
+              <a target="_blank" href="#" class="btn btn-icon btn-twitter btn-round"
                 data-toggle="tooltip" data-original-title="Follow us">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a target="_blank" href="https://www.facebook.com/creativetim" class="btn btn-icon btn-facebook btn-round"
+              <a target="_blank" href="#" class="btn btn-icon btn-facebook btn-round"
                 data-toggle="tooltip" data-original-title="Like us">
                 <i class="fab fa-facebook-square"></i>
               </a>
-              <a target="_blank" href="https://dribbble.com/creativetim" class="btn btn-icon btn-dribbble  btn-round"
+              <a target="_blank" href="#" class="btn btn-icon btn-dribbble  btn-round"
                 data-toggle="tooltip" data-original-title="Follow us">
                 <i class="fab fa-dribbble"></i>
               </a>
@@ -321,7 +321,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" class="form-control" placeholder="mike@email.com">
+                        <input type="email" class="form-control" placeholder="Bisimwa@email.com">
                       </div>
                     </div>
                   </div>
@@ -386,27 +386,27 @@
       <div class="container">
         <div class="row">
           <div class="col-md-3">
-            <h1 class="title">BLK•</h1>
+            <h1 class="title">RamaLL•</h1>
           </div>
           <div class="col-md-3">
             <ul class="nav">
               <li class="nav-item">
-                <a href="../index.html" class="nav-link">
+                <a href="#" class="nav-link">
                   Home
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/landing-page.html" class="nav-link">
+                <a href="#" class="nav-link">
                   Landing
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/register-page.html" class="nav-link">
+                <a href="#" class="nav-link">
                   Register
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../examples/profile-page.html" class="nav-link">
+                <a href="#" class="nav-link">
                   Profile
                 </a>
               </li>
@@ -415,22 +415,22 @@
           <div class="col-md-3">
             <ul class="nav">
               <li class="nav-item">
-                <a href="https://creative-tim.com/contact-us" class="nav-link">
+                <a href="#" class="nav-link">
                   Contact Us
                 </a>
               </li>
               <li class="nav-item">
-                <a href="https://creative-tim.com/about-us" class="nav-link">
+                <a href="#" class="nav-link">
                   About Us
                 </a>
               </li>
               <li class="nav-item">
-                <a href="https://creative-tim.com/blog" class="nav-link">
+                <a href="#" class="nav-link">
                   Blog
                 </a>
               </li>
               <li class="nav-item">
-                <a href="https://opensource.org/licenses/MIT" class="nav-link">
+                <a href="#" class="nav-link">
                   License
                 </a>
               </li>
@@ -439,17 +439,17 @@
           <div class="col-md-3">
             <h3 class="title">Follow us:</h3>
             <div class="btn-wrapper profile">
-              <a target="_blank" href="https://twitter.com/creativetim"
+              <a target="_blank" href="#"
                 class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip"
                 data-original-title="Follow us">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a target="_blank" href="https://www.facebook.com/creativetim"
+              <a target="_blank" href="#"
                 class="btn btn-icon btn-neutral btn-round btn-simple" data-toggle="tooltip"
                 data-original-title="Like us">
                 <i class="fab fa-facebook-square"></i>
               </a>
-              <a target="_blank" href="https://dribbble.com/creativetim"
+              <a target="_blank" href="#"
                 class="btn btn-icon btn-neutral  btn-round btn-simple" data-toggle="tooltip"
                 data-original-title="Follow us">
                 <i class="fab fa-dribbble"></i>
