@@ -12,7 +12,7 @@
         <div class="scrollbar-sidebar scrollbar-container">
             <div class="app-sidebar__inner">
                 <ul class="vertical-nav-menu">
-                    <li class="app-sidebar__heading">Menu HR</li>
+                    <li class="app-sidebar__heading">Menu Boss</li>
                     <li class="mm-active">
                         <a href="#">
                             <i class="metismenu-icon pe-7s-rocket"></i>
@@ -26,7 +26,7 @@
                             <li><a href="retired.php">Retired</a></li>
                             <li><a href="payslip.php">Pay Slip</a></li>
                             <li><a href="attendance.php">Attendance</a></li>
-                            <li><a href="message.php">Messages</a></li>
+                            <li><a href="humanresource.php">User level</a></li>
                         </ul>
                     </li>
                 </ul>
