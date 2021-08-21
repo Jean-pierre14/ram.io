@@ -3,10 +3,11 @@
         <img width="42" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
     </div>
     <div class="widget-content-left">
-        <div class="widget-heading">Minnie Betts
+        <div class="widget-heading"><?=
+                                    $_SESSION['fullname'] ?>
         </div>
         <div class="widget-subheading opacity-8">A
-            short profile description
+            <?= $_SESSION['email']; ?>
         </div>
     </div>
     <div class="widget-content-right mr-2">

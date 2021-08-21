@@ -15,7 +15,51 @@ function Retired() {
         }
     })
 }
+
+function payResults() {
+    // alert("Psy") Test of the fetch ajax()
+    let action = 'payResults'
+    $.ajax({
+        url: '../config/config.jp.php',
+        method: 'POST',
+        data: {
+            action
+        },
+        success: function(data) {
+            $('#payResults').html(data)
+        }
+    })
+}
 $(document).ready(function() {
+    $('#status_slct').change(function() {
+        let d = $(this).val()
+        if (d === "Married") {
+            $('.none').show()
+        } else {
+            $('.none').hide()
+        }
+    })
+    // $('#children_num').keyup(function() {
+    //     let u = $(this).val()
+    //     if (u != '') {
+    //         if (u > 3) {
+    //             alert("the number can't be above 3")
+    //         } else {
+    //             for (i = 1; i <= u; i++) {
+    //                 $('#uiChildren').append(`
+    //             <div class="col-md-4 form-group">
+    //                     <label for="children">Children ${i}</label>
+    //                     <input type="text" name="kid[]" id="children_num${i}"
+    //                         placeholder="Name ${i}" class="form-control">
+    //             </div>
+    //             `)
+    //             }
+    //         }
+    //     } else {
+    //         $('#uiChildren').html('')
+    //     }
+    // })
+    payResults()
     select()
     select2()
     allEmployees()
@@ -24,6 +68,97 @@ $(document).ready(function() {
     children()
 
     Retired()
+    attendanceResults()
+    function attendanceResults(){
+        $.ajax({
+                url: '../config/config.jp.php',
+                method: 'post',
+                data: {
+                    action: 'attendanceResults'
+                },
+                success: function(data) {
+                    $('#attendanceResults').html(data)
+                }
+            })
+    }
+    $(document).on("click", ".yes", function(){
+        let id = $(this).attr('id')
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            data: {action: 'yes', id},
+            success: function(data){
+                attendanceResults()
+            }
+        })
+    })
+    $(document).on("click", ".no", function(){
+        let id = $(this).attr('id')
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            data: {action: 'no', id},
+            success: function(data){
+                attendanceResults()
+            }
+        })
+    })
+    $(document).on("click", ".See", function(){
+        let id = $(this).attr('id')
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            data: {action: 'see', id},
+            success: function(data){
+                $('#SeeData').html(data)
+            }
+        })
+    })
+    $(document).on('change', '.selectOnly', function(){
+        let d = $(this).val()
+        let id = $(this).attr('id')
+
+        if(d != ''){
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'POST',
+                data: {action: 'selectOnly', d, id},
+                success: function(data){
+                    $('#OnlyData').html(data)
+                }
+            })
+        }
+    })
+    $('#searchAtt').keyup(function(){
+        let txt = $(this).val()
+        
+        if(txt != ''){
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'post',
+                data: {
+                    action: 'searchAtt',
+                    txt
+                },
+                success: function(data) {
+                    $('#attendanceResults').html(data)
+                }
+            })
+        }else{
+            attendanceResults()
+        }
+    })
+    Today()
+    function Today(){
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            data: {action: 'TodayAttendance'},
+            success: function(data){
+                attendanceResults()
+            }
+        })
+    }
     $(document).on('click', '.deleteEmpl', function() {
         let id = $(this).attr('id')
         let action = 'deleteEmpl'
@@ -43,12 +178,137 @@ $(document).ready(function() {
             return false
         }
     })
+    var Url = '../config/config.jp.php'
+    ResultEmployees()
+    function ResultEmployees(){
+        let myId = $('.myId').val()
+        $.ajax({
+            url: Url,
+            method: 'post',
+            data: {action: 'ResultEmployees', myId},
+            success: function(data){
+                $('#ResultEmployees').html(data)
+            }
+        })
+    }
+    $(document).on("click", ".payConfirm", function(){
+        let id = $(this).attr('id')
+        let salary = $(this).val()
+        
+        if(confirm("Do you need to pay this user?")){
+            $.ajax({
+                url: Url,
+                method: 'POST',
+                data: {action: 'payConfirm', id, salary},
+                success: function(data){
+                    if(data === 'success'){
+                        payResults()
+                        PayedData()
+                    }else{
+                        alert('Error')
+                    }
+                }
+            })
+        }else{
+            return false
+        }
+    })
+    PayedData()
+    function PayedData(){
+        $.ajax({
+            url: Url,
+            method: 'POST',
+            data:{action:'PayedData'},
+            success: function(data){
+                $('#PayedData').html(data)
+            }
+        })
+    }
+    $(document).on("click", ".addRetired", function(){
+        let id = $(this).attr('id')
+        if(confirm("Do you want to add this user to retired list?")){
+            $.ajax({
+                url: Url,
+                method: 'POST',
+                data: {action: 'addRetired', id},
+                success: function(data){
+                    if(data === 'success'){
+                        ResultEmployees()
+                        Retired()
+                    }
+                }
+            })
+        }else{
+            return false
+        }
+    })
+
+    PayMonth()
+    function PayMonth(){
+        $.ajax({
+            url: Url,
+            method: 'POST',
+            data: {action: 'PayMonth'},
+            success: function(data){
+                if(data === 'success'){
+                    payResults()
+                }
+            }
+        })
+    }
+    $('#employeesSearch').keyup(function() {
+        
+        let text = $(this).val()
+        let txt = text.trim()
+        let myId = $('.myId').val()
+
+        let action = 'employeesSearch'
+        if (txt !== '') {
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'post',
+                data: {
+                    action,
+                    txt,
+                    myId
+                },
+                success: function(data) {
+                    $('#ResultEmployees').html(data)
+                }
+            })
+        } else {
+            $('#ResultEmployees').html('')
+            ResultEmployees()
+        }
+    })
+    $('#search_text').keyup(function() {
+        
+        let txt = $(this).val()
+        let action = 'search_text'
+        if (txt !== '') {
+            $.ajax({
+                url: '../config/config.jp.php',
+                method: 'post',
+                data: {
+                    action,
+                    txt
+                },
+                success: function(data) {
+                    $('#resultSearch').html(data)
+                    $('#payResults').hide()
+                }
+            })
+        } else {
+            $('#payResults').show()
+            $('#resultSearch').html('')
+        }
+    })
     $('#search_retired').keyup(function() {
         let txt = $(this).val()
         let action = 'search_retired'
         if (txt !== '') {
             $.ajax({
-                url: '../config/cionfig.jp.php',
+                url: '../config/config.jp.php',
                 method: 'post',
                 data: {
                     action,
@@ -61,7 +321,7 @@ $(document).ready(function() {
             })
         } else {
             $('#resultRetired').show()
-            $('#searchResult').hide()
+            $('#searchResult').html('')
         }
     })
     $('.addWoman').click(function() {
@@ -148,6 +408,7 @@ $(document).ready(function() {
     })
     $('#children').keyup(function() {
         let action = 'children'
+        let UserId = $('#userId').val()
         let countKid = $(this).val()
         if (countKid < 0) {
             $('#errorChildren').html('<p class="alert alert-danger">What do you want?</p>')
@@ -156,6 +417,7 @@ $(document).ready(function() {
                 url: '../config/config.jp.php',
                 method: 'POST',
                 data: {
+                    UserId,
                     action,
                     countKid
                 },
@@ -167,15 +429,31 @@ $(document).ready(function() {
         }
 
     })
+    $(document).on('click', '#childrenBtnSubmit', function(){
+        
+        $.ajax({
+            url: '../config/config.jp.php',
+            method: 'POST',
+            dataType: 'JSON',
+            data: $('#childrenForm').serialize(),
+            success: function(data){
+                alert(data)
+            }
+        })
+    })
+    $('#childrenSaved').click(function(){
+        $.ajax({
+            url: '../config/config.php',
+            method: 'POST',
+            dataType: 'JSON',
+            data: $('#childrenSaved').serialize(),
+            success: function(data){
+                alert(data)
+            }
+        })
+    })
 })
 
-var myAlert = document.getElementById('myAlert')
-var bsAlert = new bootstrap.Alert(myAlert)
-
-var alertList = document.querySelectorAll('.alert')
-alertList.forEach(function(alert) {
-    new bootstrap.Alert(alert)
-})
 // Children
 function children() {
     let action = 'children'

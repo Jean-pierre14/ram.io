@@ -45027,5 +45027,12 @@ span.multiselect-native-select select {
 }
 
 .after-img {
-    max-width: 100%
+    max-width: 100%;
+}
+
+.img-center{
+    position: relative;
+    margin: 20px auto;
+    width: 32px;
+    height: 32px;
 }

@@ -23,10 +23,10 @@
                             <li><a href="index.php">Dashboard</a></li>
                             <li><a href="addemployee.php">Add Employee</a></li>
                             <li><a href="viewemployees.php">View employees</a></li>
-                            <li><a href="human_ressource.php">Human ressource</a></li>
                             <li><a href="retired.php">Retired</a></li>
                             <li><a href="payslip.php">Pay Slip</a></li>
                             <li><a href="attendance.php">Attendance</a></li>
+                            <li><a href="message.php">Messages</a></li>
                         </ul>
                     </li>
                 </ul>
