@@ -22,7 +22,16 @@
                         <div class="app-inner-layout__content">
                             <div class="tab-content">
                                 <div class="container-fluid">
-                                    <h3>hr</h3>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <form action="" method="post">
+                                                <input type="search" name="search" id="searchHR" placeholder="Search..." class="form-control">
+                                            </form>
+                                        </div>
+                                        <div class="col-md-8">
+                                            fata
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
