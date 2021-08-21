@@ -1283,9 +1283,10 @@ if (isset($_POST['action'])) {
         $sql = mysqli_query($con, "SELECT * FROM payement_tb WHERE employee_id = $id ORDER BY id DESC");
 
         if(@mysqli_num_rows($sql) > 0){
+            $output .= '<div class="row justify-content-center">';
             while($row = mysqli_fetch_array($sql)){
                 $output .= '
-                
+                <div class="col-md-4">
                 <div class="card my-1 shadow-sm">
                     <div class="card-header">
                         <p class="d-flex justify-content-between align-items-center">
@@ -1299,8 +1300,10 @@ if (isset($_POST['action'])) {
                             <span>'.$row['amount'].'</span>
                         </p>
                     </div>
+                    </div>
                 </div>';
             }
+            $output .= '</div>';
         }else{
             $output .= '<p class="text-center alert alert-danger">You\'re be never be payed</p>';
         }
@@ -1312,9 +1315,10 @@ if (isset($_POST['action'])) {
 
         $sql = mysqli_query($con, "SELECT * FROM payement_tb WHERE (created_at LIKE '%".$txt."%' OR amount LIKE '%".$txt."%') AND employee_id = $id");
         if(@mysqli_num_rows($sql) > 0){
+            $output .= '<div class="row justify-content-center">';
             while($row = mysqli_fetch_array($sql)){
                 $output .= '
-                
+                <div class="col-md-4">
                 <div class="card my-1 shadow-sm">
                     <div class="card-header">
                         <p class="d-flex justify-content-between align-items-center">
@@ -1328,8 +1332,10 @@ if (isset($_POST['action'])) {
                             <span>'.$row['amount'].'</span>
                         </p>
                     </div>
+                    </div>
                 </div>';
             }
+            $output .= '</div>';
         }else{
             $output .= '<p class="alert alert-warning text-center">We can\'t found your data</p>';
         }

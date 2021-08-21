@@ -20,12 +20,22 @@
                 </div>
                 <input type="text" id="search" class="form-control" placeholder="search">
               </div>
-                <div id="salary">
+                <div id="salary" class="mb-5">
                     <h3 class="text-center">Welcome to your salary platform</h3>
                 </div>
             </div>
             <div class="tab-pane" id="linkc">
-                <div id="news">
+                <div id="news" class="mb-5">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <h3>News</h3>
+                      </div>
+                      <div class="col-md-6">
+                        <h3>News</h3>
+                      </div>
+                    </div>
+                  </div>
                   <?php include './news.php';?>
                 </div>
             </div>
