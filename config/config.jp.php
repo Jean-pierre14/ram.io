@@ -1280,7 +1280,7 @@ if (isset($_POST['action'])) {
     }
     if($_POST['action'] == 'salaryEmployee'){
         $id = $_POST['id'];
-        $sql = mysqli_query($con, "SELECT * FROM `payement_tb` WHERE employee_id = 26");
+        $sql = mysqli_query($con, "SELECT * FROM `payement_tb` WHERE employee_id = $id");
 
         if($sql){
             $row = mysqli_fetch_array($sql);
