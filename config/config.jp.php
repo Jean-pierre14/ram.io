@@ -1280,15 +1280,60 @@ if (isset($_POST['action'])) {
     }
     if($_POST['action'] == 'salaryEmployee'){
         $id = $_POST['id'];
-        $sql = mysqli_query($con, "SELECT * FROM `payement_tb` WHERE employee_id = $id");
+        $sql = mysqli_query($con, "SELECT * FROM payement_tb WHERE employee_id = $id ORDER BY id DESC");
 
-        if($sql){
-            $row = mysqli_fetch_array($sql);
-            $datas = array();
-            $datas['amount'] = $row['amount'];
-            $datas['created_at'] = $row['created_at'];
+        if(@mysqli_num_rows($sql) > 0){
+            while($row = mysqli_fetch_array($sql)){
+                $output .= '
+                
+                <div class="card my-1 shadow-sm">
+                    <div class="card-header">
+                        <p class="d-flex justify-content-between align-items-center">
+                            <span>Salary of this date:</span>
+                            <span>'.$row['created_at'].'</span>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <p class="d-flex justify-content-between align-items-center">
+                            <span>Amount: </span>
+                            <span>'.$row['amount'].'</span>
+                        </p>
+                    </div>
+                </div>';
+            }
+        }else{
+            $output .= '<p class="text-center alert alert-danger">You\'re be never be payed</p>';
         }
-        print json_encode($datas);
+        print $output;
+    }
+    if($_POST['action'] == 'searchSalary'){
+        $id = $_POST['id'];
+        $txt = trim($_POST['txt']);
+
+        $sql = mysqli_query($con, "SELECT * FROM payement_tb WHERE (created_at LIKE '%".$txt."%' OR amount LIKE '%".$txt."%') AND employee_id = $id");
+        if(@mysqli_num_rows($sql) > 0){
+            while($row = mysqli_fetch_array($sql)){
+                $output .= '
+                
+                <div class="card my-1 shadow-sm">
+                    <div class="card-header">
+                        <p class="d-flex justify-content-between align-items-center">
+                            <span>Salary of this date:</span>
+                            <span>'.$row['created_at'].'</span>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <p class="d-flex justify-content-between align-items-center">
+                            <span>Amount: </span>
+                            <span>'.$row['amount'].'</span>
+                        </p>
+                    </div>
+                </div>';
+            }
+        }else{
+            $output .= '<p class="alert alert-warning text-center">We can\'t found your data</p>';
+        }
+        print $output;
     }
 }
 

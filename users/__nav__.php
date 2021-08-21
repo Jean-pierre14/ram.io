@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="100">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="index.php" rel="tooltip" title="Designed and Coded by Creative Tim"
+        <a class="navbar-brand" href="index.php" rel="tooltip" title="Designed and Coded by Bisimwa and Peter"
           data-placement="bottom" target="_blank">
           <span>RamaLL•</span> Employee System
         </a>

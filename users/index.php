@@ -9,18 +9,25 @@
             <div class="tab-pane active" id="linka">
                 <div id="profil">
                     <h3>Welcome to your account</h3>
-                    
                 </div>
             </div>
             <div class="tab-pane" id="linkb">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                      <i class="tim-icons icon-single-02"></i>
+                  </div>
+                </div>
+                <input type="text" id="search" class="form-control" placeholder="search">
+              </div>
                 <div id="salary">
                     <h3 class="text-center">Welcome to your salary platform</h3>
                 </div>
             </div>
             <div class="tab-pane" id="linkc">
-                <h3>
-                    welcome to RamLL
-                </h3>
+                <div id="news">
+                  <?php include './news.php';?>
+                </div>
             </div>
         </div>
       </div>
