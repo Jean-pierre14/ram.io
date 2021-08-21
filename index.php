@@ -13,7 +13,9 @@
                             Sat-Sun: 11am to 4pm
                         </li>
                         <li>
-                            <a href="<?= $numero; ?>"><?= $numero; ?></a>
+                            <a href="<?= $numero; ?>">
+                                <?= $numero; ?>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -23,7 +25,9 @@
     <div class="container">
         <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">
-                <a href="index-2.html"><img src="img/logo.png" alt="" title="" /></a>
+                <a href="index.php"><img src="./admin/assets/images/ramallLogo.png"
+                        style="width: 50px;height:50px;background-color: #fff;border-radius: 50px;object-fit: cover;"
+                        alt="RamaLL" title="RamaLL" /></a>
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
@@ -32,12 +36,7 @@
                     <li><a href="#coffee">Coffee</a></li>
                     <li><a href="#review">Review</a></li>
                     <li><a href="#blog">Blog</a></li>
-                    <li class="menu-has-children"><a href="#">Pages</a>
-                        <ul>
-                            <li><a href="generic.php">Generic</a></li>
-                            <li><a href="elements.php">Elements</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="login.php">Sign In</a></li>
                 </ul>
             </nav>
         </div>
@@ -337,7 +336,7 @@
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-60 col-lg-10">
                 <div class="title text-center">
-                    <h1 class="mb-10">What kind of Coffee we serve for you</h1>
+                    <h1 class="mb-10">What kind of network we serve for you</h1>
                     <p>Who are in extremely love with eco friendly system.</p>
                 </div>
             </div>
@@ -399,10 +398,9 @@
 
                         Copyright &copy;
                         <script>
-                        document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made with
-                        <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com/"
-                            target="_blank">Colorlib</a>
+                            document.write(new Date().getFullYear());
+                        </script> Put God first |
+                        <i class="fa fa-heart-o" aria-hidden="true"></i> Designer <a href="#" target="_blank">Sniper</a>
 
                     </p>
                 </div>
@@ -412,9 +410,7 @@
                     <h6>Newsletter</h6>
                     <p>Stay update with our latest</p>
                     <div class="" id="mc_embed_signup">
-                        <form target="_blank" novalidate="true"
-                            action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                            method="get" class="form-inline">
+                        <form target="_blank" novalidate="true" action="" method="post" class="form-inline">
                             <input class="form-control" name="EMAIL" placeholder="Enter Email"
                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required=""
                                 type="email">
@@ -447,7 +443,7 @@
 <script src="js/vendor/jquery-2.2.4.min.js"></script>
 <script src="../../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-</script>
+    </script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
@@ -467,14 +463,14 @@
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
-window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
-function gtag() {
-    dataLayer.push(arguments);
-}
-gtag('js', new Date());
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-gtag('config', 'UA-23581568-13');
+    gtag('config', 'UA-23581568-13');
 </script>
 </body>
 

@@ -17,6 +17,7 @@
 
     <title>RamaLL</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link rel="shortcut icon" href="./admin/assets/images/ramallLogo.png" type="image/x-icon">
 
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -29,15 +30,4 @@
 </head>
 
 <body>
-    <?php include './config/config.jp.php';
-
-    session_start();
-    if ($_SESSION['autho'] == 1 && $_SESSION['autho'] == '') {
-        header("Location: ./admin/");
-    } elseif ($_SESSION['autho'] == 2 && $_SESSION['autho'] == '') {
-        header("Location: ./boss/");
-    } elseif ($_SESSION['autho'] == 0 && $_SESSION['autho'] == '') {
-        header("Location: ./users/");
-    } else {
-        header("Location: index.php");
-    }
+    <?php include './config/config.jp.php';?>
