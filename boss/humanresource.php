@@ -24,12 +24,12 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <form action="" method="post">
+                                            <form action="" autocomplete="off" method="post">
                                                 <input type="search" name="search" id="searchHR" placeholder="Search..." class="form-control">
                                             </form>
                                         </div>
                                         <div class="col-md-8">
-                                            fata
+                                            <h3>Data</h3>
                                         </div>
                                     </div>
                                 </div>
