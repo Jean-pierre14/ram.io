@@ -1341,6 +1341,9 @@ if (isset($_POST['action'])) {
         }
         print $output;
     }
+    if($_POST['action'] == 'hrResult'){
+        print "Cool";
+    }
 }
 
 if(isset($_POST['childrenSaved'])){

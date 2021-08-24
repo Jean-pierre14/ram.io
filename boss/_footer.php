@@ -30,7 +30,9 @@ function payResults() {
         }
     })
 }
+
 $(document).ready(function() {
+    
     $('#status_slct').change(function() {
         let d = $(this).val()
         if (d === "Married") {

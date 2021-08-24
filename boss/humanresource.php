@@ -25,10 +25,26 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <form action="" autocomplete="off" method="post">
-                                                <input type="search" name="search" id="searchHR" placeholder="Search..." class="form-control">
+                                                <input type="search" name="search" id="searchHR" placeholder="Search..."
+                                                    class="form-control">
                                             </form>
-                                            <div id="hrResult">
-                                                <img src="" alt="" class="img-flui">
+                                            <div class="my-3 max-height">
+                                                <?php
+                                                    $output2 = '';
+                                                    $Result = mysqli_query($con, "SELECT id, fullname FROM employees_tb ORDER BY fullname");
+                                                    if(@mysqli_num_rows($Result) > 0){
+                                                        $output2 .= '<div class="list-group">';
+                                                        while($row = mysqli_fetch_array($Result)){
+                                                            $output2 .= '
+                                                                <a class="list-group-item list-group-item-action" href="humanresource.php?action='.$row['id'].'">'.$row['fullname'].'</a>
+                                                            ';
+                                                        }
+                                                        $output2 .= '</div>';
+                                                    }else{
+                                                        $output2 .= '<p class="alert alert-warning">Sorry there is no data</p>';
+                                                    }
+                                                    print $output2;
+                                                ?>
                                             </div>
                                         </div>
                                         <div class="col-md-8">
