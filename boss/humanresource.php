@@ -27,6 +27,9 @@
                                             <form action="" autocomplete="off" method="post">
                                                 <input type="search" name="search" id="searchHR" placeholder="Search..." class="form-control">
                                             </form>
+                                            <div id="hrResult">
+                                                <img src="" alt="" class="img-flui">
+                                            </div>
                                         </div>
                                         <div class="col-md-8">
                                             <h3>Data</h3>
