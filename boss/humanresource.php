@@ -31,7 +31,7 @@
                                             <div class="my-3 max-height">
                                                 <?php
                                                     $output2 = '';
-                                                    $Result = mysqli_query($con, "SELECT id, fullname FROM employees_tb ORDER BY fullname");
+                                                    $Result = mysqli_query($con, "SELECT id, fullname FROM employees_tb WHERE oper = 'OPERATIONNEL' ORDER BY fullname");
                                                     if(@mysqli_num_rows($Result) > 0){
                                                         $output2 .= '<div class="list-group">';
                                                         while($row = mysqli_fetch_array($Result)){
@@ -48,7 +48,23 @@
                                             </div>
                                         </div>
                                         <div class="col-md-8">
-                                            <h3>Data</h3>
+                                            <div class="card">
+                                                <?php if(isset($_GET['action'])):?>
+                                                    <div class="card-body">
+                                                        <h2>Profil of this user</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi explicabo sunt odio tempore et consequuntur quas, recusandae reiciendis veniam eum, dolorum voluptates itaque voluptas suscipit iusto ducimus blanditiis atque culpa?
+                                                        </p>
+                                                    </div>
+                                                <?php else:?>
+                                                    <div class="card-body">
+                                                        <h2>Human Resource and User Level</h2>
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi explicabo sunt odio tempore et consequuntur quas, recusandae reiciendis veniam eum, dolorum voluptates itaque voluptas suscipit iusto ducimus blanditiis atque culpa?
+                                                        </p>
+                                                    </div>
+                                                <?php endif;?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
