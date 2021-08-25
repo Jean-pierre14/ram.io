@@ -24,10 +24,6 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <form action="" autocomplete="off" method="post">
-                                                <input type="search" name="search" id="searchHR" placeholder="Search..."
-                                                    class="form-control">
-                                            </form>
                                             <div class="my-3 max-height">
                                                 <?php
                                                     $output2 = '';
@@ -49,13 +45,24 @@
                                         </div>
                                         <div class="col-md-8">
                                             <div class="card">
-                                                <?php if(isset($_GET['action'])):?>
-                                                    <div class="card-body">
-                                                        <h2>Profil of this user</h2>
-                                                        <p>
-                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi explicabo sunt odio tempore et consequuntur quas, recusandae reiciendis veniam eum, dolorum voluptates itaque voluptas suscipit iusto ducimus blanditiis atque culpa?
-                                                        </p>
-                                                    </div>
+                                                <?php if(isset($_GET['action'])):
+                                                    $ID = $_GET['action'];
+                                                    
+                                                    $GetThis = mysqli_query($con, "SELECT * FROM employees_tb WHERE id = $ID");
+                                                    if(@mysqli_num_rows($GetThis) > 0){
+                                                        $RowThis = mysqli_fetch_array($GetThis);
+                                                        ?>
+                                                        <div class="card-body">
+                                                            <h2><?= $RowThis['fullname'];?></h2>
+                                                            <p>
+                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi explicabo sunt odio tempore et consequuntur quas, recusandae reiciendis veniam eum, dolorum voluptates itaque voluptas suscipit iusto ducimus blanditiis atque culpa?
+                                                            </p>
+                                                        </div>
+                                                        <?php
+                                                    }else{
+                                                        print '<div class="card-body"><p class="">Sorry Guy but you try :(</p></div>';
+                                                    }
+                                                    ?>
                                                 <?php else:?>
                                                     <div class="card-body">
                                                         <h2>Human Resource and User Level</h2>
