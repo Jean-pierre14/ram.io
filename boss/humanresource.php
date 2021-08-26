@@ -80,6 +80,13 @@
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
+                                                            <form>
+                                                                <select class="form-control">
+                                                                    <option value="2">Human Resource</option>
+                                                                    <option value="1">Administrator</option>
+                                                                    <option value="0">Employee</option>
+                                                                </select>
+                                                            </form>
                                                         </div>
                                                         <?php
                                                     }else{
