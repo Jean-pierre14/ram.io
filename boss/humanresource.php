@@ -86,6 +86,7 @@
                                                                     <option value="1">Administrator</option>
                                                                     <option value="0">Employee</option>
                                                                 </select>
+                                                                <button type="submit" class="btn btn-sm btn-success">Register</button>
                                                             </form>
                                                         </div>
                                                         <?php
