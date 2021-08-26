@@ -54,13 +54,36 @@
                                                         ?>
                                                         <div class="card-body">
                                                             <h2><?= $RowThis['fullname'];?></h2>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi explicabo sunt odio tempore et consequuntur quas, recusandae reiciendis veniam eum, dolorum voluptates itaque voluptas suscipit iusto ducimus blanditiis atque culpa?
-                                                            </p>
+                                                            <table class="table table-sm table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Field</th>
+                                                                        <th>Value</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Username:</td>
+                                                                        <td><?= $RowThis['username'];?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Sex:</td>
+                                                                        <td><?= $RowThis['gender'];?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Email:</td>
+                                                                        <td><?= $RowThis['email'];?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Status</td>
+                                                                        <td><?= $RowThis['oper'];?></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
                                                         </div>
                                                         <?php
                                                     }else{
-                                                        print '<div class="card-body"><p class="">Sorry Guy but you try :(</p></div>';
+                                                        print '<div class="card-body"><p class="alert alert-danger">Sorry Guy but you try :(</p></div>';
                                                     }
                                                     ?>
                                                 <?php else:?>
