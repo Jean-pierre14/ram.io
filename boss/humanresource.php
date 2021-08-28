@@ -80,7 +80,7 @@
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
-                                                            <form method="post">
+                                                            <form method="post" id="auth">
                                                                 <select class="form-control">
                                                                     <option value="2">Human Resource</option>
                                                                     <option value="1">Administrator</option>
