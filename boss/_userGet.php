@@ -7,7 +7,7 @@ $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE id =$id");
 if(@mysqli_num_rows($sql) > 0){
     $r = mysqli_fetch_array($sql);
     print '
-    <div class="bg-white shadow-sm content">
+    <div class="bg-white shadow-sm p-2">
         <h4 class="d-flex justify-content-between align-item-center flex-wrap">
             <span>Username</span>
             <span>'.$r['username'].'</span>
@@ -36,5 +36,7 @@ if(@mysqli_num_rows($sql) > 0){
     </div>
     ';
 }else{
-    header("Location: ../login.php");
+    print '<div class="alert alert-danger">
+        <p class="text-center">Fuck you :(</p>
+    </div>'
 }

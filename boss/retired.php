@@ -40,7 +40,7 @@
                                         </form>
                                             <?php if(isset($_GET['actionEdit'])):?>
                                                 <div class="row justify-content-center">
-                                                    <div class="col-md-6 col-sm-12">
+                                                    <div class="col-md-12 col-sm-12">
                                                         <?php include '_userGet.php';?>
                                                     </div>
                                                 </div>
