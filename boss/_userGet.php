@@ -4,7 +4,7 @@ $id = $_GET['actionEdit'];
 
 $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE id =$id");
 
-if(@mysqli_num_rows($sql) > 0){
+if(@mysqli_num_rows($sql) == 1){
     $r = mysqli_fetch_array($sql);
     print '
     <div class="bg-white shadow-sm p-2">
