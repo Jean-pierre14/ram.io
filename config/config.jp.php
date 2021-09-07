@@ -222,15 +222,16 @@ window.location.href = 'viewemployees.php'
     }
 }
 
-
 // Actions
 if (isset($_POST['action'])) {
     if ($_POST['action'] == 'search_txt') {
         print 'seaching...';
     }
     if ($_POST['action'] == 'payResults') {
-        sleep(2);
-        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL' ORDER BY fullname");
+        sleep(0.5);
+        
+        $thisMonth = date('m-Y');
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL' AND payMonth != '$thisMonth' ORDER BY fullname");
         if (@mysqli_num_rows($sql) > 0) {
             $output .= '<ul class="todo-list-wrapper list-group list-group-flush">';
             while ($row = mysqli_fetch_array($sql)) {
@@ -309,7 +310,8 @@ if (isset($_POST['action'])) {
     }
     if($_POST['action'] == 'PayedData'){
         $thisMonth = date('m-Y');
-        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE oper = 'OPERATIONNEL' AND payMonth = '$thisMonth' ORDER BY fullname");
+        $sql = mysqli_query($con, "SELECT `employees_tb.username`, `payement_tb.created_at` FROM employees_tb INNER JOIN ON payement_tb WHERE oper = 'OPERATIONNEL' AND payMonth = '$thisMonth' ORDER BY fullname");
+        
         if(@mysqli_num_rows($sql) > 0){
             $output .= '<ul class="list-group">';
             while($row = mysqli_fetch_array($sql)):
@@ -346,6 +348,8 @@ if (isset($_POST['action'])) {
             }else{
                 print 'error';
             }
+        }else{
+            print 'Error';
         }
     }
     if($_POST['action'] == 'payConfirm'){
