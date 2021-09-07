@@ -33,7 +33,7 @@
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#coffee">Coffee</a></li>
+                    <li><a href="#RamaLL">RamaLL</a></li>
                     <li><a href="#review">Review</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="login.php">Sign In</a></li>
@@ -68,9 +68,9 @@
                         src="img/play-icon.png" alt=""></a>
             </div>
             <div class="col-lg-6 video-left">
-                <h6>Live Coffee making process.</h6>
+                <h6>Live RamaLL making process.</h6>
                 <h1>We Telecast our <br>
-                    Coffee Making Live</h1>
+                    RamaLL Making Live</h1>
                 <p><span>We are here to listen from you deliver exellence</span></p>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut
@@ -84,12 +84,12 @@
 </section>
 
 
-<section class="menu-area section-gap" id="coffee">
+<section class="menu-area section-gap" id="RamaLL">
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-60 col-lg-10">
                 <div class="title text-center">
-                    <h1 class="mb-10">What kind of Coffee we serve for you</h1>
+                    <h1 class="mb-10">What kind of RamaLL we serve for you</h1>
                     <p>Who are in extremely love with eco friendly system.</p>
                 </div>
             </div>
@@ -163,7 +163,7 @@
             <div class="col-lg-4">
                 <div class="single-menu">
                     <div class="title-div justify-content-between d-flex">
-                        <h4>Coffee Latte</h4>
+                        <h4>RamaLL Latte</h4>
                         <p class="price float-right">
                             $49
                         </p>
@@ -320,7 +320,7 @@
             </div>
             <div class="col-lg-3 col-md-6 single-counter">
                 <h1 class="counter">2013</h1>
-                <p>Cups Coffee</p>
+                <p>Cups RamaLL</p>
             </div>
             <div class="col-lg-3 col-md-6 single-counter">
                 <h1 class="counter">10536</h1>
@@ -474,6 +474,6 @@
 </script>
 </body>
 
-<!-- Mirrored from preview.colorlib.com/theme/coffee/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 08:37:18 GMT -->
+<!-- Mirrored from preview.colorlib.com/theme/RamaLL/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 May 2021 08:37:18 GMT -->
 
 </html>

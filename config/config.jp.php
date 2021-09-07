@@ -314,13 +314,17 @@ if (isset($_POST['action'])) {
             $output .= '<ul class="list-group">';
             while($row = mysqli_fetch_array($sql)):
                 $output .= '
-                <li class="list-group-item d-flex justify-content-between">
+                <li class="list-group-item list-group-item-action d-flex justify-content-between">
                     <span>'.$row['fullname'].'</span>
                     <span>
                         <button class="btn btns-m btn-success">
                             payed
                         </button>
                     </span>
+                    <p class="list-group-item list-group-item-action d-flex justify-content-between">
+                        <span class="">Payed at :</span>
+                        <span class="">'.$row['created_at'].'</span>
+                    </p>
                 </li>';
             endwhile;
             $output .= '</ul>';

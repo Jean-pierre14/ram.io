@@ -23,4 +23,4 @@
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="profile-page">
+<body class="profile-page"> 
