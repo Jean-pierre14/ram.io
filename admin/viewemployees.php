@@ -123,6 +123,29 @@
                                                                 </form>
                                                             </div>
                                                         </div>
+                                                        <div class="card card-body">
+                                                            <?php
+                                                                $level = '';
+                                                                if($row['autho'] == 0){
+                                                                    $level = 'Employee';
+                                                                }elseif($row['autho'] == 1){
+                                                                    $level = 'Human resource';
+                                                                }else{
+                                                                    $level = 'Boss';
+                                                                }
+                                                            ?>
+                                                            <p>This is his Level <span class="badge badge-success"><?= $level;?></span></p>
+                                                            <form action="" method="post">
+                                                                <input type="hidden" value="<?= $row['id'];?>" id="MyAuthoId">
+                                                                <div id="errorAutho"></div>
+                                                                <select name="auth" id="autho" class="form-control">
+                                                                    <option value="">-- select --</option>
+                                                                    <option value="0">Employee</option>
+                                                                    <option value="1">Human resource</option>
+                                                                </select>
+                                                                <button class="my-3 btn btn-lg btn-success" type="button" id="authoBtn">Update</button>
+                                                            </form>
+                                                        </div>
                                                     </div>
 
                                                     <div class="col-md-5">

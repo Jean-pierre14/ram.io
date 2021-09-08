@@ -214,6 +214,27 @@ $(document).ready(function() {
         }
     })
     PayedData()
+    $('#authoBtn').click(function(){
+        let Event = $('#autho').val()
+        let id = $('#MyAuthoId').val()
+        if(!Event || Event === '' || Event === null){
+            $('#errorAutho').html('<p class="alert alert-danger">What do you want to Do?</p>')
+        }else{
+            $('#errorAutho').html('')
+            $.ajax({
+                url: Url,
+                method: 'POST',
+                data: {action: 'authoBtn', Event, id},
+                success: function(data){
+                    if(data === 'success'){
+                        window.location.href = `viewemployees.php?actionEdit=${id}`
+                    }else{
+                        $('#errorAutho').html('<p class="alert alert-warning">Something does wrong</p>')
+                    }
+                }
+            })
+        }
+    })
     function PayedData(){
         $.ajax({
             url: Url,

@@ -308,6 +308,18 @@ if (isset($_POST['action'])) {
         }
         print $output;
     }
+    if($_POST['action'] == 'authoBtn'){
+        $id = $_POST['id'];
+        $event = $_POST['Event'];
+
+        $sql = mysqli_query($con, "UPDATE employees_tb SET autho = $event WHERE id = $id");
+
+        if($sql){
+            print 'success';
+        }else{
+            print 'error';
+        }
+    }
     if($_POST['action'] == 'PayedData'){
         $thisMonth = date('m-Y');
 
