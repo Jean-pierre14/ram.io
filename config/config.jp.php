@@ -311,7 +311,7 @@ if (isset($_POST['action'])) {
     if($_POST['action'] == 'PayedData'){
         $thisMonth = date('m-Y');
 
-        $sql = mysqli_query($con, "SELECT * FROM employees_tb INNER JOIN ON payement_tb WHERE (oper = 'OPERATIONNEL' AND payMonth = '$thisMonth') ORDER BY fullname");
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE (oper = 'OPERATIONNEL' AND payMonth = '$thisMonth') ORDER BY fullname");
         # WHERE oper = 'OPERATIONNEL' AND payMonth = '$thisMonth' ORDER BY fullname
         
         if(@mysqli_num_rows($sql) > 0){
@@ -344,7 +344,7 @@ if (isset($_POST['action'])) {
         $thisSql = mysqli_query($con, "SELECT payMonth FROM employees_tb");
         $Row = mysqli_fetch_array($thisSql);
 
-        if($Row['payMonth'] !== $thisMonth){
+        if($Row['payMonth'] !== $thisMonth && $Row['payMonth'] !== ''){
             $sql = mysqli_query($con, "UPDATE employees_tb SET payMonth = '' WHERE oper = 'OPERATIONNEL'");
             if($sql){
                 print 'success';
