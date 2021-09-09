@@ -323,7 +323,7 @@ if (isset($_POST['action'])) {
     if($_POST['action'] == 'PayedData'){
         $thisMonth = date('m-Y');
 
-        $sql = mysqli_query($con, "SELECT * FROM employees_tb WHERE (oper = 'OPERATIONNEL' AND payMonth = '$thisMonth') ORDER BY fullname");
+        $sql = mysqli_query($con, "SELECT * FROM employees_tb INNER JOIN payement_tb ON `employees_tb.id`=`payement_tb.employee_id` WHERE (oper = 'OPERATIONNEL' AND payMonth = '$thisMonth') ORDER BY fullname");
         # WHERE oper = 'OPERATIONNEL' AND payMonth = '$thisMonth' ORDER BY fullname
         
         if(@mysqli_num_rows($sql) > 0){
