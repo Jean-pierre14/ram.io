@@ -136,7 +136,7 @@
                                                             ?>
                                                             <p>This is his Level <span class="badge badge-success"><?= $level;?></span></p>
                                                             <form action="" method="post">
-                                                                <input type="hidden" value="<?= $row['id'];?>" id="MyAuthoId">
+                                                                <input type="hidden" value="<?= $row['id'];?>" id="2">
                                                                 <div id="errorAutho"></div>
                                                                 <select name="auth" id="autho" class="form-control">
                                                                     <option value="">-- select --</option>
