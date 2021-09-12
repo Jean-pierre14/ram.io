@@ -100,7 +100,7 @@
                                                                 </select>
                                                                 <button type="submit" class="btn btn-sm btn-success" name="authBtn" id="authBtn">Register</button>
                                                             </form>
-                                                        </div>q
+                                                        </div>
                                                         <?php
                                                     }else{
                                                         print '<div class="card-body"><p class="alert alert-danger">Sorry Guy but you try :(</p></div>';
