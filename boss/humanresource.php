@@ -81,8 +81,33 @@
                                                                 </tbody>
                                                             </table>
                                                             <?php
+                                                                $level = '';
+                                                                if($RowThis['autho'] == 0){
+                                                                    $level = 'Employee';
+                                                                }elseif($RowThis['autho'] == 1){
+                                                                    $level = 'Human resource';
+                                                                }else{
+                                                                    $level = 'Boss and admin';
+                                                                }
+                                                            ?>
+                                                            <div class="list-group list-group-flush my-2">
+                                                                <p class="list-group-item list-group-item-action d-flex align-item-center justify-content-between">
+                                                                    <span>Level of the Use1`</span>
+                                                                    <span><?= $level;?></span>
+                                                                </p>
+                                                                <p class="list-group-item list-group-item-action d-flex align-item-center justify-content-between">
+                                                                    <span>Level of the User</span>
+                                                                    <span><?= $level;?></span>
+                                                                </p>
+                                                                <p class="list-group-item list-group-item-action d-flex align-item-center justify-content-between">
+                                                                    <span>Level of the User</span>
+                                                                    <span><?= $level;?></span>
+                                                                </p>
+                                                            </div>
+                                                            <?php
                                                                 if(isset($_POST['authBtn'])){
                                                                     $ID = $_GET['action'];
+                                                                    $event = $_POST['event'];
                                                                     $sql = mysqli_query($con, "UPDATE employees_tb SET autho = $event WHERE id = $ID");
                                                                     if($sql){
                                                                         print '<p class="alert alert-success">Level Changed succefully</p>';
@@ -92,7 +117,7 @@
                                                                 }
                                                             ?>
                                                             <form method="post" id="auth">
-                                                                <select class="form-control">
+                                                                <select class="form-control" name="event">
                                                                     <option value="">-- select --</option>
                                                                     <option value="2">Human Resource</option>
                                                                     <option value="1">Administrator</option>
