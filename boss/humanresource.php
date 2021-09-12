@@ -80,6 +80,17 @@
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
+                                                            <?php
+                                                                if(isset($_POST['authBtn'])){
+                                                                    $ID = $_GET['action'];
+                                                                    $sql = mysqli_query($con, "UPDATE employees_tb SET autho = $event WHERE id = $ID");
+                                                                    if($sql){
+                                                                        print '<p class="alert alert-success">Level Changed succefully</p>';
+                                                                    }else{
+                                                                        print '<p class="alert alert-danger">Level Failed</p>';
+                                                                    }
+                                                                }
+                                                            ?>
                                                             <form method="post" id="auth">
                                                                 <select class="form-control">
                                                                     <option value="">-- select --</option>
@@ -87,9 +98,9 @@
                                                                     <option value="1">Administrator</option>
                                                                     <option value="0">Employee</option>
                                                                 </select>
-                                                                <button type="submit" class="btn btn-sm btn-success" id="authBtn">Register</button>
+                                                                <button type="submit" class="btn btn-sm btn-success" name="authBtn" id="authBtn">Register</button>
                                                             </form>
-                                                        </div>
+                                                        </div>q
                                                         <?php
                                                     }else{
                                                         print '<div class="card-body"><p class="alert alert-danger">Sorry Guy but you try :(</p></div>';
