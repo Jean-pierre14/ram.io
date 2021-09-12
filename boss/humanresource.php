@@ -82,11 +82,12 @@
                                                             </table>
                                                             <form method="post" id="auth">
                                                                 <select class="form-control">
+                                                                    <option value="">-- select --</option>
                                                                     <option value="2">Human Resource</option>
                                                                     <option value="1">Administrator</option>
                                                                     <option value="0">Employee</option>
                                                                 </select>
-                                                                <button type="submit" class="btn btn-sm btn-success">Register</button>
+                                                                <button type="submit" class="btn btn-sm btn-success" id="authBtn">Register</button>
                                                             </form>
                                                         </div>
                                                         <?php
@@ -117,3 +118,11 @@
 </div>
 
 <?php include '_footer.php'; ?>
+
+<script>
+    $(document).ready(function(){
+        $('#authBtn').click(function(){
+            alert("Click")
+        })
+    })
+</script>
